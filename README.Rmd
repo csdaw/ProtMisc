@@ -1,0 +1,88 @@
+---
+title: "proteotools"
+output: github_document
+---
+
+
+## Dependency tree
+
+```{r}
+library(miniCRAN)
+library(dplyr)
+library(ggplot2)
+bioc_url <- BiocManager::repositories()[1]
+bioc_url
+```
+
+```{r}
+pkgs <- pkgDep(
+  c("ggplot2", "QFeatures"),
+  repos = c(CRAN = "https://cran.r-project.org",
+            Bioc = bioc_url),
+  includeBasePkgs = FALSE,
+  suggests = FALSE
+)
+
+pkgs
+```
+
+```{r}
+set.seed(1)
+p <- makeDepGraph(
+  c("ggplot2", "QFeatures"),
+   repos = c(CRAN = "https://cran.r-project.org",
+            Bioc = bioc_url),
+  includeBasePkgs = FALSE,
+  suggests = FALSE
+)
+```
+
+```{r}
+library(igraph)
+```
+
+```{r}
+# p_layout <- layout.fruchterman.reingold(p)
+p_layout <- layout.gem(p)
+```
+
+```{r}
+p_df <- as.data.frame(p_layout)
+p_df$pkg <- pkgs
+
+p_df
+```
+
+```{r}
+ggplot() +
+    geom_point(data=p_df,aes(x=V1,y=V2),size=4,colour="black") +  # adds a black border around the nodes
+    geom_point(data=p_df,aes(x=V1,y=V2),size=3,colour="lightgrey") +
+    geom_text(data=p_df,aes(x=V1,y=V2,label=pkg)) + # add the node labels
+    scale_x_continuous()+  # expand the x limits 
+    scale_y_continuous()+ # expand the y limits
+    theme_bw()  # use the ggplot black and white theme
+```
+
+```{r}
+g <- get.data.frame(p)
+
+head(g)
+```
+
+```{r}
+g$from.x <- p_df$V1[match(g$from, p_df$pkg)]  #  match the from locations from the node data.frame we previously connected
+g$from.y <- p_df$V2[match(g$from, p_df$pkg)]
+g$to.x <- p_df$V1[match(g$to, p_df$pkg)]  #  match the to locations from the node data.frame we previously connected
+g$to.y <- p_df$V2[match(g$to, p_df$pkg)]
+
+g
+```
+
+```{r, fig.width=10, fig.asp=1}
+ggplot() +
+    geom_segment(data=g,aes(x=from.x,xend = to.x, y=from.y,yend = to.y, colour = type), arrow = arrow(length = unit(4, "mm"))) +
+    geom_label(data=p_df,aes(x=V1,y=V2,label=pkg)) + # add the node labels
+    scale_x_continuous()+  # expand the x limits 
+    scale_y_continuous()+ # expand the y limits
+    theme_bw()  # use the ggplot black and white theme
+```
