@@ -1,5 +1,9 @@
-proteotools
+ProtMisc
 ================
+
+Miscellaneous R functions for proteomics analysis. Primarily intended to
+interface with the [R For Mass
+Spectrometry](https://www.rformassspectrometry.org/pkgs/) packages.
 
 ## Dependency tree
 
