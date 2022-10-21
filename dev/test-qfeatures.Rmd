@@ -1,0 +1,58 @@
+---
+title: "Try out qFeatures"
+author:
+  - name: "Charlotte Dawson"
+    affiliation: "Cambridge Centre for Proteomics"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: html_notebook
+---
+
+```{r}
+library(QFeatures)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+```
+```{r}
+psm2pep <- read.delim("data-raw/SILAC_HL_bothTags_PeptideGroups_PSMs.txt")
+psm <- read.delim("data-raw/SILAC_HL_bothTags_PSMs.txt")
+pep <- read.delim("data-raw/SILAC_HL_bothTags_PeptideGroups.txt")
+```
+
+```{r}
+print(length(unique(psm2pep$Peptide.Groups.Peptide.Group.ID)))
+print(nrow(pep))
+```
+
+```{r}
+print(length(unique(psm2pep$PSMs.Peptide.ID)))
+print(nrow(psm))
+```
+
+```{r}
+length(unique(pep$Peptide.Groups.Peptide.Group.ID))
+length(unique(psm2pep$Peptide.Groups.Peptide.Group.ID))
+```
+
+```{r}
+psm_test <- psm2pep %>% 
+  right_join(psm, by = c("PSMs.Workflow.ID", "PSMs.Peptide.ID"))
+```
+
+```{r}
+# PSMs for light and heavy versions of same peptide
+aaa <- psm_test %>% filter(Peptide.Groups.Peptide.Group.ID %in% 7:8)
+
+# Light and heavy peptide 
+# I think PSM ambiguity == rejected peptides should be removed.
+bbb <- pep %>% filter(Peptide.Groups.Peptide.Group.ID %in% 7:8)
+```
+
+
+```{r}
+hl <- readQFeatures(psm, ecol = "Precursor.Abundance", name = "psms")
+```
+
+
+
+
