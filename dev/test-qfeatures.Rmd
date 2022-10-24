@@ -13,46 +13,126 @@ library(ggplot2)
 library(dplyr)
 library(tidyr)
 ```
+
 ```{r}
-psm2pep <- read.delim("data-raw/SILAC_HL_bothTags_PeptideGroups_PSMs.txt")
-psm <- read.delim("data-raw/SILAC_HL_bothTags_PSMs.txt")
-pep <- read.delim("data-raw/SILAC_HL_bothTags_PeptideGroups.txt")
+# PSM
+silac_psm <- read.delim("data-raw/SILAC_HL_bothTags_PSMs.txt")
+
+pep2psm <- read.delim("data-raw/SILAC_HL_bothTags_PeptideGroups_PSMs.txt")
+
+
+
 ```
 
 ```{r}
-print(length(unique(psm2pep$Peptide.Groups.Peptide.Group.ID)))
-print(nrow(pep))
-```
+silac_psm <- silac_psm %>% 
+  left_join(pep2psm, by = c("PSMs.Workflow.ID", "PSMs.Peptide.ID")) %>% 
+  pivot_wider(names_from = "Quan.Channel", 
+              values_from = "Precursor.Abundance",
+              names_prefix = "Abundance.")
 
-```{r}
-print(length(unique(psm2pep$PSMs.Peptide.ID)))
-print(nrow(psm))
-```
-
-```{r}
-length(unique(pep$Peptide.Groups.Peptide.Group.ID))
-length(unique(psm2pep$Peptide.Groups.Peptide.Group.ID))
-```
-
-```{r}
-psm_test <- psm2pep %>% 
-  right_join(psm, by = c("PSMs.Workflow.ID", "PSMs.Peptide.ID"))
-```
-
-```{r}
-# PSMs for light and heavy versions of same peptide
-aaa <- psm_test %>% filter(Peptide.Groups.Peptide.Group.ID %in% 7:8)
-
-# Light and heavy peptide 
-# I think PSM ambiguity == rejected peptides should be removed.
-bbb <- pep %>% filter(Peptide.Groups.Peptide.Group.ID %in% 7:8)
 ```
 
 
 ```{r}
-hl <- readQFeatures(psm, ecol = "Precursor.Abundance", name = "psms")
+colnames(silac_psm)
+```
+
+```{r}
+colnames(silac_psm)[51] <- "Abundance.Unassigned"
+```
+
+```{r}
+colnames(silac_psm)
+```
+
+
+```{r}
+test_qf <- readQFeatures(silac_psm, 
+                         ecol = grep('Abundance', colnames(silac_psm)),
+                         fnames = "PSMs.Peptide.ID",
+                         name = "psms")
+```
+
+```{r}
+test_qf %>% head() %>% colnames()
+test_qf[[1]] %>% head() %>% rownames()
+test_qf[[1]] %>% head() %>% rowData()
+anyDuplicated(test_qf %>% rownames())
+```
+
+
+```{r}
+# Peptide
+silac_pep <- read.delim("data-raw/SILAC_HL_bothTags_PeptideGroups.txt")
+
+silac_pep %>% head()
+```
+
+```{r}
+colnames(silac_pep)[grepl('Abundances', colnames(silac_pep))] <- c("Abundance.Light", "Abundance.Heavy")
 ```
 
 
 
+```{r}
+silac_pep2 <- readSummarizedExperiment(silac_pep,
+                                       ecol = grep("^Abundance", colnames(silac_pep)),
+                                       fnames = "Peptide.Groups.Peptide.Group.ID")
+
+```
+
+```{r}
+silac_pep2 %>% head() %>% colnames()
+silac_pep2 %>% head() %>% rownames()
+silac_pep2 %>% head() %>% rowData()
+anyDuplicated(silac_pep2 %>% rownames())
+```
+
+```{r}
+colnames(test_qf[['psms']])
+```
+
+```{r}
+colnames(silac_pep2)
+```
+
+```{r}
+# colnames(silac_pep2) <- c("Precursor.Abundance", "banana")
+```
+
+
+```{r}
+test_qf2 <- addAssay(test_qf, silac_pep2, name='peptides')
+```
+
+```{r}
+# Link the PSMs and the peptides
+test_qf3 <- addAssayLink(test_qf2,
+                         from = 'psms',
+                         to = 'peptides',
+                         varFrom = 'Peptide.Groups.Peptide.Group.ID',
+                         varTo = 'Peptide.Groups.Peptide.Group.ID')
+```
+
+```{r}
+rownames(test_qf3[['peptides']])
+```
+
+```{r}
+test_qf3['8551', ]
+```
+
+```{r}
+subsetByFeature(test_qf3, '8551')
+```
+
+```{r}
+data.frame(longFormat(test_qf3['8551', ]))
+```
+
+```{r}
+# Probably better to Prefix these IDs with PSM or PEP
+data.frame(longFormat(test_qf3['204141', ]))
+```
 

@@ -1758,7 +1758,7 @@ pre code {
 <h1 class="title toc-ignore">Try out qFeatures</h1>
 <h4 class="author">Charlotte Dawson</h4>
 <address class="author_afil">
-Cambridge Centre for Proteomics<br><h4 class="date">21 October,
+Cambridge Centre for Proteomics<br><h4 class="date">24 October,
 2022</h4>
 
 </div>
@@ -1767,9 +1767,100 @@ Cambridge Centre for Proteomics<br><h4 class="date">21 October,
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShRRmVhdHVyZXMpXG5saWJyYXJ5KGdncGxvdDIpXG5saWJyYXJ5KGRwbHlyKVxuYGBgIn0= -->
-<pre class="r"><code>library(QFeatures)
-library(ggplot2)
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShRRmVhdHVyZXMpXG5gYGAifQ== -->
+<pre class="r"><code>library(QFeatures)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiBNdWx0aUFzc2F5RXhwZXJpbWVudFxuTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiBTdW1tYXJpemVkRXhwZXJpbWVudFxuTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiBNYXRyaXhHZW5lcmljc1xuTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiBtYXRyaXhTdGF0c1xuXG5BdHRhY2hpbmcgcGFja2FnZTog4oCYTWF0cml4R2VuZXJpY3PigJlcblxuVGhlIGZvbGxvd2luZyBvYmplY3RzIGFyZSBtYXNrZWQgZnJvbSDigJhwYWNrYWdlOm1hdHJpeFN0YXRz4oCZOlxuXG4gICAgY29sQWxscywgY29sQW55TkFzLCBjb2xBbnlzLCBjb2xBdmdzUGVyUm93U2V0LFxuICAgIGNvbENvbGxhcHNlLCBjb2xDb3VudHMsIGNvbEN1bW1heHMsIGNvbEN1bW1pbnMsXG4gICAgY29sQ3VtcHJvZHMsIGNvbEN1bXN1bXMsIGNvbERpZmZzLCBjb2xJUVJEaWZmcywgY29sSVFScyxcbiAgICBjb2xMb2dTdW1FeHBzLCBjb2xNYWREaWZmcywgY29sTWFkcywgY29sTWF4cywgY29sTWVhbnMyLFxuICAgIGNvbE1lZGlhbnMsIGNvbE1pbnMsIGNvbE9yZGVyU3RhdHMsIGNvbFByb2RzLFxuICAgIGNvbFF1YW50aWxlcywgY29sUmFuZ2VzLCBjb2xSYW5rcywgY29sU2REaWZmcywgY29sU2RzLFxuICAgIGNvbFN1bXMyLCBjb2xUYWJ1bGF0ZXMsIGNvbFZhckRpZmZzLCBjb2xWYXJzLFxuICAgIGNvbFdlaWdodGVkTWFkcywgY29sV2VpZ2h0ZWRNZWFucywgY29sV2VpZ2h0ZWRNZWRpYW5zLFxuICAgIGNvbFdlaWdodGVkU2RzLCBjb2xXZWlnaHRlZFZhcnMsIHJvd0FsbHMsIHJvd0FueU5BcyxcbiAgICByb3dBbnlzLCByb3dBdmdzUGVyQ29sU2V0LCByb3dDb2xsYXBzZSwgcm93Q291bnRzLFxuICAgIHJvd0N1bW1heHMsIHJvd0N1bW1pbnMsIHJvd0N1bXByb2RzLCByb3dDdW1zdW1zLFxuICAgIHJvd0RpZmZzLCByb3dJUVJEaWZmcywgcm93SVFScywgcm93TG9nU3VtRXhwcyxcbiAgICByb3dNYWREaWZmcywgcm93TWFkcywgcm93TWF4cywgcm93TWVhbnMyLCByb3dNZWRpYW5zLFxuICAgIHJvd01pbnMsIHJvd09yZGVyU3RhdHMsIHJvd1Byb2RzLCByb3dRdWFudGlsZXMsXG4gICAgcm93UmFuZ2VzLCByb3dSYW5rcywgcm93U2REaWZmcywgcm93U2RzLCByb3dTdW1zMixcbiAgICByb3dUYWJ1bGF0ZXMsIHJvd1ZhckRpZmZzLCByb3dWYXJzLCByb3dXZWlnaHRlZE1hZHMsXG4gICAgcm93V2VpZ2h0ZWRNZWFucywgcm93V2VpZ2h0ZWRNZWRpYW5zLCByb3dXZWlnaHRlZFNkcyxcbiAgICByb3dXZWlnaHRlZFZhcnNcblxuTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiBHZW5vbWljUmFuZ2VzXG5Mb2FkaW5nIHJlcXVpcmVkIHBhY2thZ2U6IHN0YXRzNFxuTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiBCaW9jR2VuZXJpY3NcblxuQXR0YWNoaW5nIHBhY2thZ2U6IOKAmEJpb2NHZW5lcmljc+KAmVxuXG5UaGUgZm9sbG93aW5nIG9iamVjdHMgYXJlIG1hc2tlZCBmcm9tIOKAmHBhY2thZ2U6c3RhdHPigJk6XG5cbiAgICBJUVIsIG1hZCwgc2QsIHZhciwgeHRhYnNcblxuVGhlIGZvbGxvd2luZyBvYmplY3RzIGFyZSBtYXNrZWQgZnJvbSDigJhwYWNrYWdlOmJhc2XigJk6XG5cbiAgICBhbnlEdXBsaWNhdGVkLCBhcHBlbmQsIGFzLmRhdGEuZnJhbWUsIGJhc2VuYW1lLCBjYmluZCxcbiAgICBjb2xuYW1lcywgZGlybmFtZSwgZG8uY2FsbCwgZHVwbGljYXRlZCwgZXZhbCwgZXZhbHEsXG4gICAgRmlsdGVyLCBGaW5kLCBnZXQsIGdyZXAsIGdyZXBsLCBpbnRlcnNlY3QsIGlzLnVuc29ydGVkLFxuICAgIGxhcHBseSwgTWFwLCBtYXBwbHksIG1hdGNoLCBtZ2V0LCBvcmRlciwgcGFzdGUsIHBtYXgsXG4gICAgcG1heC5pbnQsIHBtaW4sIHBtaW4uaW50LCBQb3NpdGlvbiwgcmFuaywgcmJpbmQsIFJlZHVjZSxcbiAgICByb3duYW1lcywgc2FwcGx5LCBzZXRkaWZmLCBzb3J0LCB0YWJsZSwgdGFwcGx5LCB1bmlvbixcbiAgICB1bmlxdWUsIHVuc3BsaXQsIHdoaWNoLm1heCwgd2hpY2gubWluXG5cbkxvYWRpbmcgcmVxdWlyZWQgcGFja2FnZTogUzRWZWN0b3JzXG5cbkF0dGFjaGluZyBwYWNrYWdlOiDigJhTNFZlY3RvcnPigJlcblxuVGhlIGZvbGxvd2luZyBvYmplY3RzIGFyZSBtYXNrZWQgZnJvbSDigJhwYWNrYWdlOmJhc2XigJk6XG5cbiAgICBleHBhbmQuZ3JpZCwgSSwgdW5uYW1lXG5cbkxvYWRpbmcgcmVxdWlyZWQgcGFja2FnZTogSVJhbmdlc1xuTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiBHZW5vbWVJbmZvRGJcbkxvYWRpbmcgcmVxdWlyZWQgcGFja2FnZTogQmlvYmFzZVxuV2VsY29tZSB0byBCaW9jb25kdWN0b3JcblxuICAgIFZpZ25ldHRlcyBjb250YWluIGludHJvZHVjdG9yeSBtYXRlcmlhbDsgdmlldyB3aXRoXG4gICAgJ2Jyb3dzZVZpZ25ldHRlcygpJy4gVG8gY2l0ZSBCaW9jb25kdWN0b3IsIHNlZVxuICAgICdjaXRhdGlvbihcIkJpb2Jhc2VcIiknLCBhbmQgZm9yIHBhY2thZ2VzXG4gICAgJ2NpdGF0aW9uKFwicGtnbmFtZVwiKScuXG5cblxuQXR0YWNoaW5nIHBhY2thZ2U6IOKAmEJpb2Jhc2XigJlcblxuVGhlIGZvbGxvd2luZyBvYmplY3QgaXMgbWFza2VkIGZyb20g4oCYcGFja2FnZTpNYXRyaXhHZW5lcmljc+KAmTpcblxuICAgIHJvd01lZGlhbnNcblxuVGhlIGZvbGxvd2luZyBvYmplY3RzIGFyZSBtYXNrZWQgZnJvbSDigJhwYWNrYWdlOm1hdHJpeFN0YXRz4oCZOlxuXG4gICAgYW55TWlzc2luZywgcm93TWVkaWFuc1xuXG5cbkF0dGFjaGluZyBwYWNrYWdlOiDigJhRRmVhdHVyZXPigJlcblxuVGhlIGZvbGxvd2luZyBvYmplY3QgaXMgbWFza2VkIGZyb20g4oCYcGFja2FnZTpNdWx0aUFzc2F5RXhwZXJpbWVudOKAmTpcblxuICAgIGxvbmdGb3JtYXRcblxuVGhlIGZvbGxvd2luZyBvYmplY3QgaXMgbWFza2VkIGZyb20g4oCYcGFja2FnZTpiYXNl4oCZOlxuXG4gICAgc3dlZXBcbiJ9 -->
+<pre><code>Loading required package: MultiAssayExperiment
+Loading required package: SummarizedExperiment
+Loading required package: MatrixGenerics
+Loading required package: matrixStats
+
+Attaching package: ‘MatrixGenerics’
+
+The following objects are masked from ‘package:matrixStats’:
+
+    colAlls, colAnyNAs, colAnys, colAvgsPerRowSet,
+    colCollapse, colCounts, colCummaxs, colCummins,
+    colCumprods, colCumsums, colDiffs, colIQRDiffs, colIQRs,
+    colLogSumExps, colMadDiffs, colMads, colMaxs, colMeans2,
+    colMedians, colMins, colOrderStats, colProds,
+    colQuantiles, colRanges, colRanks, colSdDiffs, colSds,
+    colSums2, colTabulates, colVarDiffs, colVars,
+    colWeightedMads, colWeightedMeans, colWeightedMedians,
+    colWeightedSds, colWeightedVars, rowAlls, rowAnyNAs,
+    rowAnys, rowAvgsPerColSet, rowCollapse, rowCounts,
+    rowCummaxs, rowCummins, rowCumprods, rowCumsums,
+    rowDiffs, rowIQRDiffs, rowIQRs, rowLogSumExps,
+    rowMadDiffs, rowMads, rowMaxs, rowMeans2, rowMedians,
+    rowMins, rowOrderStats, rowProds, rowQuantiles,
+    rowRanges, rowRanks, rowSdDiffs, rowSds, rowSums2,
+    rowTabulates, rowVarDiffs, rowVars, rowWeightedMads,
+    rowWeightedMeans, rowWeightedMedians, rowWeightedSds,
+    rowWeightedVars
+
+Loading required package: GenomicRanges
+Loading required package: stats4
+Loading required package: BiocGenerics
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, append, as.data.frame, basename, cbind,
+    colnames, dirname, do.call, duplicated, eval, evalq,
+    Filter, Find, get, grep, grepl, intersect, is.unsorted,
+    lapply, Map, mapply, match, mget, order, paste, pmax,
+    pmax.int, pmin, pmin.int, Position, rank, rbind, Reduce,
+    rownames, sapply, setdiff, sort, table, tapply, union,
+    unique, unsplit, which.max, which.min
+
+Loading required package: S4Vectors
+
+Attaching package: ‘S4Vectors’
+
+The following objects are masked from ‘package:base’:
+
+    expand.grid, I, unname
+
+Loading required package: IRanges
+Loading required package: GenomeInfoDb
+Loading required package: Biobase
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    &#39;browseVignettes()&#39;. To cite Bioconductor, see
+    &#39;citation(&quot;Biobase&quot;)&#39;, and for packages
+    &#39;citation(&quot;pkgname&quot;)&#39;.
+
+
+Attaching package: ‘Biobase’
+
+The following object is masked from ‘package:MatrixGenerics’:
+
+    rowMedians
+
+The following objects are masked from ‘package:matrixStats’:
+
+    anyMissing, rowMedians
+
+
+Attaching package: ‘QFeatures’
+
+The following object is masked from ‘package:MultiAssayExperiment’:
+
+    longFormat
+
+The following object is masked from ‘package:base’:
+
+    sweep</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShnZ3Bsb3QyKVxubGlicmFyeShkcGx5cilcbmBgYCJ9 -->
+<pre class="r"><code>library(ggplot2)
 library(dplyr)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiXG5BdHRhY2hpbmcgcGFja2FnZTog4oCYZHBseXLigJlcblxuVGhlIGZvbGxvd2luZyBvYmplY3QgaXMgbWFza2VkIGZyb20g4oCYcGFja2FnZTpCaW9iYXNl4oCZOlxuXG4gICAgY29tYmluZVxuXG5UaGUgZm9sbG93aW5nIG9iamVjdHMgYXJlIG1hc2tlZCBmcm9tIOKAmHBhY2thZ2U6R2Vub21pY1Jhbmdlc+KAmTpcblxuICAgIGludGVyc2VjdCwgc2V0ZGlmZiwgdW5pb25cblxuVGhlIGZvbGxvd2luZyBvYmplY3QgaXMgbWFza2VkIGZyb20g4oCYcGFja2FnZTpHZW5vbWVJbmZvRGLigJk6XG5cbiAgICBpbnRlcnNlY3RcblxuVGhlIGZvbGxvd2luZyBvYmplY3RzIGFyZSBtYXNrZWQgZnJvbSDigJhwYWNrYWdlOklSYW5nZXPigJk6XG5cbiAgICBjb2xsYXBzZSwgZGVzYywgaW50ZXJzZWN0LCBzZXRkaWZmLCBzbGljZSwgdW5pb25cblxuVGhlIGZvbGxvd2luZyBvYmplY3RzIGFyZSBtYXNrZWQgZnJvbSDigJhwYWNrYWdlOlM0VmVjdG9yc+KAmTpcblxuICAgIGZpcnN0LCBpbnRlcnNlY3QsIHJlbmFtZSwgc2V0ZGlmZiwgc2V0ZXF1YWwsIHVuaW9uXG5cblRoZSBmb2xsb3dpbmcgb2JqZWN0cyBhcmUgbWFza2VkIGZyb20g4oCYcGFja2FnZTpCaW9jR2VuZXJpY3PigJk6XG5cbiAgICBjb21iaW5lLCBpbnRlcnNlY3QsIHNldGRpZmYsIHVuaW9uXG5cblRoZSBmb2xsb3dpbmcgb2JqZWN0IGlzIG1hc2tlZCBmcm9tIOKAmHBhY2thZ2U6bWF0cml4U3RhdHPigJk6XG5cbiAgICBjb3VudFxuXG5UaGUgZm9sbG93aW5nIG9iamVjdHMgYXJlIG1hc2tlZCBmcm9tIOKAmHBhY2thZ2U6c3RhdHPigJk6XG5cbiAgICBmaWx0ZXIsIGxhZ1xuXG5UaGUgZm9sbG93aW5nIG9iamVjdHMgYXJlIG1hc2tlZCBmcm9tIOKAmHBhY2thZ2U6YmFzZeKAmTpcblxuICAgIGludGVyc2VjdCwgc2V0ZGlmZiwgc2V0ZXF1YWwsIHVuaW9uXG4ifQ== -->
@@ -1824,85 +1915,649 @@ The following object is masked from ‘package:S4Vectors’:
     expand</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHJpbnQobGVuZ3RoKHVuaXF1ZShwc20ycGVwJFBlcHRpZGUuR3JvdXBzLlBlcHRpZGUuR3JvdXAuSUQpKSlcbmBgYCJ9 -->
-<pre class="r"><code>print(length(unique(psm2pep$Peptide.Groups.Peptide.Group.ID)))</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDgwMzRcbiJ9 -->
-<pre><code>[1] 8034</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHJpbnQobnJvdyhwZXApKVxuYGBgIn0= -->
-<pre class="r"><code>print(nrow(pep))</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDgwMzRcbiJ9 -->
-<pre><code>[1] 8034</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHJpbnQobGVuZ3RoKHVuaXF1ZShwc20ycGVwJFBTTXMuUGVwdGlkZS5JRCkpKVxuYGBgIn0= -->
-<pre class="r"><code>print(length(unique(psm2pep$PSMs.Peptide.ID)))</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDIwMDE3XG4ifQ== -->
-<pre><code>[1] 20017</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHJpbnQobnJvdyhwc20pKVxuYGBgIn0= -->
-<pre class="r"><code>print(nrow(psm))</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDIwMDE3XG4ifQ== -->
-<pre><code>[1] 20017</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGVuZ3RoKHVuaXF1ZShwZXAkUGVwdGlkZS5Hcm91cHMuUGVwdGlkZS5Hcm91cC5JRCkpXG5gYGAifQ== -->
-<pre class="r"><code>length(unique(pep$Peptide.Groups.Peptide.Group.ID))</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDgwMzRcbiJ9 -->
-<pre><code>[1] 8034</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGVuZ3RoKHVuaXF1ZShwc20ycGVwJFBlcHRpZGUuR3JvdXBzLlBlcHRpZGUuR3JvdXAuSUQpKVxuYGBgIn0= -->
-<pre class="r"><code>length(unique(psm2pep$Peptide.Groups.Peptide.Group.ID))</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDgwMzRcbiJ9 -->
-<pre><code>[1] 8034</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWFhIDwtIHBzbV90ZXN0ICU+JSBmaWx0ZXIoUGVwdGlkZS5Hcm91cHMuUGVwdGlkZS5Hcm91cC5JRCA9PSA3OjgpXG5cbmBgYCJ9 -->
-<pre class="r"><code>aaa &lt;- psm_test %&gt;% filter(Peptide.Groups.Peptide.Group.ID == 7:8)
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBQU01cbnNpbGFjX3BzbSA8LSByZWFkLmRlbGltKFwiZGF0YS1yYXcvU0lMQUNfSExfYm90aFRhZ3NfUFNNcy50eHRcIilcblxucGVwMnBzbSA8LSByZWFkLmRlbGltKFwiZGF0YS1yYXcvU0lMQUNfSExfYm90aFRhZ3NfUGVwdGlkZUdyb3Vwc19QU01zLnR4dFwiKVxuXG5cblxuYGBgIn0= -->
+<pre class="r"><code># PSM
+silac_psm &lt;- read.delim(&quot;data-raw/SILAC_HL_bothTags_PSMs.txt&quot;)
+
+pep2psm &lt;- read.delim(&quot;data-raw/SILAC_HL_bothTags_PeptideGroups_PSMs.txt&quot;)
 </code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZzogbG9uZ2VyIG9iamVjdCBsZW5ndGggaXMgbm90IGEgbXVsdGlwbGUgb2Ygc2hvcnRlciBvYmplY3QgbGVuZ3RoXG4ifQ== -->
-<pre><code>Warning: longer object length is not a multiple of shorter object length</code></pre>
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2lsYWNfcHNtIDwtIHNpbGFjX3BzbSAlPiUgXG4gIGxlZnRfam9pbihwZXAycHNtLCBieSA9IGMoXCJQU01zLldvcmtmbG93LklEXCIsIFwiUFNNcy5QZXB0aWRlLklEXCIpKSAlPiUgXG4gIHBpdm90X3dpZGVyKG5hbWVzX2Zyb20gPSBcIlF1YW4uQ2hhbm5lbFwiLCBcbiAgICAgICAgICAgICAgdmFsdWVzX2Zyb20gPSBcIlByZWN1cnNvci5BYnVuZGFuY2VcIixcbiAgICAgICAgICAgICAgbmFtZXNfcHJlZml4ID0gXCJBYnVuZGFuY2UuXCIpXG5cbmBgYCJ9 -->
+<pre class="r"><code>silac_psm &lt;- silac_psm %&gt;% 
+  left_join(pep2psm, by = c(&quot;PSMs.Workflow.ID&quot;, &quot;PSMs.Peptide.ID&quot;)) %&gt;% 
+  pivot_wider(names_from = &quot;Quan.Channel&quot;, 
+              values_from = &quot;Precursor.Abundance&quot;,
+              names_prefix = &quot;Abundance.&quot;)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29sbmFtZXMoc2lsYWNfcHNtKVxuYGBgIn0= -->
+<pre class="r"><code>colnames(silac_psm)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBcIlBTTXMuV29ya2Zsb3cuSURcIiAgICAgICAgICAgICAgICAgIFwiUFNNcy5QZXB0aWRlLklEXCIgICAgICAgICAgICAgICAgICBcbiBbM10gXCJDaGVja2VkXCIgICAgICAgICAgICAgICAgICAgICAgICAgICBcIkNvbmZpZGVuY2VcIiAgICAgICAgICAgICAgICAgICAgICAgXG4gWzVdIFwiSWRlbnRpZnlpbmcuTm9kZVwiICAgICAgICAgICAgICAgICAgXCJQU00uQW1iaWd1aXR5XCIgICAgICAgICAgICAgICAgICAgIFxuIFs3XSBcIlNlcXVlbmNlXCIgICAgICAgICAgICAgICAgICAgICAgICAgIFwiQW5ub3RhdGVkLlNlcXVlbmNlXCIgICAgICAgICAgICAgICBcbiBbOV0gXCJNb2RpZmljYXRpb25zXCIgICAgICAgICAgICAgICAgICAgICBcIk51bWJlci5vZi5Qcm90ZWluc1wiICAgICAgICAgICAgICAgXG5bMTFdIFwiTWFzdGVyLlByb3RlaW4uQWNjZXNzaW9uc1wiICAgICAgICAgXCJQcm90ZWluLkFjY2Vzc2lvbnNcIiAgICAgICAgICAgICAgIFxuWzEzXSBcIk51bWJlci5vZi5NaXNzZWQuQ2xlYXZhZ2VzXCIgICAgICAgIFwiQ2hhcmdlXCIgICAgICAgICAgICAgICAgICAgICAgICAgICBcblsxNV0gXCJEZWx0YS5TY29yZVwiICAgICAgICAgICAgICAgICAgICAgICBcIkRlbHRhLkNuXCIgICAgICAgICAgICAgICAgICAgICAgICAgXG5bMTddIFwiUmFua1wiICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXCJTZWFyY2guRW5naW5lLlJhbmtcIiAgICAgICAgICAgICAgIFxuWzE5XSBcIm16LmluLkRhXCIgICAgICAgICAgICAgICAgICAgICAgICAgIFwiTUhwbHVzLmluLkRhXCIgICAgICAgICAgICAgICAgICAgICBcblsyMV0gXCJUaGVvLk1IcGx1cy5pbi5EYVwiICAgICAgICAgICAgICAgICBcIkRlbHRhLk0uaW4ucHBtXCIgICAgICAgICAgICAgICAgICAgXG5bMjNdIFwiRGVsdGEubXouaW4uRGFcIiAgICAgICAgICAgICAgICAgICAgXCJJbnRlbnNpdHlcIiAgICAgICAgICAgICAgICAgICAgICAgIFxuWzI1XSBcIkFjdGl2YXRpb24uVHlwZVwiICAgICAgICAgICAgICAgICAgIFwiTVMuT3JkZXJcIiAgICAgICAgICAgICAgICAgICAgICAgICBcblsyN10gXCJJc29sYXRpb24uSW50ZXJmZXJlbmNlLmluLlBlcmNlbnRcIiBcIklvbi5JbmplY3QuVGltZS5pbi5tc1wiICAgICAgICAgICAgXG5bMjldIFwiUlQuaW4ubWluXCIgICAgICAgICAgICAgICAgICAgICAgICAgXCJGaXJzdC5TY2FuXCIgICAgICAgICAgICAgICAgICAgICAgIFxuWzMxXSBcIlNwZWN0cnVtLkZpbGVcIiAgICAgICAgICAgICAgICAgICAgIFwiRmlsZS5JRFwiICAgICAgICAgICAgICAgICAgICAgICAgICBcblszM10gXCJRdWFuLkluZm9cIiAgICAgICAgICAgICAgICAgICAgICAgICBcIkFtYW5kYS5TY29yZVwiICAgICAgICAgICAgICAgICAgICAgXG5bMzVdIFwiQ2hhcm1lUlQuQ29tYmluZWQuU2NvcmVcIiAgICAgICAgICAgXCJTZWFyY2guU3BhY2VcIiAgICAgICAgICAgICAgICAgICAgIFxuWzM3XSBcIk1TMi5FcnJvcmluLnBwbVwiICAgICAgICAgICAgICAgICAgIFwiTVMuQW1hbmRhLlJhbmtcIiAgICAgICAgICAgICAgICAgICBcblszOV0gXCJTZWFyY2guRGVwdGhcIiAgICAgICAgICAgICAgICAgICAgICBcIlByZWN1cnNvci5JbnRlbnNpdHlcIiAgICAgICAgICAgICAgXG5bNDFdIFwiUHJlY3Vyc29yLkNoYXJnZVwiICAgICAgICAgICAgICAgICAgXCJYQ29yclwiICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuWzQzXSBcIk51bWJlci5vZi5Qcm90ZWluLkdyb3Vwc1wiICAgICAgICAgIFwiUGVyY29sYXRvci5xLlZhbHVlXCIgICAgICAgICAgICAgICBcbls0NV0gXCJQZXJjb2xhdG9yLlBFUFwiICAgICAgICAgICAgICAgICAgICBcIkFwZXguUlQuaW4ubWluXCIgICAgICAgICAgICAgICAgICAgXG5bNDddIFwiUHJlY3Vyc29yLlF1YW4uUmVzdWx0LklEXCIgICAgICAgICAgXCJQZXB0aWRlLkdyb3Vwcy5QZXB0aWRlLkdyb3VwLklEXCIgIFxuWzQ5XSBcIkFidW5kYW5jZS5MaWdodFwiICAgICAgICAgICAgICAgICAgIFwiQWJ1bmRhbmNlLkhlYXZ5XCIgICAgICAgICAgICAgICAgICBcbls1MV0gXCJBYnVuZGFuY2UuXCIgICAgICAgICAgICAgICAgICAgICAgIFxuIn0= -->
+<pre><code> [1] &quot;PSMs.Workflow.ID&quot;                  &quot;PSMs.Peptide.ID&quot;                  
+ [3] &quot;Checked&quot;                           &quot;Confidence&quot;                       
+ [5] &quot;Identifying.Node&quot;                  &quot;PSM.Ambiguity&quot;                    
+ [7] &quot;Sequence&quot;                          &quot;Annotated.Sequence&quot;               
+ [9] &quot;Modifications&quot;                     &quot;Number.of.Proteins&quot;               
+[11] &quot;Master.Protein.Accessions&quot;         &quot;Protein.Accessions&quot;               
+[13] &quot;Number.of.Missed.Cleavages&quot;        &quot;Charge&quot;                           
+[15] &quot;Delta.Score&quot;                       &quot;Delta.Cn&quot;                         
+[17] &quot;Rank&quot;                              &quot;Search.Engine.Rank&quot;               
+[19] &quot;mz.in.Da&quot;                          &quot;MHplus.in.Da&quot;                     
+[21] &quot;Theo.MHplus.in.Da&quot;                 &quot;Delta.M.in.ppm&quot;                   
+[23] &quot;Delta.mz.in.Da&quot;                    &quot;Intensity&quot;                        
+[25] &quot;Activation.Type&quot;                   &quot;MS.Order&quot;                         
+[27] &quot;Isolation.Interference.in.Percent&quot; &quot;Ion.Inject.Time.in.ms&quot;            
+[29] &quot;RT.in.min&quot;                         &quot;First.Scan&quot;                       
+[31] &quot;Spectrum.File&quot;                     &quot;File.ID&quot;                          
+[33] &quot;Quan.Info&quot;                         &quot;Amanda.Score&quot;                     
+[35] &quot;CharmeRT.Combined.Score&quot;           &quot;Search.Space&quot;                     
+[37] &quot;MS2.Errorin.ppm&quot;                   &quot;MS.Amanda.Rank&quot;                   
+[39] &quot;Search.Depth&quot;                      &quot;Precursor.Intensity&quot;              
+[41] &quot;Precursor.Charge&quot;                  &quot;XCorr&quot;                            
+[43] &quot;Number.of.Protein.Groups&quot;          &quot;Percolator.q.Value&quot;               
+[45] &quot;Percolator.PEP&quot;                    &quot;Apex.RT.in.min&quot;                   
+[47] &quot;Precursor.Quan.Result.ID&quot;          &quot;Peptide.Groups.Peptide.Group.ID&quot;  
+[49] &quot;Abundance.Light&quot;                   &quot;Abundance.Heavy&quot;                  
+[51] &quot;Abundance.&quot;                       </code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGwgPC0gcmVhZFFGZWF0dXJlcyhcIlByZWN1cnNvci5BYnVuZGFuY2VcIilcbmBgYCJ9 -->
-<pre class="r"><code>hl &lt;- readQFeatures(&quot;Precursor.Abundance&quot;)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29sbmFtZXMoc2lsYWNfcHNtKVs1MV0gPC0gXCJBYnVuZGFuY2UuVW5hc3NpZ25lZFwiXG5gYGAifQ== -->
+<pre class="r"><code>colnames(silac_psm)[51] &lt;- &quot;Abundance.Unassigned&quot;</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZzogY2Fubm90IG9wZW4gZmlsZSAnUHJlY3Vyc29yLkFidW5kYW5jZSc6IE5vIHN1Y2ggZmlsZSBvciBkaXJlY3RvcnlFcnJvciBpbiBmaWxlKGZpbGUsIFwicnRcIikgOiBjYW5ub3Qgb3BlbiB0aGUgY29ubmVjdGlvblxuIn0= -->
-<pre><code>Warning: cannot open file &#39;Precursor.Abundance&#39;: No such file or directoryError in file(file, &quot;rt&quot;) : cannot open the connection</code></pre>
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29sbmFtZXMoc2lsYWNfcHNtKVxuYGBgIn0= -->
+<pre class="r"><code>colnames(silac_psm)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBcIlBTTXMuV29ya2Zsb3cuSURcIiAgICAgICAgICAgICAgICAgIFwiUFNNcy5QZXB0aWRlLklEXCIgICAgICAgICAgICAgICAgICBcbiBbM10gXCJDaGVja2VkXCIgICAgICAgICAgICAgICAgICAgICAgICAgICBcIkNvbmZpZGVuY2VcIiAgICAgICAgICAgICAgICAgICAgICAgXG4gWzVdIFwiSWRlbnRpZnlpbmcuTm9kZVwiICAgICAgICAgICAgICAgICAgXCJQU00uQW1iaWd1aXR5XCIgICAgICAgICAgICAgICAgICAgIFxuIFs3XSBcIlNlcXVlbmNlXCIgICAgICAgICAgICAgICAgICAgICAgICAgIFwiQW5ub3RhdGVkLlNlcXVlbmNlXCIgICAgICAgICAgICAgICBcbiBbOV0gXCJNb2RpZmljYXRpb25zXCIgICAgICAgICAgICAgICAgICAgICBcIk51bWJlci5vZi5Qcm90ZWluc1wiICAgICAgICAgICAgICAgXG5bMTFdIFwiTWFzdGVyLlByb3RlaW4uQWNjZXNzaW9uc1wiICAgICAgICAgXCJQcm90ZWluLkFjY2Vzc2lvbnNcIiAgICAgICAgICAgICAgIFxuWzEzXSBcIk51bWJlci5vZi5NaXNzZWQuQ2xlYXZhZ2VzXCIgICAgICAgIFwiQ2hhcmdlXCIgICAgICAgICAgICAgICAgICAgICAgICAgICBcblsxNV0gXCJEZWx0YS5TY29yZVwiICAgICAgICAgICAgICAgICAgICAgICBcIkRlbHRhLkNuXCIgICAgICAgICAgICAgICAgICAgICAgICAgXG5bMTddIFwiUmFua1wiICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXCJTZWFyY2guRW5naW5lLlJhbmtcIiAgICAgICAgICAgICAgIFxuWzE5XSBcIm16LmluLkRhXCIgICAgICAgICAgICAgICAgICAgICAgICAgIFwiTUhwbHVzLmluLkRhXCIgICAgICAgICAgICAgICAgICAgICBcblsyMV0gXCJUaGVvLk1IcGx1cy5pbi5EYVwiICAgICAgICAgICAgICAgICBcIkRlbHRhLk0uaW4ucHBtXCIgICAgICAgICAgICAgICAgICAgXG5bMjNdIFwiRGVsdGEubXouaW4uRGFcIiAgICAgICAgICAgICAgICAgICAgXCJJbnRlbnNpdHlcIiAgICAgICAgICAgICAgICAgICAgICAgIFxuWzI1XSBcIkFjdGl2YXRpb24uVHlwZVwiICAgICAgICAgICAgICAgICAgIFwiTVMuT3JkZXJcIiAgICAgICAgICAgICAgICAgICAgICAgICBcblsyN10gXCJJc29sYXRpb24uSW50ZXJmZXJlbmNlLmluLlBlcmNlbnRcIiBcIklvbi5JbmplY3QuVGltZS5pbi5tc1wiICAgICAgICAgICAgXG5bMjldIFwiUlQuaW4ubWluXCIgICAgICAgICAgICAgICAgICAgICAgICAgXCJGaXJzdC5TY2FuXCIgICAgICAgICAgICAgICAgICAgICAgIFxuWzMxXSBcIlNwZWN0cnVtLkZpbGVcIiAgICAgICAgICAgICAgICAgICAgIFwiRmlsZS5JRFwiICAgICAgICAgICAgICAgICAgICAgICAgICBcblszM10gXCJRdWFuLkluZm9cIiAgICAgICAgICAgICAgICAgICAgICAgICBcIkFtYW5kYS5TY29yZVwiICAgICAgICAgICAgICAgICAgICAgXG5bMzVdIFwiQ2hhcm1lUlQuQ29tYmluZWQuU2NvcmVcIiAgICAgICAgICAgXCJTZWFyY2guU3BhY2VcIiAgICAgICAgICAgICAgICAgICAgIFxuWzM3XSBcIk1TMi5FcnJvcmluLnBwbVwiICAgICAgICAgICAgICAgICAgIFwiTVMuQW1hbmRhLlJhbmtcIiAgICAgICAgICAgICAgICAgICBcblszOV0gXCJTZWFyY2guRGVwdGhcIiAgICAgICAgICAgICAgICAgICAgICBcIlByZWN1cnNvci5JbnRlbnNpdHlcIiAgICAgICAgICAgICAgXG5bNDFdIFwiUHJlY3Vyc29yLkNoYXJnZVwiICAgICAgICAgICAgICAgICAgXCJYQ29yclwiICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuWzQzXSBcIk51bWJlci5vZi5Qcm90ZWluLkdyb3Vwc1wiICAgICAgICAgIFwiUGVyY29sYXRvci5xLlZhbHVlXCIgICAgICAgICAgICAgICBcbls0NV0gXCJQZXJjb2xhdG9yLlBFUFwiICAgICAgICAgICAgICAgICAgICBcIkFwZXguUlQuaW4ubWluXCIgICAgICAgICAgICAgICAgICAgXG5bNDddIFwiUHJlY3Vyc29yLlF1YW4uUmVzdWx0LklEXCIgICAgICAgICAgXCJQZXB0aWRlLkdyb3Vwcy5QZXB0aWRlLkdyb3VwLklEXCIgIFxuWzQ5XSBcIkFidW5kYW5jZS5MaWdodFwiICAgICAgICAgICAgICAgICAgIFwiQWJ1bmRhbmNlLkhlYXZ5XCIgICAgICAgICAgICAgICAgICBcbls1MV0gXCJBYnVuZGFuY2UuVW5hc3NpZ25lZFwiICAgICAgICAgICAgIFxuIn0= -->
+<pre><code> [1] &quot;PSMs.Workflow.ID&quot;                  &quot;PSMs.Peptide.ID&quot;                  
+ [3] &quot;Checked&quot;                           &quot;Confidence&quot;                       
+ [5] &quot;Identifying.Node&quot;                  &quot;PSM.Ambiguity&quot;                    
+ [7] &quot;Sequence&quot;                          &quot;Annotated.Sequence&quot;               
+ [9] &quot;Modifications&quot;                     &quot;Number.of.Proteins&quot;               
+[11] &quot;Master.Protein.Accessions&quot;         &quot;Protein.Accessions&quot;               
+[13] &quot;Number.of.Missed.Cleavages&quot;        &quot;Charge&quot;                           
+[15] &quot;Delta.Score&quot;                       &quot;Delta.Cn&quot;                         
+[17] &quot;Rank&quot;                              &quot;Search.Engine.Rank&quot;               
+[19] &quot;mz.in.Da&quot;                          &quot;MHplus.in.Da&quot;                     
+[21] &quot;Theo.MHplus.in.Da&quot;                 &quot;Delta.M.in.ppm&quot;                   
+[23] &quot;Delta.mz.in.Da&quot;                    &quot;Intensity&quot;                        
+[25] &quot;Activation.Type&quot;                   &quot;MS.Order&quot;                         
+[27] &quot;Isolation.Interference.in.Percent&quot; &quot;Ion.Inject.Time.in.ms&quot;            
+[29] &quot;RT.in.min&quot;                         &quot;First.Scan&quot;                       
+[31] &quot;Spectrum.File&quot;                     &quot;File.ID&quot;                          
+[33] &quot;Quan.Info&quot;                         &quot;Amanda.Score&quot;                     
+[35] &quot;CharmeRT.Combined.Score&quot;           &quot;Search.Space&quot;                     
+[37] &quot;MS2.Errorin.ppm&quot;                   &quot;MS.Amanda.Rank&quot;                   
+[39] &quot;Search.Depth&quot;                      &quot;Precursor.Intensity&quot;              
+[41] &quot;Precursor.Charge&quot;                  &quot;XCorr&quot;                            
+[43] &quot;Number.of.Protein.Groups&quot;          &quot;Percolator.q.Value&quot;               
+[45] &quot;Percolator.PEP&quot;                    &quot;Apex.RT.in.min&quot;                   
+[47] &quot;Precursor.Quan.Result.ID&quot;          &quot;Peptide.Groups.Peptide.Group.ID&quot;  
+[49] &quot;Abundance.Light&quot;                   &quot;Abundance.Heavy&quot;                  
+[51] &quot;Abundance.Unassigned&quot;             </code></pre>
 <!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGVzdF9xZiA8LSByZWFkUUZlYXR1cmVzKHNpbGFjX3BzbSwgXG4gICAgICAgICAgICAgICAgICAgICAgICAgZWNvbCA9IGdyZXAoJ0FidW5kYW5jZScsIGNvbG5hbWVzKHNpbGFjX3BzbSkpLFxuICAgICAgICAgICAgICAgICAgICAgICAgIGZuYW1lcyA9IFwiUFNNcy5QZXB0aWRlLklEXCIsXG4gICAgICAgICAgICAgICAgICAgICAgICAgbmFtZSA9IFwicHNtc1wiKVxuYGBgIn0= -->
+<pre class="r"><code>test_qf &lt;- readQFeatures(silac_psm, 
+                         ecol = grep(&#39;Abundance&#39;, colnames(silac_psm)),
+                         fnames = &quot;PSMs.Peptide.ID&quot;,
+                         name = &quot;psms&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGVzdF9xZiAlPiUgaGVhZCgpICU+JSBjb2xuYW1lcygpXG5gYGAifQ== -->
+<pre class="r"><code>test_qf %&gt;% head() %&gt;% colnames()</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiQ2hhcmFjdGVyTGlzdCBvZiBsZW5ndGggMVxuW1tcInBzbXNcIl1dIEFidW5kYW5jZS5MaWdodCBBYnVuZGFuY2UuSGVhdnkgQWJ1bmRhbmNlLlVuYXNzaWduZWRcbiJ9 -->
+<pre><code>CharacterList of length 1
+[[&quot;psms&quot;]] Abundance.Light Abundance.Heavy Abundance.Unassigned</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGVzdF9xZltbMV1dICU+JSBoZWFkKCkgJT4lIHJvd25hbWVzKClcbmBgYCJ9 -->
+<pre class="r"><code>test_qf[[1]] %&gt;% head() %&gt;% rownames()</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiNDIyNjkyXCIgXCIyNjI5MzhcIiBcIjM5ODg1M1wiIFwiMzk4ODYyXCIgXCIzOTg4NjhcIiBcIjM5ODg4OFwiXG4ifQ== -->
+<pre><code>[1] &quot;422692&quot; &quot;262938&quot; &quot;398853&quot; &quot;398862&quot; &quot;398868&quot; &quot;398888&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGVzdF9xZltbMV1dICU+JSBoZWFkKCkgJT4lIHJvd0RhdGEoKVxuYGBgIn0= -->
+<pre class="r"><code>test_qf[[1]] %&gt;% head() %&gt;% rowData()</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRGF0YUZyYW1lIHdpdGggNiByb3dzIGFuZCA0OCBjb2x1bW5zXG4gICAgICAgUFNNcy5Xb3JrZmxvdy5JRCBQU01zLlBlcHRpZGUuSUQgICAgIENoZWNrZWQgIENvbmZpZGVuY2UgSWRlbnRpZnlpbmcuTm9kZVxuICAgICAgICAgICAgICA8aW50ZWdlcj4gICAgICAgPGludGVnZXI+IDxjaGFyYWN0ZXI+IDxjaGFyYWN0ZXI+ICAgICAgPGNoYXJhY3Rlcj5cbjQyMjY5MiAgICAgICAgICAgICAtMTUwICAgICAgICAgIDQyMjY5MiAgICAgICBGYWxzZSAgICAgICAgSGlnaCAgICBTZXF1ZXN0IEhULi4uXG4yNjI5MzggICAgICAgICAgICAgLTE1MCAgICAgICAgICAyNjI5MzggICAgICAgRmFsc2UgICAgICAgIEhpZ2ggICAgU2VxdWVzdCBIVC4uLlxuMzk4ODUzICAgICAgICAgICAgIC0xNTAgICAgICAgICAgMzk4ODUzICAgICAgIEZhbHNlICAgICAgICBIaWdoICAgIFNlcXVlc3QgSFQuLi5cbjM5ODg2MiAgICAgICAgICAgICAtMTUwICAgICAgICAgIDM5ODg2MiAgICAgICBGYWxzZSAgICAgICAgSGlnaCAgICBTZXF1ZXN0IEhULi4uXG4zOTg4NjggICAgICAgICAgICAgLTE1MCAgICAgICAgICAzOTg4NjggICAgICAgRmFsc2UgICAgICAgIEhpZ2ggICAgU2VxdWVzdCBIVC4uLlxuMzk4ODg4ICAgICAgICAgICAgIC0xNTAgICAgICAgICAgMzk4ODg4ICAgICAgIEZhbHNlICAgICAgICBIaWdoICAgIFNlcXVlc3QgSFQuLi5cbiAgICAgICBQU00uQW1iaWd1aXR5ICAgICAgU2VxdWVuY2UgQW5ub3RhdGVkLlNlcXVlbmNlIE1vZGlmaWNhdGlvbnMgTnVtYmVyLm9mLlByb3RlaW5zXG4gICAgICAgICA8Y2hhcmFjdGVyPiAgIDxjaGFyYWN0ZXI+ICAgICAgICA8Y2hhcmFjdGVyPiAgIDxjaGFyYWN0ZXI+ICAgICAgICAgIDxpbnRlZ2VyPlxuNDIyNjkyIFVuYW1iaWd1b3UuLi4gR0lMR1lURUhRVi4uLiAgICAgIFtLXS5HSUxHWVQuLi4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDFcbjI2MjkzOCBVbmFtYmlndW91Li4uIEhISUVUR0dHUUwuLi4gICAgICBbUl0uSEhJRVRHLi4uICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAxXG4zOTg4NTMgVW5hbWJpZ3VvdS4uLiBRTEVERUxWU0xRLi4uICAgICAgW0tdLlFMRURFTC4uLiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMVxuMzk4ODYyIFVuYW1iaWd1b3UuLi4gVkdERFBBVldRTC4uLiAgICAgIFtLXS5WR0REUEEuLi4gSzExKExhYmVsOi4uLiAgICAgICAgICAgICAgICAgIDFcbjM5ODg2OCBVbmFtYmlndW91Li4uIEZQUUxEU1RTRkEuLi4gICAgICBbUl0uRlBRTERTLi4uIFIxMyhMYWJlbDouLi4gICAgICAgICAgICAgICAgICAxXG4zOTg4ODggVW5hbWJpZ3VvdS4uLiAgICAgTExMUUxFQVRLICAgICAgW1JdLkxMTFFMRS4uLiBLOShMYWJlbDoxLi4uICAgICAgICAgICAgICAgICAgMVxuICAgICAgIE1hc3Rlci5Qcm90ZWluLkFjY2Vzc2lvbnMgUHJvdGVpbi5BY2Nlc3Npb25zIE51bWJlci5vZi5NaXNzZWQuQ2xlYXZhZ2VzXG4gICAgICAgICAgICAgICAgICAgICA8Y2hhcmFjdGVyPiAgICAgICAgPGNoYXJhY3Rlcj4gICAgICAgICAgICAgICAgICA8aW50ZWdlcj5cbjQyMjY5MiAgICAgICAgICAgICAgICAgICAgUDA0NDA2ICAgICAgICAgICAgIFAwNDQwNiAgICAgICAgICAgICAgICAgICAgICAgICAgMFxuMjYyOTM4ICAgICAgICAgICAgICAgICAgICBROTI2MTYgICAgICAgICAgICAgUTkyNjE2ICAgICAgICAgICAgICAgICAgICAgICAgICAwXG4zOTg4NTMgICAgICAgICAgICAgICAgICAgIFAwOTQ5MyAgICAgICAgICAgICBQMDk0OTMgICAgICAgICAgICAgICAgICAgICAgICAgIDBcbjM5ODg2MiAgICAgICAgICAgICAgICAgICAgUTlZNDkwICAgICAgICAgICAgIFE5WTQ5MCAgICAgICAgICAgICAgICAgICAgICAgICAgMFxuMzk4ODY4ICAgICAgICAgICAgICAgICAgICBQNDkzMjcgICAgICAgICAgICAgUDQ5MzI3ICAgICAgICAgICAgICAgICAgICAgICAgICAwXG4zOTg4ODggICAgICAgICAgICAgICAgICAgIFExMzU2MSAgICAgICAgICAgICBRMTM1NjEgICAgICAgICAgICAgICAgICAgICAgICAgIDBcbiAgICAgICAgICBDaGFyZ2UgRGVsdGEuU2NvcmUgIERlbHRhLkNuICAgICAgUmFuayBTZWFyY2guRW5naW5lLlJhbmsgIG16LmluLkRhXG4gICAgICAgPGludGVnZXI+ICAgPG51bWVyaWM+IDxudW1lcmljPiA8aW50ZWdlcj4gICAgICAgICAgPGludGVnZXI+IDxudW1lcmljPlxuNDIyNjkyICAgICAgICAgNCAgICAgIDAuODA0NSAgICAgICAgIDAgICAgICAgICAxICAgICAgICAgICAgICAgICAgMSAgMTAwOS45NzhcbjI2MjkzOCAgICAgICAgIDMgICAgICAwLjM5OTAgICAgICAgICAwICAgICAgICAgMSAgICAgICAgICAgICAgICAgIDEgICA0NDguOTA1XG4zOTg4NTMgICAgICAgICAyICAgICAgMC40MDA3ICAgICAgICAgMCAgICAgICAgIDEgICAgICAgICAgICAgICAgICAxICAgNjUxLjM0OVxuMzk4ODYyICAgICAgICAgMiAgICAgIDAuMjEzNiAgICAgICAgIDAgICAgICAgICAxICAgICAgICAgICAgICAgICAgMSAgIDYxOC4zMjlcbjM5ODg2OCAgICAgICAgIDIgICAgICAwLjM0OTkgICAgICAgICAwICAgICAgICAgMSAgICAgICAgICAgICAgICAgIDEgICA3NDAuMzU4XG4zOTg4ODggICAgICAgICAyICAgICAgMC4yNjI1ICAgICAgICAgMCAgICAgICAgIDEgICAgICAgICAgICAgICAgICAxICAgNTE4LjgyOFxuICAgICAgIE1IcGx1cy5pbi5EYSBUaGVvLk1IcGx1cy5pbi5EYSBEZWx0YS5NLmluLnBwbSBEZWx0YS5tei5pbi5EYSBJbnRlbnNpdHlcbiAgICAgICAgICA8bnVtZXJpYz4gICAgICAgICA8bnVtZXJpYz4gICAgICA8bnVtZXJpYz4gICAgICA8bnVtZXJpYz4gPG51bWVyaWM+XG40MjI2OTIgICAgICA0MDM2Ljg5ICAgICAgICAgICA0MDM2Ljg5ICAgICAgICAgIC0xLjExICAgICAgIC0wLjAwMTEyICAgMjM5MjQ5OVxuMjYyOTM4ICAgICAgMTM0NC43MCAgICAgICAgICAgMTM0NC43MCAgICAgICAgICAtMC41MiAgICAgICAtMC4wMDAyMyAgICA2ODM3MzRcbjM5ODg1MyAgICAgIDEzMDEuNjkgICAgICAgICAgIDEzMDEuNjkgICAgICAgICAgLTIuNTEgICAgICAgLTAuMDAxNjMgICA0NzIxNTc5XG4zOTg4NjIgICAgICAxMjM1LjY1ICAgICAgICAgICAxMjM1LjY1ICAgICAgICAgIC0wLjU2ICAgICAgIC0wLjAwMDM1ICAgMjUxNjIwNFxuMzk4ODY4ICAgICAgMTQ3OS43MSAgICAgICAgICAgMTQ3OS43MSAgICAgICAgICAtMS4yOSAgICAgICAtMC4wMDA5NSAgIDY0NjAwMTRcbjM5ODg4OCAgICAgIDEwMzYuNjUgICAgICAgICAgIDEwMzYuNjUgICAgICAgICAgLTAuNTkgICAgICAgLTAuMDAwMzEgICA1NjUzNjY4XG4gICAgICAgQWN0aXZhdGlvbi5UeXBlICAgIE1TLk9yZGVyIElzb2xhdGlvbi5JbnRlcmZlcmVuY2UuaW4uUGVyY2VudFxuICAgICAgICAgICA8Y2hhcmFjdGVyPiA8Y2hhcmFjdGVyPiAgICAgICAgICAgICAgICAgICAgICAgICA8bnVtZXJpYz5cbjQyMjY5MiAgICAgICAgICAgICBDSUQgICAgICAgICBNUzIgICAgICAgICAgICAgICAgICAgICAgICAgICAgMC4wMDAwXG4yNjI5MzggICAgICAgICAgICAgQ0lEICAgICAgICAgTVMyICAgICAgICAgICAgICAgICAgICAgICAgICAgNjIuMDQ1NlxuMzk4ODUzICAgICAgICAgICAgIENJRCAgICAgICAgIE1TMiAgICAgICAgICAgICAgICAgICAgICAgICAgIDMzLjYxMTBcbjM5ODg2MiAgICAgICAgICAgICBDSUQgICAgICAgICBNUzIgICAgICAgICAgICAgICAgICAgICAgICAgICAyNy45NTIyXG4zOTg4NjggICAgICAgICAgICAgQ0lEICAgICAgICAgTVMyICAgICAgICAgICAgICAgICAgICAgICAgICAgMjkuODg3NlxuMzk4ODg4ICAgICAgICAgICAgIENJRCAgICAgICAgIE1TMiAgICAgICAgICAgICAgICAgICAgICAgICAgIDQ4LjAyMzlcbiAgICAgICBJb24uSW5qZWN0LlRpbWUuaW4ubXMgUlQuaW4ubWluIEZpcnN0LlNjYW4gU3BlY3RydW0uRmlsZSAgICAgRmlsZS5JRFxuICAgICAgICAgICAgICAgICAgIDxudW1lcmljPiA8bnVtZXJpYz4gIDxpbnRlZ2VyPiAgIDxjaGFyYWN0ZXI+IDxjaGFyYWN0ZXI+XG40MjI2OTIgICAgICAgICAgICAgICAgIDMuNDM1ICAgNDAuNjQ2NSAgICAgIDM4MDg5IFNJTEFDX0hhbmQuLi4gICAgICAgICAgRjFcbjI2MjkzOCAgICAgICAgICAgICAgICAxMy42NzQgICAxOC4zNjM1ICAgICAgIDgzODQgU0lMQUNfSGFuZC4uLiAgICAgICAgICBGMVxuMzk4ODUzICAgICAgICAgICAgICAgICA0LjMyMiAgIDM3LjE1NjAgICAgICAzMzczMyBTSUxBQ19IYW5kLi4uICAgICAgICAgIEYxXG4zOTg4NjIgICAgICAgICAgICAgICAgIDYuNDE3ICAgMzcuMTU3MyAgICAgIDMzNzM1IFNJTEFDX0hhbmQuLi4gICAgICAgICAgRjFcbjM5ODg2OCAgICAgICAgICAgICAgICAgNS4yNTMgICAzNy4xNTgwICAgICAgMzM3MzYgU0lMQUNfSGFuZC4uLiAgICAgICAgICBGMVxuMzk4ODg4ICAgICAgICAgICAgICAgICA0LjUxNSAgIDM3LjE2MDIgICAgICAzMzczOSBTSUxBQ19IYW5kLi4uICAgICAgICAgIEYxXG4gICAgICAgICBRdWFuLkluZm8gQW1hbmRhLlNjb3JlIENoYXJtZVJULkNvbWJpbmVkLlNjb3JlIFNlYXJjaC5TcGFjZSBNUzIuRXJyb3Jpbi5wcG1cbiAgICAgICA8Y2hhcmFjdGVyPiAgICA8bnVtZXJpYz4gICAgICAgICAgICAgICA8bnVtZXJpYz4gICAgPGludGVnZXI+ICAgICAgIDxudW1lcmljPlxuNDIyNjkyICAgICAgICAgICAgICAgICAgICAgICBOQSAgICAgICAgICAgICAgICAgICAgICBOQSAgICAgICAgICAgIDAgICAgICAgICAgICAgICAwXG4yNjI5MzggICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICAgICAgMCAgICAgICAgICAgICAgIDBcbjM5ODg1MyAgICAgICAgICAgICAgICAgICAgICAgTkEgICAgICAgICAgICAgICAgICAgICAgTkEgICAgICAgICAgICAwICAgICAgICAgICAgICAgMFxuMzk4ODYyICAgICAgICAgICAgICAgICAgICAgICBOQSAgICAgICAgICAgICAgICAgICAgICBOQSAgICAgICAgICAgIDAgICAgICAgICAgICAgICAwXG4zOTg4NjggICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICAgICAgMCAgICAgICAgICAgICAgIDBcbjM5ODg4OCAgICAgICAgICAgICAgICAgICAgICAgTkEgICAgICAgICAgICAgICAgICAgICAgTkEgICAgICAgICAgICAwICAgICAgICAgICAgICAgMFxuICAgICAgIE1TLkFtYW5kYS5SYW5rIFNlYXJjaC5EZXB0aCBQcmVjdXJzb3IuSW50ZW5zaXR5IFByZWN1cnNvci5DaGFyZ2UgICAgIFhDb3JyXG4gICAgICAgICAgICA8aW50ZWdlcj4gICAgPGludGVnZXI+ICAgICAgICAgICA8bnVtZXJpYz4gICAgICAgIDxpbnRlZ2VyPiA8bnVtZXJpYz5cbjQyMjY5MiAgICAgICAgICAgICAgMCAgICAgICAgICAgIDAgICAgICAgICAgICAgICAgICAgMCAgICAgICAgICAgICAgICAwICAgICAgOC45MFxuMjYyOTM4ICAgICAgICAgICAgICAwICAgICAgICAgICAgMCAgICAgICAgICAgICAgICAgICAwICAgICAgICAgICAgICAgIDAgICAgICAzLjgxXG4zOTg4NTMgICAgICAgICAgICAgIDAgICAgICAgICAgICAwICAgICAgICAgICAgICAgICAgIDAgICAgICAgICAgICAgICAgMCAgICAgIDIuNzJcbjM5ODg2MiAgICAgICAgICAgICAgMCAgICAgICAgICAgIDAgICAgICAgICAgICAgICAgICAgMCAgICAgICAgICAgICAgICAwICAgICAgMy4wOVxuMzk4ODY4ICAgICAgICAgICAgICAwICAgICAgICAgICAgMCAgICAgICAgICAgICAgICAgICAwICAgICAgICAgICAgICAgIDAgICAgICAzLjQzXG4zOTg4ODggICAgICAgICAgICAgIDAgICAgICAgICAgICAwICAgICAgICAgICAgICAgICAgIDAgICAgICAgICAgICAgICAgMCAgICAgIDIuNTlcbiAgICAgICBOdW1iZXIub2YuUHJvdGVpbi5Hcm91cHMgUGVyY29sYXRvci5xLlZhbHVlIFBlcmNvbGF0b3IuUEVQIEFwZXguUlQuaW4ubWluXG4gICAgICAgICAgICAgICAgICAgICAgPGludGVnZXI+ICAgICAgICAgIDxudW1lcmljPiAgICAgIDxudW1lcmljPiAgICAgIDxudW1lcmljPlxuNDIyNjkyICAgICAgICAgICAgICAgICAgICAgICAgMSAgICAgICAgIDAuMDAwMTU1ODYgICAgMi41MDE5MmUtMTQgICAgICAgICAgNDAuNjlcbjI2MjkzOCAgICAgICAgICAgICAgICAgICAgICAgIDEgICAgICAgICAwLjAwMDE1NTkwICAgIDMuMzc4MDBlLTA1ICAgICAgICAgIDE4LjMzXG4zOTg4NTMgICAgICAgICAgICAgICAgICAgICAgICAxICAgICAgICAgMC4wMDAxNTU5MCAgICAxLjQ1NzAwZS0wNCAgICAgICAgICAzNy4xNVxuMzk4ODYyICAgICAgICAgICAgICAgICAgICAgICAgMSAgICAgICAgIDAuMDAwMTU1OTAgICAgMS42OTIwMGUtMDQgICAgICAgICAgMzcuMTFcbjM5ODg2OCAgICAgICAgICAgICAgICAgICAgICAgIDEgICAgICAgICAwLjAwMDE1NTkwICAgIDEuMDMxMDBlLTAzICAgICAgICAgIDM3LjEzXG4zOTg4ODggICAgICAgICAgICAgICAgICAgICAgICAxICAgICAgICAgMC4wMDAxNTU5MCAgICA4LjI0MTAwZS0wNCAgICAgICAgICAzNy4xM1xuICAgICAgIFByZWN1cnNvci5RdWFuLlJlc3VsdC5JRCBQZXB0aWRlLkdyb3Vwcy5QZXB0aWRlLkdyb3VwLklEXG4gICAgICAgICAgICAgICAgICAgICAgPGludGVnZXI+ICAgICAgICAgICAgICAgICAgICAgICA8aW50ZWdlcj5cbjQyMjY5MiAgICAgICAgICAgICAgICAgICAgIDM5MzcgICAgICAgICAgICAgICAgICAgICAgICAgICAxMzUwN1xuMjYyOTM4ICAgICAgICAgICAgICAgICAgICAgIDE4NSAgICAgICAgICAgICAgICAgICAgICAgICAgIDE1MTYyXG4zOTg4NTMgICAgICAgICAgICAgICAgICAgICAzMzU1ICAgICAgICAgICAgICAgICAgICAgICAgICAgMzE3NTlcbjM5ODg2MiAgICAgICAgICAgICAgICAgICAgIDMzNTYgICAgICAgICAgICAgICAgICAgICAgICAgICA0MDg4NVxuMzk4ODY4ICAgICAgICAgICAgICAgICAgICAgMzM1NyAgICAgICAgICAgICAgICAgICAgICAgICAgIDExNTc2XG4zOTg4ODggICAgICAgICAgICAgICAgICAgICAzMzU4ICAgICAgICAgICAgICAgICAgICAgICAgICAgMjE4MzFcbiJ9 -->
+<pre><code>DataFrame with 6 rows and 48 columns
+       PSMs.Workflow.ID PSMs.Peptide.ID     Checked  Confidence Identifying.Node
+              &lt;integer&gt;       &lt;integer&gt; &lt;character&gt; &lt;character&gt;      &lt;character&gt;
+422692             -150          422692       False        High    Sequest HT...
+262938             -150          262938       False        High    Sequest HT...
+398853             -150          398853       False        High    Sequest HT...
+398862             -150          398862       False        High    Sequest HT...
+398868             -150          398868       False        High    Sequest HT...
+398888             -150          398888       False        High    Sequest HT...
+       PSM.Ambiguity      Sequence Annotated.Sequence Modifications Number.of.Proteins
+         &lt;character&gt;   &lt;character&gt;        &lt;character&gt;   &lt;character&gt;          &lt;integer&gt;
+422692 Unambiguou... GILGYTEHQV...      [K].GILGYT...                                1
+262938 Unambiguou... HHIETGGGQL...      [R].HHIETG...                                1
+398853 Unambiguou... QLEDELVSLQ...      [K].QLEDEL...                                1
+398862 Unambiguou... VGDDPAVWQL...      [K].VGDDPA... K11(Label:...                  1
+398868 Unambiguou... FPQLDSTSFA...      [R].FPQLDS... R13(Label:...                  1
+398888 Unambiguou...     LLLQLEATK      [R].LLLQLE... K9(Label:1...                  1
+       Master.Protein.Accessions Protein.Accessions Number.of.Missed.Cleavages
+                     &lt;character&gt;        &lt;character&gt;                  &lt;integer&gt;
+422692                    P04406             P04406                          0
+262938                    Q92616             Q92616                          0
+398853                    P09493             P09493                          0
+398862                    Q9Y490             Q9Y490                          0
+398868                    P49327             P49327                          0
+398888                    Q13561             Q13561                          0
+          Charge Delta.Score  Delta.Cn      Rank Search.Engine.Rank  mz.in.Da
+       &lt;integer&gt;   &lt;numeric&gt; &lt;numeric&gt; &lt;integer&gt;          &lt;integer&gt; &lt;numeric&gt;
+422692         4      0.8045         0         1                  1  1009.978
+262938         3      0.3990         0         1                  1   448.905
+398853         2      0.4007         0         1                  1   651.349
+398862         2      0.2136         0         1                  1   618.329
+398868         2      0.3499         0         1                  1   740.358
+398888         2      0.2625         0         1                  1   518.828
+       MHplus.in.Da Theo.MHplus.in.Da Delta.M.in.ppm Delta.mz.in.Da Intensity
+          &lt;numeric&gt;         &lt;numeric&gt;      &lt;numeric&gt;      &lt;numeric&gt; &lt;numeric&gt;
+422692      4036.89           4036.89          -1.11       -0.00112   2392499
+262938      1344.70           1344.70          -0.52       -0.00023    683734
+398853      1301.69           1301.69          -2.51       -0.00163   4721579
+398862      1235.65           1235.65          -0.56       -0.00035   2516204
+398868      1479.71           1479.71          -1.29       -0.00095   6460014
+398888      1036.65           1036.65          -0.59       -0.00031   5653668
+       Activation.Type    MS.Order Isolation.Interference.in.Percent
+           &lt;character&gt; &lt;character&gt;                         &lt;numeric&gt;
+422692             CID         MS2                            0.0000
+262938             CID         MS2                           62.0456
+398853             CID         MS2                           33.6110
+398862             CID         MS2                           27.9522
+398868             CID         MS2                           29.8876
+398888             CID         MS2                           48.0239
+       Ion.Inject.Time.in.ms RT.in.min First.Scan Spectrum.File     File.ID
+                   &lt;numeric&gt; &lt;numeric&gt;  &lt;integer&gt;   &lt;character&gt; &lt;character&gt;
+422692                 3.435   40.6465      38089 SILAC_Hand...          F1
+262938                13.674   18.3635       8384 SILAC_Hand...          F1
+398853                 4.322   37.1560      33733 SILAC_Hand...          F1
+398862                 6.417   37.1573      33735 SILAC_Hand...          F1
+398868                 5.253   37.1580      33736 SILAC_Hand...          F1
+398888                 4.515   37.1602      33739 SILAC_Hand...          F1
+         Quan.Info Amanda.Score CharmeRT.Combined.Score Search.Space MS2.Errorin.ppm
+       &lt;character&gt;    &lt;numeric&gt;               &lt;numeric&gt;    &lt;integer&gt;       &lt;numeric&gt;
+422692                       NA                      NA            0               0
+262938                       NA                      NA            0               0
+398853                       NA                      NA            0               0
+398862                       NA                      NA            0               0
+398868                       NA                      NA            0               0
+398888                       NA                      NA            0               0
+       MS.Amanda.Rank Search.Depth Precursor.Intensity Precursor.Charge     XCorr
+            &lt;integer&gt;    &lt;integer&gt;           &lt;numeric&gt;        &lt;integer&gt; &lt;numeric&gt;
+422692              0            0                   0                0      8.90
+262938              0            0                   0                0      3.81
+398853              0            0                   0                0      2.72
+398862              0            0                   0                0      3.09
+398868              0            0                   0                0      3.43
+398888              0            0                   0                0      2.59
+       Number.of.Protein.Groups Percolator.q.Value Percolator.PEP Apex.RT.in.min
+                      &lt;integer&gt;          &lt;numeric&gt;      &lt;numeric&gt;      &lt;numeric&gt;
+422692                        1         0.00015586    2.50192e-14          40.69
+262938                        1         0.00015590    3.37800e-05          18.33
+398853                        1         0.00015590    1.45700e-04          37.15
+398862                        1         0.00015590    1.69200e-04          37.11
+398868                        1         0.00015590    1.03100e-03          37.13
+398888                        1         0.00015590    8.24100e-04          37.13
+       Precursor.Quan.Result.ID Peptide.Groups.Peptide.Group.ID
+                      &lt;integer&gt;                       &lt;integer&gt;
+422692                     3937                           13507
+262938                      185                           15162
+398853                     3355                           31759
+398862                     3356                           40885
+398868                     3357                           11576
+398888                     3358                           21831</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYW55RHVwbGljYXRlZCh0ZXN0X3FmICU+JSByb3duYW1lcygpKVxuYGBgIn0= -->
+<pre class="r"><code>anyDuplicated(test_qf %&gt;% rownames())</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIHBzbXMgXG5GQUxTRSBcbiJ9 -->
+<pre><code> psms 
+FALSE </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBQZXB0aWRlXG5zaWxhY19wZXAgPC0gcmVhZC5kZWxpbShcImRhdGEtcmF3L1NJTEFDX0hMX2JvdGhUYWdzX1BlcHRpZGVHcm91cHMudHh0XCIpXG5cbnNpbGFjX3BlcCAlPiUgaGVhZCgpXG5gYGAifQ== -->
+<pre class="r"><code># Peptide
+silac_pep &lt;- read.delim(&quot;data-raw/SILAC_HL_bothTags_PeptideGroups.txt&quot;)
+
+silac_pep %&gt;% head()</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6NiwibmNvbCI6MzQsInN1bW1hcnkiOnsiRGVzY3JpcHRpb24iOlsiZGYgWzYgw5cgMzRdIl19fSwicmRmIjoiSDRzSUFBQUFBQUFBQTdWWGEyd1VWUlNldnUzU0Y2OVlvWkdsaUJTMGw4NTJ0N1FVbUJsbis2TGRaYmU3bE9MYW1ObmQyWGJwN3N6dTdHeHRUWXdGTkFaUlFJZzFvZ1RCNEE4d0JyUUtHaE1TQmFLaEdQMVIrVUdpRXVzUE5ZQkdVTUpMN3p6dWRIZTJXd3FOazl5ZGU4ODUzem5mblh2dXVYZmJyWjNWaGs0RGhtRlpXSFptQnBhVkE3dFl6bnAzWTJVdEJpVndrSUZsWS9uU3V4OGF6WWFkY3RnS1ljdkZNUDl4REdPdllsamdGbXkzWWZzYnc3b2xmWW1zVjRBNWpVd294azUva093MXV6blkzVE90ZnJLL1lodEZVUnVhWEs0Mk4wVzVuZTJxdU1SR09admFHanFvTnJlMXplbHlJZmtNbTdXRmFtbHVkbXhvbVVTVWI3TzIyaHZhT3B5dHFtQ096ZXF3MHk2YW9wcXNMdHBOVTAwdXVsWEg1RUZQWlJmUXNRRWVxa3RWbHlycVpGYkFZMGY2MmJKK25Bcnd0RTlCTlZOUnFXd1R3cFVwaWxUV3dFTjM2WmpQdy92YkdDOGJXb2xYMHhVMVMzR0x2Y0s4MU9ocHh5M0lXeVhlVC9sWWNTQms5TmdyM2F3UTdxbzNwZ1BWYU54U1FQZmhEVWVncWdsQXBoU1FDWUphcSt1TnJYVUkxemtCenRKUE00S1hDUWY5ZkpnVmV5UWRiYWszMGl0Z3c2dWxIMm1FMTAzSVN3NWhxcEkrWXBIMEVZbmhocE8zajBXWEVJZjVvVjNmN2x0RnNMLzI3dm5uVkJrUk9vQ1IxS2ZiaU9kR2JsaVhyanU2NXVESjR2bG5ybitvNFFiNGxRdTJiOTlKUkYvNjRySGh3akZpOFNYeGhhMkg2N1czall3T1pJN2RRdVB4N1F2MzlzVHRYdlJTamNpV0M0alN6OUFsUmE2enRtYTlxUmFOMXBtckxXWnQ1S2d5V1hBOHphaW1HcTh5SitoVzFGbDB2Z3NWMzBZUFhqbWVZNFZLQ0ZtbzVWQ2g0bHNXNHBNS0M1UzRrckF1MFJCR2wyVEtnaVdTd05ER1ZPT215OVpTTmRyOTZ4VmlrK0Vsa3FuNi8zZEJVRExvbnd6MUxTY3ArY2FWWE9xaml1UGtXMGQyOTE3djIwOE9QZm5uZC9iNmMrVFFsaHN0cTdaZEpYY3ZpL3JNVzA2U0J3N3RPSHR6N3NjSVIrVXZESk93OC93ZmtxdThnK2hOMFh1Y2c3QkgrUTk0alFsNkRiZjJNajQ0RVk0YTNTajVvemFOblAwcEdhZk9veUFBV3pkc1ViVkZZSXVsV2ZNQ08rK01NMXdIRTRxek1WVDAyMWwvblBNem5LZ3puaGlrT3l5YldhWnZZTUpCR3p5MHhMdWJLWU5rcndZSHkvUWFHM2xJQzVHMDgyS1NJUEY4VERXZjFNSFVEdVpVRi9keVBFL251TS9pbGpNNmQ3Sm9lcGNIcGZiMnZMOS8rWVdkUHhDK1gyNUdiNTcra1ZqMTZpaFpPMm9tbGh5NXZQeXZuM2NUVG5QMmIydGZtYXRQVHpRbXZGK2R4dFlkS3lVZTRjdlB2Y3hjSnRidmtSeWRJZWhGWDV2R09pOGd1UmJ2dmVLeGdkYys3eUQybm9vTzl6K0JFOHpWYTRiTUV4VGhldWZNOEF2bmU0bXRZMWN5TjM4Mm1EYmUwTnVManI5ZXVZaG8vbjdYM2tzZFI0bk5JeVZGbTI1OVEzaDNGT3piWjk2NEpsSlVkdWlUYmFWNkhGa1FrQi9penNXbUQrWThlNUhNZWxONjlwSjVrWGZQRzFaSHllSnErZEcydTdWRWtUdEhIejdoL1AxRnNuMjFiRWc2UWlQd09VYytuYm56cVlwclgrcDUzamNPTDVEMUdsOTZSTEZINy9xWXpHOGNsM1MzemVHWXNMWVZ5MVhoQWdjYkVZTitGalFKZkR3U0EwbEQwR0pWemZMb0h0Ylh5Mm83aGVhNUFEVGpmT2o2K29DTGpjWVR4ck1vanVORlJtVDlRS2NwdFBIK1lDRG9ZOFFnejZGeU1zUFp4NFNDNGdCd05EalFYUldKb3FCUEtpTG9BTERIdzE1V0FId0FPQVJlWklPY1NoMEZUdEVqVFZHQ3htVkQwb2RzVEV5RVV1U004dm5ZV0N5QldwbURqd1ZscmdDcWs2MlJqVEZwVHVudFpxV05NbStjbkMwWWk4SFBSb2RnaldPNnRZbzcwOTNEOHNEV0hBbkY1UWhXdExmblUxNjVFa09QeXFlQTRFWWNKRmJTTkNhSkpiWFVJYkMrdUJEakJTRFZiZERPeHVJaGNUd0Q4bVZwQ3hmZ1VZR1hCWFFQdzNGc1NKVTlLbGMraVoyTENVZENyTnpETlRZQXBvMG84TWg2OFVUV0pvMllLbFdOSzhaVERuaWhqbVVFWHc5bzRMcURIQXRzTGtDRkdUaERZS3BDVkNhemwxTXlKb0ptTjdvdk8xakJ4NGNZRVU0L0N1UkRhMHBSd0ZSd0tkRWVUMERCaEo5U3BHVjN3NlJFV2RoSjg0SXdCY05sYWl5WGp4ZW1ObTBMWEhZaHpMYTc0WXFHdmRESWZ3L2dXVzQrQXFnSTJ3OGdIaTU1T01qcEtsVyt3RDhEVUxXU2JpeVpnNWo4NU9wTG1pL0V4RkJKUTBLRG54RVpFQkFnSG83dTZDQjVmRVFwUEZpbTlEOC9Sd2ZPRUhTQ21YRk9ZdUt2OVBYRXVkNUtITjRwWVFncytXOUNoc0pONjVjclFUUC9WWjNsb1Bza0szOFZ4RDRrL1ZsQzFRbk9XWjR5aUFoQjdWWmxnTklZRUdFbFJYWUdtQVJJSXM4T3UvTWZ5ZnA4QytBUUFBQT0ifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Peptide.Groups.Peptide.Group.ID"],"name":[1],"type":["int"],"align":["right"]},{"label":["Checked"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Confidence"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Sequence"],"name":[4],"type":["chr"],"align":["left"]},{"label":["Annotated.Sequence"],"name":[5],"type":["chr"],"align":["left"]},{"label":["Modifications"],"name":[6],"type":["chr"],"align":["left"]},{"label":["Qvality.PEP"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["Qvality.q.value"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["Number.of.Protein.Groups"],"name":[9],"type":["int"],"align":["right"]},{"label":["Number.of.Proteins"],"name":[10],"type":["int"],"align":["right"]},{"label":["Number.of.PSMs"],"name":[11],"type":["int"],"align":["right"]},{"label":["Master.Protein.Accessions"],"name":[12],"type":["chr"],"align":["left"]},{"label":["Positions.in.Master.Proteins"],"name":[13],"type":["chr"],"align":["left"]},{"label":["Modifications.in.Master.Proteins"],"name":[14],"type":["chr"],"align":["left"]},{"label":["Protein.Accessions"],"name":[15],"type":["chr"],"align":["left"]},{"label":["Number.of.Missed.Cleavages"],"name":[16],"type":["int"],"align":["right"]},{"label":["Theo.MHplus.in.Da"],"name":[17],"type":["dbl"],"align":["right"]},{"label":["Abundances.Grouped.F1.Light"],"name":[18],"type":["dbl"],"align":["right"]},{"label":["Abundances.Grouped.F1.Heavy"],"name":[19],"type":["dbl"],"align":["right"]},{"label":["Precursor.Quan.Result.ID"],"name":[20],"type":["int"],"align":["right"]},{"label":["Quan.Info"],"name":[21],"type":["chr"],"align":["left"]},{"label":["Quan.Channel"],"name":[22],"type":["chr"],"align":["left"]},{"label":["Found.in.Sample.in.S1.F1.Light.Control"],"name":[23],"type":["chr"],"align":["left"]},{"label":["Found.in.Sample.in.S2.F1.Heavy.Sample"],"name":[24],"type":["chr"],"align":["left"]},{"label":["Confidence.by.Search.Engine.MS.Amanda.20"],"name":[25],"type":["chr"],"align":["left"]},{"label":["Confidence.by.Search.Engine.Sequest.HT"],"name":[26],"type":["chr"],"align":["left"]},{"label":["Percolator.q.Value.by.Search.Engine.MS.Amanda.20"],"name":[27],"type":["dbl"],"align":["right"]},{"label":["Percolator.q.Value.by.Search.Engine.Sequest.HT"],"name":[28],"type":["dbl"],"align":["right"]},{"label":["Percolator.PEP.by.Search.Engine.MS.Amanda.20"],"name":[29],"type":["dbl"],"align":["right"]},{"label":["Percolator.PEP.by.Search.Engine.Sequest.HT"],"name":[30],"type":["dbl"],"align":["right"]},{"label":["XCorr.by.Search.Engine.Sequest.HT"],"name":[31],"type":["dbl"],"align":["right"]},{"label":["Amanda.Score.by.Search.Engine.MS.Amanda.20"],"name":[32],"type":["dbl"],"align":["right"]},{"label":["CharmeRT.Combined.Score.by.Search.Engine.MS.Amanda.20"],"name":[33],"type":["dbl"],"align":["right"]},{"label":["Top.Apex.RT.in.min"],"name":[34],"type":["dbl"],"align":["right"]}],"data":[{"1":"25783","2":"False","3":"High","4":"MAAAWGSSLTAATQR","5":"[-].MAAAWGSSLTAATQR.[A]","6":"1xLabel:13C(6)15N(4) [R15]","7":"7.91893e-02","8":"0.006209590","9":"1","10":"1","11":"1","12":"Q86U28","13":"Q86U28 [1-15]","14":"","15":"Q86U28","16":"0","17":"1531.756","18":"205869.7","19":"3529827","20":"3174","21":"","22":"Heavy","23":"Peak Found","24":"High","25":"High","26":"n/a","27":"0.0030120","28":"NA","29":"0.043090","30":"NA","31":"NA","32":"40.13","33":"40.13","34":"17.05","_rn_":"1"},{"1":"26100","2":"False","3":"High","4":"MAQGLEVALTDLQSSR","5":"[-].MAQGLEVALTDLQSSR.[N]","6":"1xAcetyl [N-Term]; 1xLabel:13C(6)15N(4) [R16]","7":"5.16326e-02","8":"0.004279860","9":"1","10":"1","11":"2","12":"O43548","13":"O43548 [1-16]","14":"O43548 1xAcetyl [N-Term]","15":"O43548","16":"0","17":"1770.893","18":"NA","19":"NA","20":"3175","21":"NoQuanValues","22":"Heavy","23":"Not Found","24":"High","25":"High","26":"High","27":"0.0024290","28":"0.0022930","29":"0.026140","30":"2.208e-02","31":"3.55","32":"71.33","33":"71.33","34":"NA","_rn_":"2"},{"1":"26364","2":"False","3":"High","4":"MDIAIHHPWIR","5":"[-].MDIAIHHPWIR.[R]","6":"1xAcetyl [N-Term]","7":"2.67478e-03","8":"0.000167294","9":"1","10":"1","11":"4","12":"P02511","13":"P02511 [1-11]","14":"P02511 1xAcetyl [N-Term]","15":"P02511","16":"0","17":"1430.736","18":"NA","19":"NA","20":"3185","21":"Redundant","22":"Light","23":"High","24":"Peak Found","25":"High","26":"High","27":"0.0004357","28":"0.0001559","29":"0.002192","30":"7.580e-04","31":"1.93","32":"72.96","33":"72.96","34":"39.60","_rn_":"3"},{"1":"26365","2":"False","3":"High","4":"MDIAIHHPWIR","5":"[-].MDIAIHHPWIR.[R]","6":"1xAcetyl [N-Term]; 1xLabel:13C(6)15N(4) [R11]","7":"3.49474e-03","8":"0.000167294","9":"1","10":"1","11":"3","12":"P02511","13":"P02511 [1-11]","14":"P02511 1xAcetyl [N-Term]","15":"P02511","16":"0","17":"1440.744","18":"2565795.0","19":"2337458","20":"3185","21":"","22":"Heavy","23":"Peak Found","24":"High","25":"High","26":"High","27":"0.0001806","28":"0.0013170","29":"0.001198","30":"8.690e-03","31":"2.45","32":"65.70","33":"65.70","34":"39.60","_rn_":"4"},{"1":"26358","2":"False","3":"High","4":"MDKNELVQK","5":"[-].MDKNELVQK.[A]","6":"1xAcetyl [N-Term]; 2xLabel:13C(6)15N(2) [K3; K9]","7":"7.27556e-03","8":"0.000892692","9":"1","10":"1","11":"2","12":"P63104","13":"P63104 [1-9]","14":"P63104 1xAcetyl [N-Term]","15":"P63104","16":"1","17":"1162.611","18":"10816273.0","19":"14050911","20":"3184","21":"","22":"Heavy","23":"Peak Found","24":"High","25":"High","26":"High","27":"0.0010500","28":"0.0005841","29":"0.009714","30":"2.265e-03","31":"2.93","32":"124.04","33":"124.04","34":"27.45","_rn_":"5"},{"1":"26402","2":"False","3":"High","4":"MDPNCSCAAGDSCTCAGSCK","5":"[-].MDPNCSCAAGDSCTCAGSCK.[C]","6":"1xAcetyl [N-Term]; 5xCarbamidomethyl [C5; C7; C13; C15; C19]; 1xLabel:13C(6)15N(2) [K20]","7":"5.58684e-07","8":"0.000167294","9":"1","10":"1","11":"1","12":"P02795","13":"P02795 [1-20]","14":"P02795 1xAcetyl [N-Term]","15":"P02795","16":"0","17":"2258.779","18":"NA","19":"NA","20":"3187","21":"NoQuanValues","22":"Heavy","23":"Not Found","24":"High","25":"n/a","26":"High","27":"NA","28":"0.0001559","29":"NA","30":"5.981e-08","31":"3.90","32":"NA","33":"NA","34":"NA","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10],"total":[34]},"rows":{"min":[10],"max":[10],"total":[6]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29sbmFtZXMoc2lsYWNfcGVwKVtncmVwbCgnQWJ1bmRhbmNlcycsIGNvbG5hbWVzKHNpbGFjX3BlcCkpXSA8LSBjKFwiQWJ1bmRhbmNlLkxpZ2h0XCIsIFwiQWJ1bmRhbmNlLkhlYXZ5XCIpXG5gYGAifQ== -->
+<pre class="r"><code>colnames(silac_pep)[grepl(&#39;Abundances&#39;, colnames(silac_pep))] &lt;- c(&quot;Abundance.Light&quot;, &quot;Abundance.Heavy&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2lsYWNfcGVwMiA8LSByZWFkU3VtbWFyaXplZEV4cGVyaW1lbnQoc2lsYWNfcGVwLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZWNvbCA9IGdyZXAoXCJeQWJ1bmRhbmNlXCIsIGNvbG5hbWVzKHNpbGFjX3BlcCkpLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZm5hbWVzID0gXCJQZXB0aWRlLkdyb3Vwcy5QZXB0aWRlLkdyb3VwLklEXCIpXG5cbmBgYCJ9 -->
+<pre class="r"><code>silac_pep2 &lt;- readSummarizedExperiment(silac_pep,
+                                       ecol = grep(&quot;^Abundance&quot;, colnames(silac_pep)),
+                                       fnames = &quot;Peptide.Groups.Peptide.Group.ID&quot;)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2lsYWNfcGVwMiAlPiUgaGVhZCgpICU+JSBjb2xuYW1lcygpXG5gYGAifQ== -->
+<pre class="r"><code>silac_pep2 %&gt;% head() %&gt;% colnames()</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiQWJ1bmRhbmNlLkxpZ2h0XCIgXCJBYnVuZGFuY2UuSGVhdnlcIlxuIn0= -->
+<pre><code>[1] &quot;Abundance.Light&quot; &quot;Abundance.Heavy&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2lsYWNfcGVwMiAlPiUgaGVhZCgpICU+JSByb3duYW1lcygpXG5gYGAifQ== -->
+<pre class="r"><code>silac_pep2 %&gt;% head() %&gt;% rownames()</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiMjU3ODNcIiBcIjI2MTAwXCIgXCIyNjM2NFwiIFwiMjYzNjVcIiBcIjI2MzU4XCIgXCIyNjQwMlwiXG4ifQ== -->
+<pre><code>[1] &quot;25783&quot; &quot;26100&quot; &quot;26364&quot; &quot;26365&quot; &quot;26358&quot; &quot;26402&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2lsYWNfcGVwMiAlPiUgaGVhZCgpICU+JSByb3dEYXRhKClcbmBgYCJ9 -->
+<pre class="r"><code>silac_pep2 %&gt;% head() %&gt;% rowData()</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRGF0YUZyYW1lIHdpdGggNiByb3dzIGFuZCAzMiBjb2x1bW5zXG4gICAgICBQZXB0aWRlLkdyb3Vwcy5QZXB0aWRlLkdyb3VwLklEICAgICBDaGVja2VkICBDb25maWRlbmNlICAgICAgU2VxdWVuY2VcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8aW50ZWdlcj4gPGNoYXJhY3Rlcj4gPGNoYXJhY3Rlcj4gICA8Y2hhcmFjdGVyPlxuMjU3ODMgICAgICAgICAgICAgICAgICAgICAgICAgICAyNTc4MyAgICAgICBGYWxzZSAgICAgICAgSGlnaCBNQUFBV0dTU0xULi4uXG4yNjEwMCAgICAgICAgICAgICAgICAgICAgICAgICAgIDI2MTAwICAgICAgIEZhbHNlICAgICAgICBIaWdoIE1BUUdMRVZBTFQuLi5cbjI2MzY0ICAgICAgICAgICAgICAgICAgICAgICAgICAgMjYzNjQgICAgICAgRmFsc2UgICAgICAgIEhpZ2ggTURJQUlISFBXSS4uLlxuMjYzNjUgICAgICAgICAgICAgICAgICAgICAgICAgICAyNjM2NSAgICAgICBGYWxzZSAgICAgICAgSGlnaCBNRElBSUhIUFdJLi4uXG4yNjM1OCAgICAgICAgICAgICAgICAgICAgICAgICAgIDI2MzU4ICAgICAgIEZhbHNlICAgICAgICBIaWdoICAgICBNREtORUxWUUtcbjI2NDAyICAgICAgICAgICAgICAgICAgICAgICAgICAgMjY0MDIgICAgICAgRmFsc2UgICAgICAgIEhpZ2ggTURQTkNTQ0FBRy4uLlxuICAgICAgQW5ub3RhdGVkLlNlcXVlbmNlIE1vZGlmaWNhdGlvbnMgUXZhbGl0eS5QRVAgUXZhbGl0eS5xLnZhbHVlXG4gICAgICAgICAgICAgPGNoYXJhY3Rlcj4gICA8Y2hhcmFjdGVyPiAgIDxudW1lcmljPiAgICAgICA8bnVtZXJpYz5cbjI1NzgzICAgICAgWy1dLk1BQUFXRy4uLiAxeExhYmVsOjEzLi4uIDcuOTE4OTNlLTAyICAgICAwLjAwNjIwOTU5MFxuMjYxMDAgICAgICBbLV0uTUFRR0xFLi4uIDF4QWNldHlsIFsuLi4gNS4xNjMyNmUtMDIgICAgIDAuMDA0Mjc5ODYwXG4yNjM2NCAgICAgIFstXS5NRElBSUguLi4gMXhBY2V0eWwgWy4uLiAyLjY3NDc4ZS0wMyAgICAgMC4wMDAxNjcyOTRcbjI2MzY1ICAgICAgWy1dLk1ESUFJSC4uLiAxeEFjZXR5bCBbLi4uIDMuNDk0NzRlLTAzICAgICAwLjAwMDE2NzI5NFxuMjYzNTggICAgICBbLV0uTURLTkVMLi4uIDF4QWNldHlsIFsuLi4gNy4yNzU1NmUtMDMgICAgIDAuMDAwODkyNjkyXG4yNjQwMiAgICAgIFstXS5NRFBOQ1MuLi4gMXhBY2V0eWwgWy4uLiA1LjU4Njg0ZS0wNyAgICAgMC4wMDAxNjcyOTRcbiAgICAgIE51bWJlci5vZi5Qcm90ZWluLkdyb3VwcyBOdW1iZXIub2YuUHJvdGVpbnMgTnVtYmVyLm9mLlBTTXNcbiAgICAgICAgICAgICAgICAgICAgIDxpbnRlZ2VyPiAgICAgICAgICA8aW50ZWdlcj4gICAgICA8aW50ZWdlcj5cbjI1NzgzICAgICAgICAgICAgICAgICAgICAgICAgMSAgICAgICAgICAgICAgICAgIDEgICAgICAgICAgICAgIDFcbjI2MTAwICAgICAgICAgICAgICAgICAgICAgICAgMSAgICAgICAgICAgICAgICAgIDEgICAgICAgICAgICAgIDJcbjI2MzY0ICAgICAgICAgICAgICAgICAgICAgICAgMSAgICAgICAgICAgICAgICAgIDEgICAgICAgICAgICAgIDRcbjI2MzY1ICAgICAgICAgICAgICAgICAgICAgICAgMSAgICAgICAgICAgICAgICAgIDEgICAgICAgICAgICAgIDNcbjI2MzU4ICAgICAgICAgICAgICAgICAgICAgICAgMSAgICAgICAgICAgICAgICAgIDEgICAgICAgICAgICAgIDJcbjI2NDAyICAgICAgICAgICAgICAgICAgICAgICAgMSAgICAgICAgICAgICAgICAgIDEgICAgICAgICAgICAgIDFcbiAgICAgIE1hc3Rlci5Qcm90ZWluLkFjY2Vzc2lvbnMgUG9zaXRpb25zLmluLk1hc3Rlci5Qcm90ZWluc1xuICAgICAgICAgICAgICAgICAgICA8Y2hhcmFjdGVyPiAgICAgICAgICAgICAgICAgIDxjaGFyYWN0ZXI+XG4yNTc4MyAgICAgICAgICAgICAgICAgICAgUTg2VTI4ICAgICAgICAgICAgICAgIFE4NlUyOCBbMS0uLi5cbjI2MTAwICAgICAgICAgICAgICAgICAgICBPNDM1NDggICAgICAgICAgICAgICAgTzQzNTQ4IFsxLS4uLlxuMjYzNjQgICAgICAgICAgICAgICAgICAgIFAwMjUxMSAgICAgICAgICAgICAgICBQMDI1MTEgWzEtLi4uXG4yNjM2NSAgICAgICAgICAgICAgICAgICAgUDAyNTExICAgICAgICAgICAgICAgIFAwMjUxMSBbMS0uLi5cbjI2MzU4ICAgICAgICAgICAgICAgICAgICBQNjMxMDQgICAgICAgICAgICAgICAgUDYzMTA0IFsxLS4uLlxuMjY0MDIgICAgICAgICAgICAgICAgICAgIFAwMjc5NSAgICAgICAgICAgICAgICBQMDI3OTUgWzEtLi4uXG4gICAgICBNb2RpZmljYXRpb25zLmluLk1hc3Rlci5Qcm90ZWlucyBQcm90ZWluLkFjY2Vzc2lvbnMgTnVtYmVyLm9mLk1pc3NlZC5DbGVhdmFnZXNcbiAgICAgICAgICAgICAgICAgICAgICAgICAgIDxjaGFyYWN0ZXI+ICAgICAgICA8Y2hhcmFjdGVyPiAgICAgICAgICAgICAgICAgIDxpbnRlZ2VyPlxuMjU3ODMgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgUTg2VTI4ICAgICAgICAgICAgICAgICAgICAgICAgICAwXG4yNjEwMCAgICAgICAgICAgICAgICAgICAgTzQzNTQ4IDF4QS4uLiAgICAgICAgICAgICBPNDM1NDggICAgICAgICAgICAgICAgICAgICAgICAgIDBcbjI2MzY0ICAgICAgICAgICAgICAgICAgICBQMDI1MTEgMXhBLi4uICAgICAgICAgICAgIFAwMjUxMSAgICAgICAgICAgICAgICAgICAgICAgICAgMFxuMjYzNjUgICAgICAgICAgICAgICAgICAgIFAwMjUxMSAxeEEuLi4gICAgICAgICAgICAgUDAyNTExICAgICAgICAgICAgICAgICAgICAgICAgICAwXG4yNjM1OCAgICAgICAgICAgICAgICAgICAgUDYzMTA0IDF4QS4uLiAgICAgICAgICAgICBQNjMxMDQgICAgICAgICAgICAgICAgICAgICAgICAgIDFcbjI2NDAyICAgICAgICAgICAgICAgICAgICBQMDI3OTUgMXhBLi4uICAgICAgICAgICAgIFAwMjc5NSAgICAgICAgICAgICAgICAgICAgICAgICAgMFxuICAgICAgVGhlby5NSHBsdXMuaW4uRGEgUHJlY3Vyc29yLlF1YW4uUmVzdWx0LklEICAgICBRdWFuLkluZm8gUXVhbi5DaGFubmVsXG4gICAgICAgICAgICAgIDxudW1lcmljPiAgICAgICAgICAgICAgICA8aW50ZWdlcj4gICA8Y2hhcmFjdGVyPiAgPGNoYXJhY3Rlcj5cbjI1NzgzICAgICAgICAgICAxNTMxLjc2ICAgICAgICAgICAgICAgICAgICAgMzE3NCAgICAgICAgICAgICAgICAgICAgICBIZWF2eVxuMjYxMDAgICAgICAgICAgIDE3NzAuODkgICAgICAgICAgICAgICAgICAgICAzMTc1IE5vUXVhblZhbHUuLi4gICAgICAgIEhlYXZ5XG4yNjM2NCAgICAgICAgICAgMTQzMC43NCAgICAgICAgICAgICAgICAgICAgIDMxODUgICAgIFJlZHVuZGFudCAgICAgICAgTGlnaHRcbjI2MzY1ICAgICAgICAgICAxNDQwLjc0ICAgICAgICAgICAgICAgICAgICAgMzE4NSAgICAgICAgICAgICAgICAgICAgICBIZWF2eVxuMjYzNTggICAgICAgICAgIDExNjIuNjEgICAgICAgICAgICAgICAgICAgICAzMTg0ICAgICAgICAgICAgICAgICAgICAgIEhlYXZ5XG4yNjQwMiAgICAgICAgICAgMjI1OC43OCAgICAgICAgICAgICAgICAgICAgIDMxODcgTm9RdWFuVmFsdS4uLiAgICAgICAgSGVhdnlcbiAgICAgIEZvdW5kLmluLlNhbXBsZS5pbi5TMS5GMS5MaWdodC5Db250cm9sIEZvdW5kLmluLlNhbXBsZS5pbi5TMi5GMS5IZWF2eS5TYW1wbGVcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxjaGFyYWN0ZXI+ICAgICAgICAgICAgICAgICAgICAgICAgICAgPGNoYXJhY3Rlcj5cbjI1NzgzICAgICAgICAgICAgICAgICAgICAgICAgICAgICBQZWFrIEZvdW5kICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEhpZ2hcbjI2MTAwICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgTm90IEZvdW5kICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEhpZ2hcbjI2MzY0ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBIaWdoICAgICAgICAgICAgICAgICAgICAgICAgICAgIFBlYWsgRm91bmRcbjI2MzY1ICAgICAgICAgICAgICAgICAgICAgICAgICAgICBQZWFrIEZvdW5kICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEhpZ2hcbjI2MzU4ICAgICAgICAgICAgICAgICAgICAgICAgICAgICBQZWFrIEZvdW5kICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEhpZ2hcbjI2NDAyICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgTm90IEZvdW5kICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEhpZ2hcbiAgICAgIENvbmZpZGVuY2UuYnkuU2VhcmNoLkVuZ2luZS5NUy5BbWFuZGEuMjAgQ29uZmlkZW5jZS5ieS5TZWFyY2guRW5naW5lLlNlcXVlc3QuSFRcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGNoYXJhY3Rlcj4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPGNoYXJhY3Rlcj5cbjI1NzgzICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEhpZ2ggICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBuL2FcbjI2MTAwICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEhpZ2ggICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEhpZ2hcbjI2MzY0ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEhpZ2ggICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEhpZ2hcbjI2MzY1ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEhpZ2ggICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEhpZ2hcbjI2MzU4ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEhpZ2ggICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEhpZ2hcbjI2NDAyICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBuL2EgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEhpZ2hcbiAgICAgIFBlcmNvbGF0b3IucS5WYWx1ZS5ieS5TZWFyY2guRW5naW5lLk1TLkFtYW5kYS4yMFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPG51bWVyaWM+XG4yNTc4MyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjAwMzAxMjBcbjI2MTAwICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAuMDAyNDI5MFxuMjYzNjQgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMC4wMDA0MzU3XG4yNjM2NSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjAwMDE4MDZcbjI2MzU4ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAuMDAxMDUwMFxuMjY0MDIgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BXG4gICAgICBQZXJjb2xhdG9yLnEuVmFsdWUuYnkuU2VhcmNoLkVuZ2luZS5TZXF1ZXN0LkhUXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPG51bWVyaWM+XG4yNTc4MyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BXG4yNjEwMCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMC4wMDIyOTMwXG4yNjM2NCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMC4wMDAxNTU5XG4yNjM2NSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMC4wMDEzMTcwXG4yNjM1OCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMC4wMDA1ODQxXG4yNjQwMiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMC4wMDAxNTU5XG4gICAgICBQZXJjb2xhdG9yLlBFUC5ieS5TZWFyY2guRW5naW5lLk1TLkFtYW5kYS4yMFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8bnVtZXJpYz5cbjI1NzgzICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAuMDQzMDkwXG4yNjEwMCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjAyNjE0MFxuMjYzNjQgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMC4wMDIxOTJcbjI2MzY1ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAuMDAxMTk4XG4yNjM1OCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwLjAwOTcxNFxuMjY0MDIgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgTkFcbiAgICAgIFBlcmNvbGF0b3IuUEVQLmJ5LlNlYXJjaC5FbmdpbmUuU2VxdWVzdC5IVCBYQ29yci5ieS5TZWFyY2guRW5naW5lLlNlcXVlc3QuSFRcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxudW1lcmljPiAgICAgICAgICAgICAgICAgICAgICAgICA8bnVtZXJpYz5cbjI1NzgzICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBOQSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgTkFcbjI2MTAwICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDIuMjA4ZS0wMiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDMuNTVcbjI2MzY0ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDcuNTgwZS0wNCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDEuOTNcbjI2MzY1ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDguNjkwZS0wMyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDIuNDVcbjI2MzU4ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDIuMjY1ZS0wMyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDIuOTNcbjI2NDAyICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDUuOTgxZS0wOCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDMuOTBcbiAgICAgIEFtYW5kYS5TY29yZS5ieS5TZWFyY2guRW5naW5lLk1TLkFtYW5kYS4yMFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPG51bWVyaWM+XG4yNTc4MyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgNDAuMTNcbjI2MTAwICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA3MS4zM1xuMjYzNjQgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDcyLjk2XG4yNjM2NSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgNjUuNzBcbjI2MzU4ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDEyNC4wNFxuMjY0MDIgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BXG4gICAgICBDaGFybWVSVC5Db21iaW5lZC5TY29yZS5ieS5TZWFyY2guRW5naW5lLk1TLkFtYW5kYS4yMCBUb3AuQXBleC5SVC5pbi5taW5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPG51bWVyaWM+ICAgICAgICAgIDxudW1lcmljPlxuMjU3ODMgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgNDAuMTMgICAgICAgICAgICAgIDE3LjA1XG4yNjEwMCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA3MS4zMyAgICAgICAgICAgICAgICAgTkFcbjI2MzY0ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDcyLjk2ICAgICAgICAgICAgICAzOS42MFxuMjYzNjUgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgNjUuNzAgICAgICAgICAgICAgIDM5LjYwXG4yNjM1OCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDEyNC4wNCAgICAgICAgICAgICAgMjcuNDVcbjI2NDAyICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICAgICAgICAgICBOQVxuIn0= -->
+<pre><code>DataFrame with 6 rows and 32 columns
+      Peptide.Groups.Peptide.Group.ID     Checked  Confidence      Sequence
+                            &lt;integer&gt; &lt;character&gt; &lt;character&gt;   &lt;character&gt;
+25783                           25783       False        High MAAAWGSSLT...
+26100                           26100       False        High MAQGLEVALT...
+26364                           26364       False        High MDIAIHHPWI...
+26365                           26365       False        High MDIAIHHPWI...
+26358                           26358       False        High     MDKNELVQK
+26402                           26402       False        High MDPNCSCAAG...
+      Annotated.Sequence Modifications Qvality.PEP Qvality.q.value
+             &lt;character&gt;   &lt;character&gt;   &lt;numeric&gt;       &lt;numeric&gt;
+25783      [-].MAAAWG... 1xLabel:13... 7.91893e-02     0.006209590
+26100      [-].MAQGLE... 1xAcetyl [... 5.16326e-02     0.004279860
+26364      [-].MDIAIH... 1xAcetyl [... 2.67478e-03     0.000167294
+26365      [-].MDIAIH... 1xAcetyl [... 3.49474e-03     0.000167294
+26358      [-].MDKNEL... 1xAcetyl [... 7.27556e-03     0.000892692
+26402      [-].MDPNCS... 1xAcetyl [... 5.58684e-07     0.000167294
+      Number.of.Protein.Groups Number.of.Proteins Number.of.PSMs
+                     &lt;integer&gt;          &lt;integer&gt;      &lt;integer&gt;
+25783                        1                  1              1
+26100                        1                  1              2
+26364                        1                  1              4
+26365                        1                  1              3
+26358                        1                  1              2
+26402                        1                  1              1
+      Master.Protein.Accessions Positions.in.Master.Proteins
+                    &lt;character&gt;                  &lt;character&gt;
+25783                    Q86U28                Q86U28 [1-...
+26100                    O43548                O43548 [1-...
+26364                    P02511                P02511 [1-...
+26365                    P02511                P02511 [1-...
+26358                    P63104                P63104 [1-...
+26402                    P02795                P02795 [1-...
+      Modifications.in.Master.Proteins Protein.Accessions Number.of.Missed.Cleavages
+                           &lt;character&gt;        &lt;character&gt;                  &lt;integer&gt;
+25783                                              Q86U28                          0
+26100                    O43548 1xA...             O43548                          0
+26364                    P02511 1xA...             P02511                          0
+26365                    P02511 1xA...             P02511                          0
+26358                    P63104 1xA...             P63104                          1
+26402                    P02795 1xA...             P02795                          0
+      Theo.MHplus.in.Da Precursor.Quan.Result.ID     Quan.Info Quan.Channel
+              &lt;numeric&gt;                &lt;integer&gt;   &lt;character&gt;  &lt;character&gt;
+25783           1531.76                     3174                      Heavy
+26100           1770.89                     3175 NoQuanValu...        Heavy
+26364           1430.74                     3185     Redundant        Light
+26365           1440.74                     3185                      Heavy
+26358           1162.61                     3184                      Heavy
+26402           2258.78                     3187 NoQuanValu...        Heavy
+      Found.in.Sample.in.S1.F1.Light.Control Found.in.Sample.in.S2.F1.Heavy.Sample
+                                 &lt;character&gt;                           &lt;character&gt;
+25783                             Peak Found                                  High
+26100                              Not Found                                  High
+26364                                   High                            Peak Found
+26365                             Peak Found                                  High
+26358                             Peak Found                                  High
+26402                              Not Found                                  High
+      Confidence.by.Search.Engine.MS.Amanda.20 Confidence.by.Search.Engine.Sequest.HT
+                                   &lt;character&gt;                            &lt;character&gt;
+25783                                     High                                    n/a
+26100                                     High                                   High
+26364                                     High                                   High
+26365                                     High                                   High
+26358                                     High                                   High
+26402                                      n/a                                   High
+      Percolator.q.Value.by.Search.Engine.MS.Amanda.20
+                                             &lt;numeric&gt;
+25783                                        0.0030120
+26100                                        0.0024290
+26364                                        0.0004357
+26365                                        0.0001806
+26358                                        0.0010500
+26402                                               NA
+      Percolator.q.Value.by.Search.Engine.Sequest.HT
+                                           &lt;numeric&gt;
+25783                                             NA
+26100                                      0.0022930
+26364                                      0.0001559
+26365                                      0.0013170
+26358                                      0.0005841
+26402                                      0.0001559
+      Percolator.PEP.by.Search.Engine.MS.Amanda.20
+                                         &lt;numeric&gt;
+25783                                     0.043090
+26100                                     0.026140
+26364                                     0.002192
+26365                                     0.001198
+26358                                     0.009714
+26402                                           NA
+      Percolator.PEP.by.Search.Engine.Sequest.HT XCorr.by.Search.Engine.Sequest.HT
+                                       &lt;numeric&gt;                         &lt;numeric&gt;
+25783                                         NA                                NA
+26100                                  2.208e-02                              3.55
+26364                                  7.580e-04                              1.93
+26365                                  8.690e-03                              2.45
+26358                                  2.265e-03                              2.93
+26402                                  5.981e-08                              3.90
+      Amanda.Score.by.Search.Engine.MS.Amanda.20
+                                       &lt;numeric&gt;
+25783                                      40.13
+26100                                      71.33
+26364                                      72.96
+26365                                      65.70
+26358                                     124.04
+26402                                         NA
+      CharmeRT.Combined.Score.by.Search.Engine.MS.Amanda.20 Top.Apex.RT.in.min
+                                                  &lt;numeric&gt;          &lt;numeric&gt;
+25783                                                 40.13              17.05
+26100                                                 71.33                 NA
+26364                                                 72.96              39.60
+26365                                                 65.70              39.60
+26358                                                124.04              27.45
+26402                                                    NA                 NA</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYW55RHVwbGljYXRlZChzaWxhY19wZXAyICU+JSByb3duYW1lcygpKVxuYGBgIn0= -->
+<pre class="r"><code>anyDuplicated(silac_pep2 %&gt;% rownames())</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDBcbiJ9 -->
+<pre><code>[1] 0</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29sbmFtZXModGVzdF9xZltbJ3BzbXMnXV0pXG5gYGAifQ== -->
+<pre class="r"><code>colnames(test_qf[[&#39;psms&#39;]])</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiQWJ1bmRhbmNlLkxpZ2h0XCIgICAgICBcIkFidW5kYW5jZS5IZWF2eVwiICAgICAgXCJBYnVuZGFuY2UuVW5hc3NpZ25lZFwiXG4ifQ== -->
+<pre><code>[1] &quot;Abundance.Light&quot;      &quot;Abundance.Heavy&quot;      &quot;Abundance.Unassigned&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29sbmFtZXMoc2lsYWNfcGVwMilcbmBgYCJ9 -->
+<pre class="r"><code>colnames(silac_pep2)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiQWJ1bmRhbmNlLkxpZ2h0XCIgXCJBYnVuZGFuY2UuSGVhdnlcIlxuIn0= -->
+<pre><code>[1] &quot;Abundance.Light&quot; &quot;Abundance.Heavy&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBjb2xuYW1lcyhzaWxhY19wZXAyKSA8LSBjKFwiUHJlY3Vyc29yLkFidW5kYW5jZVwiLCBcImJhbmFuYVwiKVxuYGBgIn0= -->
+<pre class="r"><code># colnames(silac_pep2) &lt;- c(&quot;Precursor.Abundance&quot;, &quot;banana&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGVzdF9xZjIgPC0gYWRkQXNzYXkodGVzdF9xZiwgc2lsYWNfcGVwMiwgbmFtZT0ncGVwdGlkZXMnKVxuYGBgIn0= -->
+<pre class="r"><code>test_qf2 &lt;- addAssay(test_qf, silac_pep2, name=&#39;peptides&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBMaW5rIHRoZSBQU01zIGFuZCB0aGUgcGVwdGlkZXNcbnRlc3RfcWYzIDwtIGFkZEFzc2F5TGluayh0ZXN0X3FmMixcbiAgICAgICAgICAgICAgICAgICAgICAgICBmcm9tID0gJ3BzbXMnLFxuICAgICAgICAgICAgICAgICAgICAgICAgIHRvID0gJ3BlcHRpZGVzJyxcbiAgICAgICAgICAgICAgICAgICAgICAgICB2YXJGcm9tID0gJ1BlcHRpZGUuR3JvdXBzLlBlcHRpZGUuR3JvdXAuSUQnLFxuICAgICAgICAgICAgICAgICAgICAgICAgIHZhclRvID0gJ1BlcHRpZGUuR3JvdXBzLlBlcHRpZGUuR3JvdXAuSUQnKVxuYGBgIn0= -->
+<pre class="r"><code># Link the PSMs and the peptides
+test_qf3 &lt;- addAssayLink(test_qf2,
+                         from = &#39;psms&#39;,
+                         to = &#39;peptides&#39;,
+                         varFrom = &#39;Peptide.Groups.Peptide.Group.ID&#39;,
+                         varTo = &#39;Peptide.Groups.Peptide.Group.ID&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucm93bmFtZXModGVzdF9xZjNbWydwZXB0aWRlcyddXSlcbmBgYCJ9 -->
+<pre class="r"><code>rownames(test_qf3[[&#39;peptides&#39;]])</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgWzFdIFwiMjU3ODNcIiBcIjI2MTAwXCIgXCIyNjM2NFwiIFwiMjYzNjVcIiBcIjI2MzU4XCIgXCIyNjQwMlwiIFwiMjY0MDFcIiBcIjI2NDAwXCJcbiAgIFs5XSBcIjI2NjMxXCIgXCIyNjYzOFwiIFwiMjY3NDRcIiBcIjI4NzEzXCIgXCIyODcxMlwiIFwiOFwiICAgICBcIjdcIiAgICAgXCIyNVwiICAgXG4gIFsxN10gXCI0MVwiICAgIFwiNDBcIiAgICBcIjUyXCIgICAgXCI1MVwiICAgIFwiNTlcIiAgICBcIjYwXCIgICAgXCI2NFwiICAgIFwiNjhcIiAgIFxuICBbMjVdIFwiODBcIiAgICBcIjgxXCIgICAgXCIxMTNcIiAgIFwiMTEyXCIgICBcIjEyNlwiICAgXCIxNTlcIiAgIFwiMTcxXCIgICBcIjE3MFwiICBcbiAgWzMzXSBcIjE3N1wiICAgXCIxNzZcIiAgIFwiMjAxXCIgICBcIjIwMlwiICAgXCIyMjJcIiAgIFwiMjIxXCIgICBcIjIwN1wiICAgXCIyMDhcIiAgXG4gIFs0MV0gXCIyNTFcIiAgIFwiMjU0XCIgICBcIjI3MlwiICAgXCIyOTBcIiAgIFwiMjg5XCIgICBcIjMxNFwiICAgXCIzMTNcIiAgIFwiMzc5XCIgIFxuICBbNDldIFwiMzgwXCIgICBcIjM4OFwiICAgXCIzODdcIiAgIFwiNDAwXCIgICBcIjM5OVwiICAgXCI0MDlcIiAgIFwiNDA4XCIgICBcIjQxOVwiICBcbiAgWzU3XSBcIjQyMFwiICAgXCI0MjJcIiAgIFwiNDIxXCIgICBcIjQzMlwiICAgXCI0MzFcIiAgIFwiNDQ5XCIgICBcIjQ0OFwiICAgXCI0NjJcIiAgXG4gIFs2NV0gXCI0NzBcIiAgIFwiNDcxXCIgICBcIjQ3N1wiICAgXCI0NzhcIiAgIFwiNDk2XCIgICBcIjUyNlwiICAgXCI1MjVcIiAgIFwiNTI3XCIgIFxuICBbNzNdIFwiNTI4XCIgICBcIjUxNFwiICAgXCI1MjlcIiAgIFwiNTQwXCIgICBcIjUzOVwiICAgXCI1MzhcIiAgIFwiNTgxXCIgICBcIjU4MlwiICBcbiAgWzgxXSBcIjU5MVwiICAgXCI1OTRcIiAgIFwiNTk2XCIgICBcIjU5OFwiICAgXCI2MDJcIiAgIFwiNjA1XCIgICBcIjYwNFwiICAgXCI2MjJcIiAgXG4gIFs4OV0gXCI2MjFcIiAgIFwiNjQ0XCIgICBcIjcyM1wiICAgXCI3MzdcIiAgIFwiNzQ0XCIgICBcIjc1M1wiICAgXCI4MjhcIiAgIFwiODI5XCIgIFxuICBbOTddIFwiODMwXCIgICBcIjc5NVwiICAgXCI3OTZcIiAgIFwiODE0XCIgICBcIjg1NlwiICAgXCI4NTVcIiAgIFwiODcxXCIgICBcIjg3MFwiICBcbiBbMTA1XSBcIjg3NVwiICAgXCI4ODhcIiAgIFwiODg3XCIgICBcIjg4NVwiICAgXCI4ODZcIiAgIFwiOTYzXCIgICBcIjk2NlwiICAgXCI5NjVcIiAgXG4gWzExM10gXCI5NzBcIiAgIFwiOTY5XCIgICBcIjk5MFwiICAgXCI5ODlcIiAgIFwiOTk5XCIgICBcIjEwMDBcIiAgXCIxMDEyXCIgIFwiMTAxM1wiIFxuIFsxMjFdIFwiMTA2MVwiICBcIjEwNjhcIiAgXCIxMDgwXCIgIFwiMTA4OVwiICBcIjEwOTJcIiAgXCIxMDkzXCIgIFwiMTEwMVwiICBcIjExMDJcIiBcbiBbMTI5XSBcIjExMTJcIiAgXCIxMTM2XCIgIFwiMTE0OFwiICBcIjExNTFcIiAgXCIxMTUzXCIgIFwiMTE1OFwiICBcIjEyNDdcIiAgXCIxMjY3XCIgXG4gWzEzN10gXCIxMjY5XCIgIFwiMTI1OFwiICBcIjEyNjNcIiAgXCIxMjYyXCIgIFwiMTI3MFwiICBcIjEyNzRcIiAgXCIxMjc1XCIgIFwiMTI4MVwiIFxuIFsxNDVdIFwiMTI4N1wiICBcIjEyODhcIiAgXCIxMjkwXCIgIFwiMTI4OVwiICBcIjEzMDZcIiAgXCIxMzA3XCIgIFwiMTMxM1wiICBcIjEzMTJcIiBcbiBbMTUzXSBcIjEzMTlcIiAgXCIxMzE4XCIgIFwiMTMyNVwiICBcIjEzMjRcIiAgXCIxMzI5XCIgIFwiMTM0NlwiICBcIjEzNDVcIiAgXCIxMzc5XCIgXG4gWzE2MV0gXCIxMzg0XCIgIFwiMTM4NVwiICBcIjEzODdcIiAgXCIxMzg4XCIgIFwiMTQwNVwiICBcIjE0MDZcIiAgXCIxNDEwXCIgIFwiMTQxOFwiIFxuIFsxNjldIFwiMTQyMVwiICBcIjE0MjJcIiAgXCIxNDYyXCIgIFwiMTQ2MVwiICBcIjE0NjRcIiAgXCIxNDYzXCIgIFwiMTYwNVwiICBcIjE2MDZcIiBcbiBbMTc3XSBcIjE2MDhcIiAgXCIxNjA5XCIgIFwiMTYzM1wiICBcIjE2MzRcIiAgXCIxNjczXCIgIFwiMTY3NFwiICBcIjE3MTNcIiAgXCIxNzMxXCIgXG4gWzE4NV0gXCIxNzczXCIgIFwiMTc3NFwiICBcIjE4MDNcIiAgXCIxODA0XCIgIFwiMTgzOFwiICBcIjE4OTNcIiAgXCIxODk0XCIgIFwiMTg2NFwiIFxuIFsxOTNdIFwiMTk0NlwiICBcIjE5NDdcIiAgXCIxOTQ5XCIgIFwiMTk1N1wiICBcIjE5NThcIiAgXCIxOTU5XCIgIFwiMTk2MFwiICBcIjE5NzlcIiBcbiBbMjAxXSBcIjE5NzhcIiAgXCIyMDU0XCIgIFwiMjEzN1wiICBcIjIxNDVcIiAgXCIyMTQ5XCIgIFwiMjE2MlwiICBcIjIxNjFcIiAgXCIxNDg4XCIgXG4gWzIwOV0gXCIxNTMxXCIgIFwiMTUzMlwiICBcIjE1NTNcIiAgXCIxNTk3XCIgIFwiMTU5OFwiICBcIjE2MDFcIiAgXCIxNjIxXCIgIFwiMTYzN1wiIFxuIFsyMTddIFwiMTYzOFwiICBcIjE2MzlcIiAgXCIxNjY0XCIgIFwiMTY2NVwiICBcIjE2NjdcIiAgXCIxNjcxXCIgIFwiMTY3MlwiICBcIjE2OTBcIiBcbiBbMjI1XSBcIjE2ODlcIiAgXCIxNjk3XCIgIFwiMTcwMVwiICBcIjE3MTRcIiAgXCIxNzE4XCIgIFwiMTcyOVwiICBcIjE3MzBcIiAgXCIxNzI3XCIgXG4gWzIzM10gXCIxNzI4XCIgIFwiMTczNFwiICBcIjE3MzlcIiAgXCIxNzUxXCIgIFwiMTc2MVwiICBcIjE3NjBcIiAgXCIxNzY3XCIgIFwiMTc3MlwiIFxuIFsyNDFdIFwiMTc3OVwiICBcIjE3ODBcIiAgXCIxNzg0XCIgIFwiMTc4NVwiICBcIjE3OTFcIiAgXCIxODE2XCIgIFwiMTg1OVwiICBcIjE4NThcIiBcbiBbMjQ5XSBcIjE4NzRcIiAgXCIxODc1XCIgIFwiMTg3OFwiICBcIjE4NzlcIiAgXCIxODY2XCIgIFwiMTg2N1wiICBcIjE4ODBcIiAgXCIxODgxXCIgXG4gWzI1N10gXCIxOTAxXCIgIFwiMTkxMFwiICBcIjE5MjlcIiAgXCIxOTQ1XCIgIFwiMTk3NlwiICBcIjE5NzVcIiAgXCIxOTk1XCIgIFwiMjAwMVwiIFxuIFsyNjVdIFwiMjAwMlwiICBcIjIwMDRcIiAgXCIyMDAzXCIgIFwiMjAxMFwiICBcIjIwMTdcIiAgXCIyMDE4XCIgIFwiMjA3MlwiICBcIjIwNzdcIiBcbiBbMjczXSBcIjIwNzhcIiAgXCIyMDk0XCIgIFwiMjA5NVwiICBcIjIxMTdcIiAgXCIyMTE4XCIgIFwiMjExOVwiICBcIjIxNDdcIiAgXCIyMTQ2XCIgXG4gWzI4MV0gXCIyMTUwXCIgIFwiMjE1MVwiICBcIjIxNjVcIiAgXCIyMTcwXCIgIFwiMjE5NlwiICBcIjIxOTdcIiAgXCIyMTk4XCIgIFwiMjIxNlwiIFxuIFsyODldIFwiMjIxN1wiICBcIjIzMzZcIiAgXCIyMzM3XCIgIFwiMjM0OFwiICBcIjIzNDlcIiAgXCIyMzY2XCIgIFwiMjM3OFwiICBcIjIzNzdcIiBcbiBbMjk3XSBcIjIzOTBcIiAgXCIyNDAyXCIgIFwiMjQwMVwiICBcIjI0MzFcIiAgXCIyNDU0XCIgIFwiMjQ1OFwiICBcIjI0NDZcIiAgXCIyNDUwXCIgXG4gWzMwNV0gXCIyNDUxXCIgIFwiMjQ1NVwiICBcIjI0NzhcIiAgXCIyNDk1XCIgIFwiMjQ5NlwiICBcIjI1MDRcIiAgXCIyNTAzXCIgIFwiMjUxNVwiIFxuIFszMTNdIFwiMjUxNlwiICBcIjI1MjJcIiAgXCIyNTIxXCIgIFwiMjUyOFwiICBcIjI1MjlcIiAgXCIyNTQxXCIgIFwiMjU0MlwiICBcIjI1NDNcIiBcbiBbMzIxXSBcIjI1NTNcIiAgXCIyNTU0XCIgIFwiMjU2MVwiICBcIjI1ODJcIiAgXCIyNTkxXCIgIFwiMjYzMlwiICBcIjI2MzFcIiAgXCIyNjI1XCIgXG4gWzMyOV0gXCIyNjI2XCIgIFwiMjYyOFwiICBcIjI2MjdcIiAgXCIyNjI5XCIgIFwiMjY1MlwiICBcIjI2NTFcIiAgXCIyNjY1XCIgIFwiMjY2NFwiIFxuIFszMzddIFwiMjY2NlwiICBcIjI2NjdcIiAgXCIyNjgwXCIgIFwiMjY4MVwiICBcIjI2OTJcIiAgXCIyNjkzXCIgIFwiMjcyN1wiICBcIjI3MzJcIiBcbiBbMzQ1XSBcIjI3MzNcIiAgXCIyNzQwXCIgIFwiMjc0OFwiICBcIjI3NDlcIiAgXCIyODYzXCIgIFwiMjg2NFwiICBcIjI5MzBcIiAgXCIyOTMzXCIgXG4gWzM1M10gXCIyOTM0XCIgIFwiMjkzNVwiICBcIjI5NDhcIiAgXCIyOTQ5XCIgIFwiMjk1NFwiICBcIjI5NTNcIiAgXCIyOTgzXCIgIFwiMzAxMVwiIFxuIFszNjFdIFwiMzAxMFwiICBcIjMwMTNcIiAgXCIzMDEyXCIgIFwiMzAyNFwiICBcIjMwMjVcIiAgXCIzMDI4XCIgIFwiMzAyOVwiICBcIjMwNTBcIiBcbiBbMzY5XSBcIjMwNDlcIiAgXCIzMDY0XCIgIFwiMzA2M1wiICBcIjMwNjdcIiAgXCIzMDc1XCIgIFwiMzA0MFwiICBcIjMwNDFcIiAgXCIzMDQ2XCIgXG4gWzM3N10gXCIzMDYxXCIgIFwiMzA2MFwiICBcIjMwNzNcIiAgXCIzMDc0XCIgIFwiMzE0MlwiICBcIjMxNDFcIiAgXCIzMTQ3XCIgIFwiMzE0OFwiIFxuIFszODVdIFwiMzE1NFwiICBcIjMxNTNcIiAgXCIzMTU2XCIgIFwiMzE1N1wiICBcIjMxNThcIiAgXCIzMTU5XCIgIFwiMzE3N1wiICBcIjMxODZcIiBcbiBbMzkzXSBcIjMxODVcIiAgXCIzMTk1XCIgIFwiMzE5OFwiICBcIjMyMDZcIiAgXCIzMjA1XCIgIFwiMzIxM1wiICBcIjMyMTRcIiAgXCIzMjE3XCIgXG4gWzQwMV0gXCIzMjE4XCIgIFwiMzIxOVwiICBcIjMyMjBcIiAgXCIzMjI0XCIgIFwiMzIyNVwiICBcIjMyMjZcIiAgXCIzMjI4XCIgIFwiMzIyOVwiIFxuIFs0MDldIFwiMzIzNFwiICBcIjMyMzNcIiAgXCIzMjY2XCIgIFwiMzI4MVwiICBcIjMyODBcIiAgXCIzMzAyXCIgIFwiMzMwNFwiICBcIjMzMDVcIiBcbiBbNDE3XSBcIjMzMDdcIiAgXCIzMzA4XCIgIFwiMzMyM1wiICBcIjMzMzFcIiAgXCIzMzMwXCIgIFwiMzM0OFwiICBcIjMzNDlcIiAgXCIzMzY1XCIgXG4gWzQyNV0gXCIzMzczXCIgIFwiMzM3NFwiICBcIjMzODlcIiAgXCIzMzkxXCIgIFwiMzM5MlwiICBcIjMzOTdcIiAgXCIzMzk4XCIgIFwiMzQwMlwiIFxuIFs0MzNdIFwiMzQwM1wiICBcIjM0MDhcIiAgXCIzNDA5XCIgIFwiMzQxOFwiICBcIjM0MTlcIiAgXCIzNDM0XCIgIFwiMzQ0NVwiICBcIjM0NDdcIiBcbiBbNDQxXSBcIjM0NDZcIiAgXCIzNDUzXCIgIFwiMzQ1NlwiICBcIjM0NTlcIiAgXCIzNDYwXCIgIFwiMzQ2NVwiICBcIjM0NjZcIiAgXCIzNDk0XCIgXG4gWzQ0OV0gXCIzNTE0XCIgIFwiMzUxOFwiICBcIjM1MTlcIiAgXCIzNTcxXCIgIFwiMzU2OVwiICBcIjM1ODBcIiAgXCIzNTgxXCIgIFwiMzU5MlwiIFxuIFs0NTddIFwiMzU5M1wiICBcIjM2MThcIiAgXCIzNjE5XCIgIFwiMzYyMFwiICBcIjM2MjFcIiAgXCIzNjIyXCIgIFwiMzYyM1wiICBcIjM2MzFcIiBcbiBbNDY1XSBcIjM2MzRcIiAgXCIzNjMzXCIgIFwiMzY1NFwiICBcIjM2NTNcIiAgXCIzNjk2XCIgIFwiMzY5N1wiICBcIjM3MTlcIiAgXCIzNzIwXCIgXG4gWzQ3M10gXCIzNzMzXCIgIFwiMzczNFwiICBcIjM3MzFcIiAgXCIzNzMyXCIgIFwiMzc0NVwiICBcIjM3NDZcIiAgXCIzNzQ3XCIgIFwiMzc0OFwiIFxuIFs0ODFdIFwiMzc1NVwiICBcIjM3NTZcIiAgXCIzNzU3XCIgIFwiMzc1OFwiICBcIjM3NjJcIiAgXCIzNzYzXCIgIFwiMzc2NFwiICBcIjM3ODJcIiBcbiBbNDg5XSBcIjM3ODNcIiAgXCIzNzkxXCIgIFwiMzc5MFwiICBcIjM4MDNcIiAgXCIzODI5XCIgIFwiMzgyOFwiICBcIjM4NThcIiAgXCIzODk0XCIgXG4gWzQ5N10gXCIzODk1XCIgIFwiMzkyOFwiICBcIjM5MjlcIiAgXCIzOTQ3XCIgIFwiMzk0OFwiICBcIjM5NjNcIiAgXCIzOTcxXCIgIFwiMzk3MlwiIFxuIFs1MDVdIFwiMzk3M1wiICBcIjQxNzNcIiAgXCI0MTkxXCIgIFwiNDE5MFwiICBcIjQwNzBcIiAgXCI0MTgxXCIgIFwiNDE4MFwiICBcIjQyMDdcIiBcbiBbNTEzXSBcIjQyMzRcIiAgXCI0MjMzXCIgIFwiNDI2MlwiICBcIjQyODZcIiAgXCI0Mjg1XCIgIFwiNDI5N1wiICBcIjQzMDVcIiAgXCI0MzA0XCIgXG4gWzUyMV0gXCI0MzUwXCIgIFwiNDM3OVwiICBcIjQ0NDBcIiAgXCI0NDQxXCIgIFwiNDQ3N1wiICBcIjQ1MjhcIiAgXCI0NTI3XCIgIFwiNDU2M1wiIFxuIFs1MjldIFwiNDU2NFwiICBcIjQ2MTNcIiAgXCI0NjEyXCIgIFwiNDYxOFwiICBcIjQ2MjJcIiAgXCI0NjMyXCIgIFwiNDYzM1wiICBcIjQ2NDJcIiBcbiBbNTM3XSBcIjQ2NDNcIiAgXCI0NjUwXCIgIFwiNDY1NlwiICBcIjQ2NjRcIiAgXCI0NjY1XCIgIFwiNDY2OFwiICBcIjQ2NjdcIiAgXCI0NjcwXCIgXG4gWzU0NV0gXCI0NjczXCIgIFwiNDY4MFwiICBcIjQ3MDNcIiAgXCI0NzA2XCIgIFwiNDcwN1wiICBcIjQ3NDFcIiAgXCI0NzQyXCIgIFwiNDc0M1wiIFxuIFs1NTNdIFwiNDc0NFwiICBcIjQ3NjhcIiAgXCI0NzY5XCIgIFwiNDc3NFwiICBcIjQ3NzNcIiAgXCI0ODA0XCIgIFwiNDgwNVwiICBcIjQ4MjlcIiBcbiBbNTYxXSBcIjQ4NzJcIiAgXCI0OTY3XCIgIFwiNDk2OFwiICBcIjUwMTdcIiAgXCI1MDIyXCIgIFwiNTAyM1wiICBcIjUwMjRcIiAgXCI1MDI1XCIgXG4gWzU2OV0gXCI1MDc5XCIgIFwiNTExNlwiICBcIjUxMTdcIiAgXCI1MTU2XCIgIFwiNTE1N1wiICBcIjUxNTFcIiAgXCI1MTUyXCIgIFwiNTE1OVwiIFxuIFs1NzddIFwiNTE3M1wiICBcIjUxNzRcIiAgXCI1MTc1XCIgIFwiNTE4MFwiICBcIjUxODFcIiAgXCI1MTkxXCIgIFwiNTE5MlwiICBcIjUxOThcIiBcbiBbNTg1XSBcIjUxOTdcIiAgXCI1MjE3XCIgIFwiNTIxOFwiICBcIjUyMTlcIiAgXCI1MjIzXCIgIFwiNTI0N1wiICBcIjUyNDhcIiAgXCI1MjU0XCIgXG4gWzU5M10gXCI1MjU1XCIgIFwiNTI1N1wiICBcIjU0NzBcIiAgXCI1NDcxXCIgIFwiNTUwN1wiICBcIjU1MzlcIiAgXCI1NTM4XCIgIFwiNTY0NlwiIFxuIFs2MDFdIFwiNTU4OFwiICBcIjU1ODdcIiAgXCI1NjYxXCIgIFwiNTY2MlwiICBcIjU2NjNcIiAgXCI1NjkyXCIgIFwiNTY5M1wiICBcIjU3NjBcIiBcbiBbNjA5XSBcIjU3NjFcIiAgXCI1Nzc5XCIgIFwiNTc4MFwiICBcIjU3ODNcIiAgXCI1Nzg0XCIgIFwiNTgwNVwiICBcIjU4MDZcIiAgXCI1NDAxXCIgXG4gWzYxN10gXCI1NDEwXCIgIFwiNTQxMVwiICBcIjU0MThcIiAgXCI1NDE5XCIgIFwiNTQ4MlwiICBcIjU0ODNcIiAgXCI1NDg5XCIgIFwiNTUwMFwiIFxuIFs2MjVdIFwiNTUyM1wiICBcIjU1NTRcIiAgXCI1NTU1XCIgIFwiNTYyN1wiICBcIjU2MjFcIiAgXCI1NjIyXCIgIFwiNTY4NVwiICBcIjU2ODRcIiBcbiBbNjMzXSBcIjU2ODdcIiAgXCI1Njg2XCIgIFwiNTc0NVwiICBcIjU3NTRcIiAgXCI1NzU1XCIgIFwiNTc4NVwiICBcIjU3OTdcIiAgXCI1ODMxXCIgXG4gWzY0MV0gXCI1ODMyXCIgIFwiNTkzNlwiICBcIjU5MzdcIiAgXCI1OTY1XCIgIFwiNTk2NlwiICBcIjYwOTVcIiAgXCI2MTQzXCIgIFwiNjE0NFwiIFxuIFs2NDldIFwiNjE1N1wiICBcIjYxODJcIiAgXCI2MTk2XCIgIFwiNjE5NVwiICBcIjYxOThcIiAgXCI2MTkyXCIgIFwiNjE5OVwiICBcIjYyMDBcIiBcbiBbNjU3XSBcIjYyMTFcIiAgXCI2MjE1XCIgIFwiNjIxNFwiICBcIjYyMzVcIiAgXCI2MjM0XCIgIFwiNjMxNlwiICBcIjYzMTdcIiAgXCI2MzczXCIgXG4gWzY2NV0gXCI2NDQxXCIgIFwiNjQ0MlwiICBcIjY0NTFcIiAgXCI2NDUwXCIgIFwiNjQ3MFwiICBcIjY0OTBcIiAgXCI2NDg5XCIgIFwiNjQ5OVwiIFxuIFs2NzNdIFwiNjQ5OFwiICBcIjY1MDdcIiAgXCI2NTA2XCIgIFwiNjUxMFwiICBcIjY1MTFcIiAgXCI2NTEzXCIgIFwiNjUxMlwiICBcIjY1NDRcIiBcbiBbNjgxXSBcIjY1NDNcIiAgXCI2NTQ1XCIgIFwiNjU1NVwiICBcIjY1NjJcIiAgXCI2NTYzXCIgIFwiNjU3NlwiICBcIjY1OTBcIiAgXCI2NTg5XCIgXG4gWzY4OV0gXCI2NTk3XCIgIFwiNjU5OFwiICBcIjY2MzNcIiAgXCI2NjM0XCIgIFwiNjY3N1wiICBcIjY2NzZcIiAgXCI2NjcwXCIgIFwiNjY5MVwiIFxuIFs2OTddIFwiNjY5MFwiICBcIjY2OThcIiAgXCI2Njk3XCIgIFwiNjcwNlwiICBcIjY3MDVcIiAgXCI2NzY3XCIgIFwiNjgyN1wiICBcIjY4MzVcIiBcbiBbNzA1XSBcIjY4MzlcIiAgXCI2ODQwXCIgIFwiNjg0NFwiICBcIjY4NzRcIiAgXCI2ODczXCIgIFwiNjg5MFwiICBcIjY5MjdcIiAgXCI2OTQ2XCIgXG4gWzcxM10gXCI2OTgyXCIgIFwiNjk3OVwiICBcIjY5ODRcIiAgXCI2OTk5XCIgIFwiNzAwMFwiICBcIjcwMDFcIiAgXCI3MDE1XCIgIFwiNzAxN1wiIFxuIFs3MjFdIFwiNzA2MFwiICBcIjcwNjFcIiAgXCI3MDY2XCIgIFwiNzA2N1wiICBcIjcxMDFcIiAgXCI3MTM4XCIgIFwiNzEzOVwiICBcIjcxNDNcIiBcbiBbNzI5XSBcIjcxNzlcIiAgXCI3MTgzXCIgIFwiNzE4NFwiICBcIjcxOTFcIiAgXCI3MTkwXCIgIFwiNzIyNlwiICBcIjcyMzFcIiAgXCI3MjMwXCIgXG4gWzczN10gXCI3MjM1XCIgIFwiNzIzNFwiICBcIjcyNTNcIiAgXCI3MjU0XCIgIFwiNzI3NlwiICBcIjcyNzdcIiAgXCI3MzA1XCIgIFwiNzMwNlwiIFxuIFs3NDVdIFwiNzMxN1wiICBcIjczMThcIiAgXCI3MzQyXCIgIFwiNzM0NFwiICBcIjczNTVcIiAgXCI3MzU2XCIgIFwiNzM3NVwiICBcIjczNzZcIiBcbiBbNzUzXSBcIjc0NDVcIiAgXCI3NDUzXCIgIFwiNzQ2MVwiICBcIjc0NjJcIiAgXCI3NTEzXCIgIFwiNzUyNVwiICBcIjc1NTVcIiAgXCI3NTU0XCIgXG4gWzc2MV0gXCI3NTkxXCIgIFwiNzU5MFwiICBcIjc2MjhcIiAgXCI3NjI5XCIgIFwiNzY2MlwiICBcIjc2NjFcIiAgXCI3Nzk4XCIgIFwiNzc5N1wiIFxuIFs3NjldIFwiNzc3MVwiICBcIjc5MzJcIiAgXCI3OTMzXCIgIFwiNzk1NlwiICBcIjc5NTdcIiAgXCI3OTc1XCIgIFwiNzk3NlwiICBcIjc5OTRcIiBcbiBbNzc3XSBcIjgwMTBcIiAgXCI4MDExXCIgIFwiODAxM1wiICBcIjgwMzRcIiAgXCI4MDM1XCIgIFwiODAzOFwiICBcIjgwMzlcIiAgXCI4MDkwXCIgXG4gWzc4NV0gXCI4MDg5XCIgIFwiODExMlwiICBcIjgxMzZcIiAgXCI4MTIyXCIgIFwiODEzMFwiICBcIjgxMzFcIiAgXCI4MTQyXCIgIFwiODE1NVwiIFxuIFs3OTNdIFwiODE1N1wiICBcIjgxNjdcIiAgXCI4MTczXCIgIFwiODE3NFwiICBcIjgyMDlcIiAgXCI4MjEzXCIgIFwiODIxMlwiICBcIjgyMjhcIiBcbiBbODAxXSBcIjgyMzRcIiAgXCI4NTE1XCIgIFwiODUxNlwiICBcIjg1MjNcIiAgXCI4NTI0XCIgIFwiODYyOVwiICBcIjg2MjhcIiAgXCI4NjcwXCIgXG4gWzgwOV0gXCI4NzU0XCIgIFwiODc1M1wiICBcIjg4MDFcIiAgXCI4ODAwXCIgIFwiODgxOVwiICBcIjg4MjBcIiAgXCI4ODMzXCIgIFwiODg1M1wiIFxuIFs4MTddIFwiODg1NFwiICBcIjg4NjdcIiAgXCI4ODY4XCIgIFwiOTA1N1wiICBcIjkwODVcIiAgXCI5MDg0XCIgIFwiOTA4NlwiICBcIjkwODNcIiBcbiBbODI1XSBcIjkxMjlcIiAgXCI5MTI4XCIgIFwiOTE4MFwiICBcIjgyOTVcIiAgXCI4MzExXCIgIFwiODM2MlwiICBcIjgzNjNcIiAgXCI4MzY4XCIgXG4gWzgzM10gXCI4MzY3XCIgIFwiODQ0MVwiICBcIjg0OThcIiAgXCI4NDk3XCIgIFwiODUyMlwiICBcIjg1NTFcIiAgXCI4NTUyXCIgIFwiODU2N1wiIFxuIFs4NDFdIFwiODYyNFwiICBcIjg2MzFcIiAgXCI4NjMwXCIgIFwiODYzN1wiICBcIjg2NTNcIiAgXCI4NjYzXCIgIFwiODY4MVwiICBcIjg2ODNcIiBcbiBbODQ5XSBcIjg3MThcIiAgXCI4NzE5XCIgIFwiODczNFwiICBcIjg3MzVcIiAgXCI4NzM2XCIgIFwiODcyOVwiICBcIjg3NTBcIiAgXCI4NzUxXCIgXG4gWzg1N10gXCI4NzU5XCIgIFwiODg0NlwiICBcIjg4NDVcIiAgXCI4Nzk1XCIgIFwiODc5NlwiICBcIjg4MjhcIiAgXCI4ODY0XCIgIFwiODkxNlwiIFxuIFs4NjVdIFwiODkzMVwiICBcIjg5MzJcIiAgXCI4OTk3XCIgIFwiOTAzMlwiICBcIjkwMzZcIiAgXCI5MDQ1XCIgIFwiOTA1MVwiICBcIjkwNTBcIiBcbiBbODczXSBcIjkwNzBcIiAgXCI5MDY5XCIgIFwiOTA5MVwiICBcIjkwOTJcIiAgXCI5MDk1XCIgIFwiOTA5NFwiICBcIjkxMTVcIiAgXCI5MTE2XCIgXG4gWzg4MV0gXCI5MTMyXCIgIFwiOTE1OFwiICBcIjkyODVcIiAgXCI5MzEyXCIgIFwiOTMxNVwiICBcIjkzMzNcIiAgXCI5MzYwXCIgIFwiOTM5OVwiIFxuIFs4ODldIFwiOTQwMFwiICBcIjkzOThcIiAgXCI5Mzk3XCIgIFwiOTcyMFwiICBcIjk3MTlcIiAgXCI5NzI1XCIgIFwiOTc1MlwiICBcIjk3NTFcIiBcbiBbODk3XSBcIjk3NTNcIiAgXCI5NzY1XCIgIFwiOTc2NFwiICBcIjk3ODFcIiAgXCI5NzgyXCIgIFwiOTgyNFwiICBcIjk4MjNcIiAgXCI5ODMyXCIgXG4gWzkwNV0gXCI5ODMxXCIgIFwiOTg0NlwiICBcIjk4ODNcIiAgXCI5ODgyXCIgIFwiOTg5MlwiICBcIjk4OTNcIiAgXCI5OTAzXCIgIFwiOTkwNFwiIFxuIFs5MTNdIFwiMTAwNDlcIiBcIjEwMTIxXCIgXCIxMDEyNlwiIFwiMTAxMjVcIiBcIjEwMTQxXCIgXCIxMDE1NFwiIFwiMTAxNTlcIiBcIjEwMTgxXCJcbiBbOTIxXSBcIjEwMjA5XCIgXCIxMDIyM1wiIFwiMTAyMjJcIiBcIjEwMjUxXCIgXCIxMDI1MlwiIFwiMTAyNjZcIiBcIjEwMjcwXCIgXCIxMDI2OVwiXG4gWzkyOV0gXCIxMDI3M1wiIFwiMTAyNzJcIiBcIjEwMjc1XCIgXCIxMDI3NFwiIFwiMTAzMDVcIiBcIjEwMzA2XCIgXCIxMDMxNVwiIFwiMTAzMTZcIlxuIFs5MzddIFwiMTAzMjFcIiBcIjEwMzIyXCIgXCIxMDM1MlwiIFwiMTAzNTNcIiBcIjEwNDI1XCIgXCIxMDQyOVwiIFwiMTA0MzhcIiBcIjEwNDM5XCJcbiBbOTQ1XSBcIjEwNDUwXCIgXCIxMDQ1MVwiIFwiMTA0NjRcIiBcIjEwNDY3XCIgXCIxMDQ2OFwiIFwiMTA0ODNcIiBcIjEwNTEyXCIgXCIxMDU2MVwiXG4gWzk1M10gXCIxMDYyNFwiIFwiMTA2MzFcIiBcIjEwNjMyXCIgXCIxMDYzN1wiIFwiMTA2MzhcIiBcIjEwNjUxXCIgXCIxMDY1MFwiIFwiMTA2NTZcIlxuIFs5NjFdIFwiMTA2NjVcIiBcIjEwNjkzXCIgXCIxMDY5NFwiIFwiMTA3MzVcIiBcIjEwNzQwXCIgXCIxMDc0OVwiIFwiMTA3NTJcIiBcIjEwNzUzXCJcbiBbOTY5XSBcIjEwNzU5XCIgXCIxMDc2MFwiIFwiMTA3NjFcIiBcIjEwNzcyXCIgXCIxMDc5MlwiIFwiMTA3OTlcIiBcIjEwNzk4XCIgXCIxMDgwNFwiXG4gWzk3N10gXCIxMDgxMlwiIFwiMTA4MTFcIiBcIjEwODE4XCIgXCIxMDgxOVwiIFwiMTA4MjdcIiBcIjEwODI2XCIgXCIxMDgzNFwiIFwiMTA4MzlcIlxuIFs5ODVdIFwiMTA4OTRcIiBcIjEwODk1XCIgXCIxMDkwNlwiIFwiMTA5MjBcIiBcIjEwOTIxXCIgXCIxMDkyMlwiIFwiMTA5NDJcIiBcIjEwOTQzXCJcbiBbOTkzXSBcIjEwOTU2XCIgXCIxMDk1N1wiIFwiMTA5NzBcIiBcIjEwOTY5XCIgXCIxMDk4OFwiIFwiMTA5ODlcIiBcIjEwOTkwXCIgXCIxMDk5MVwiXG4gWyByZWFjaGVkIGdldE9wdGlvbihcIm1heC5wcmludFwiKSAtLSBvbWl0dGVkIDcwMzQgZW50cmllcyBdXG4ifQ== -->
+<pre><code>   [1] &quot;25783&quot; &quot;26100&quot; &quot;26364&quot; &quot;26365&quot; &quot;26358&quot; &quot;26402&quot; &quot;26401&quot; &quot;26400&quot;
+   [9] &quot;26631&quot; &quot;26638&quot; &quot;26744&quot; &quot;28713&quot; &quot;28712&quot; &quot;8&quot;     &quot;7&quot;     &quot;25&quot;   
+  [17] &quot;41&quot;    &quot;40&quot;    &quot;52&quot;    &quot;51&quot;    &quot;59&quot;    &quot;60&quot;    &quot;64&quot;    &quot;68&quot;   
+  [25] &quot;80&quot;    &quot;81&quot;    &quot;113&quot;   &quot;112&quot;   &quot;126&quot;   &quot;159&quot;   &quot;171&quot;   &quot;170&quot;  
+  [33] &quot;177&quot;   &quot;176&quot;   &quot;201&quot;   &quot;202&quot;   &quot;222&quot;   &quot;221&quot;   &quot;207&quot;   &quot;208&quot;  
+  [41] &quot;251&quot;   &quot;254&quot;   &quot;272&quot;   &quot;290&quot;   &quot;289&quot;   &quot;314&quot;   &quot;313&quot;   &quot;379&quot;  
+  [49] &quot;380&quot;   &quot;388&quot;   &quot;387&quot;   &quot;400&quot;   &quot;399&quot;   &quot;409&quot;   &quot;408&quot;   &quot;419&quot;  
+  [57] &quot;420&quot;   &quot;422&quot;   &quot;421&quot;   &quot;432&quot;   &quot;431&quot;   &quot;449&quot;   &quot;448&quot;   &quot;462&quot;  
+  [65] &quot;470&quot;   &quot;471&quot;   &quot;477&quot;   &quot;478&quot;   &quot;496&quot;   &quot;526&quot;   &quot;525&quot;   &quot;527&quot;  
+  [73] &quot;528&quot;   &quot;514&quot;   &quot;529&quot;   &quot;540&quot;   &quot;539&quot;   &quot;538&quot;   &quot;581&quot;   &quot;582&quot;  
+  [81] &quot;591&quot;   &quot;594&quot;   &quot;596&quot;   &quot;598&quot;   &quot;602&quot;   &quot;605&quot;   &quot;604&quot;   &quot;622&quot;  
+  [89] &quot;621&quot;   &quot;644&quot;   &quot;723&quot;   &quot;737&quot;   &quot;744&quot;   &quot;753&quot;   &quot;828&quot;   &quot;829&quot;  
+  [97] &quot;830&quot;   &quot;795&quot;   &quot;796&quot;   &quot;814&quot;   &quot;856&quot;   &quot;855&quot;   &quot;871&quot;   &quot;870&quot;  
+ [105] &quot;875&quot;   &quot;888&quot;   &quot;887&quot;   &quot;885&quot;   &quot;886&quot;   &quot;963&quot;   &quot;966&quot;   &quot;965&quot;  
+ [113] &quot;970&quot;   &quot;969&quot;   &quot;990&quot;   &quot;989&quot;   &quot;999&quot;   &quot;1000&quot;  &quot;1012&quot;  &quot;1013&quot; 
+ [121] &quot;1061&quot;  &quot;1068&quot;  &quot;1080&quot;  &quot;1089&quot;  &quot;1092&quot;  &quot;1093&quot;  &quot;1101&quot;  &quot;1102&quot; 
+ [129] &quot;1112&quot;  &quot;1136&quot;  &quot;1148&quot;  &quot;1151&quot;  &quot;1153&quot;  &quot;1158&quot;  &quot;1247&quot;  &quot;1267&quot; 
+ [137] &quot;1269&quot;  &quot;1258&quot;  &quot;1263&quot;  &quot;1262&quot;  &quot;1270&quot;  &quot;1274&quot;  &quot;1275&quot;  &quot;1281&quot; 
+ [145] &quot;1287&quot;  &quot;1288&quot;  &quot;1290&quot;  &quot;1289&quot;  &quot;1306&quot;  &quot;1307&quot;  &quot;1313&quot;  &quot;1312&quot; 
+ [153] &quot;1319&quot;  &quot;1318&quot;  &quot;1325&quot;  &quot;1324&quot;  &quot;1329&quot;  &quot;1346&quot;  &quot;1345&quot;  &quot;1379&quot; 
+ [161] &quot;1384&quot;  &quot;1385&quot;  &quot;1387&quot;  &quot;1388&quot;  &quot;1405&quot;  &quot;1406&quot;  &quot;1410&quot;  &quot;1418&quot; 
+ [169] &quot;1421&quot;  &quot;1422&quot;  &quot;1462&quot;  &quot;1461&quot;  &quot;1464&quot;  &quot;1463&quot;  &quot;1605&quot;  &quot;1606&quot; 
+ [177] &quot;1608&quot;  &quot;1609&quot;  &quot;1633&quot;  &quot;1634&quot;  &quot;1673&quot;  &quot;1674&quot;  &quot;1713&quot;  &quot;1731&quot; 
+ [185] &quot;1773&quot;  &quot;1774&quot;  &quot;1803&quot;  &quot;1804&quot;  &quot;1838&quot;  &quot;1893&quot;  &quot;1894&quot;  &quot;1864&quot; 
+ [193] &quot;1946&quot;  &quot;1947&quot;  &quot;1949&quot;  &quot;1957&quot;  &quot;1958&quot;  &quot;1959&quot;  &quot;1960&quot;  &quot;1979&quot; 
+ [201] &quot;1978&quot;  &quot;2054&quot;  &quot;2137&quot;  &quot;2145&quot;  &quot;2149&quot;  &quot;2162&quot;  &quot;2161&quot;  &quot;1488&quot; 
+ [209] &quot;1531&quot;  &quot;1532&quot;  &quot;1553&quot;  &quot;1597&quot;  &quot;1598&quot;  &quot;1601&quot;  &quot;1621&quot;  &quot;1637&quot; 
+ [217] &quot;1638&quot;  &quot;1639&quot;  &quot;1664&quot;  &quot;1665&quot;  &quot;1667&quot;  &quot;1671&quot;  &quot;1672&quot;  &quot;1690&quot; 
+ [225] &quot;1689&quot;  &quot;1697&quot;  &quot;1701&quot;  &quot;1714&quot;  &quot;1718&quot;  &quot;1729&quot;  &quot;1730&quot;  &quot;1727&quot; 
+ [233] &quot;1728&quot;  &quot;1734&quot;  &quot;1739&quot;  &quot;1751&quot;  &quot;1761&quot;  &quot;1760&quot;  &quot;1767&quot;  &quot;1772&quot; 
+ [241] &quot;1779&quot;  &quot;1780&quot;  &quot;1784&quot;  &quot;1785&quot;  &quot;1791&quot;  &quot;1816&quot;  &quot;1859&quot;  &quot;1858&quot; 
+ [249] &quot;1874&quot;  &quot;1875&quot;  &quot;1878&quot;  &quot;1879&quot;  &quot;1866&quot;  &quot;1867&quot;  &quot;1880&quot;  &quot;1881&quot; 
+ [257] &quot;1901&quot;  &quot;1910&quot;  &quot;1929&quot;  &quot;1945&quot;  &quot;1976&quot;  &quot;1975&quot;  &quot;1995&quot;  &quot;2001&quot; 
+ [265] &quot;2002&quot;  &quot;2004&quot;  &quot;2003&quot;  &quot;2010&quot;  &quot;2017&quot;  &quot;2018&quot;  &quot;2072&quot;  &quot;2077&quot; 
+ [273] &quot;2078&quot;  &quot;2094&quot;  &quot;2095&quot;  &quot;2117&quot;  &quot;2118&quot;  &quot;2119&quot;  &quot;2147&quot;  &quot;2146&quot; 
+ [281] &quot;2150&quot;  &quot;2151&quot;  &quot;2165&quot;  &quot;2170&quot;  &quot;2196&quot;  &quot;2197&quot;  &quot;2198&quot;  &quot;2216&quot; 
+ [289] &quot;2217&quot;  &quot;2336&quot;  &quot;2337&quot;  &quot;2348&quot;  &quot;2349&quot;  &quot;2366&quot;  &quot;2378&quot;  &quot;2377&quot; 
+ [297] &quot;2390&quot;  &quot;2402&quot;  &quot;2401&quot;  &quot;2431&quot;  &quot;2454&quot;  &quot;2458&quot;  &quot;2446&quot;  &quot;2450&quot; 
+ [305] &quot;2451&quot;  &quot;2455&quot;  &quot;2478&quot;  &quot;2495&quot;  &quot;2496&quot;  &quot;2504&quot;  &quot;2503&quot;  &quot;2515&quot; 
+ [313] &quot;2516&quot;  &quot;2522&quot;  &quot;2521&quot;  &quot;2528&quot;  &quot;2529&quot;  &quot;2541&quot;  &quot;2542&quot;  &quot;2543&quot; 
+ [321] &quot;2553&quot;  &quot;2554&quot;  &quot;2561&quot;  &quot;2582&quot;  &quot;2591&quot;  &quot;2632&quot;  &quot;2631&quot;  &quot;2625&quot; 
+ [329] &quot;2626&quot;  &quot;2628&quot;  &quot;2627&quot;  &quot;2629&quot;  &quot;2652&quot;  &quot;2651&quot;  &quot;2665&quot;  &quot;2664&quot; 
+ [337] &quot;2666&quot;  &quot;2667&quot;  &quot;2680&quot;  &quot;2681&quot;  &quot;2692&quot;  &quot;2693&quot;  &quot;2727&quot;  &quot;2732&quot; 
+ [345] &quot;2733&quot;  &quot;2740&quot;  &quot;2748&quot;  &quot;2749&quot;  &quot;2863&quot;  &quot;2864&quot;  &quot;2930&quot;  &quot;2933&quot; 
+ [353] &quot;2934&quot;  &quot;2935&quot;  &quot;2948&quot;  &quot;2949&quot;  &quot;2954&quot;  &quot;2953&quot;  &quot;2983&quot;  &quot;3011&quot; 
+ [361] &quot;3010&quot;  &quot;3013&quot;  &quot;3012&quot;  &quot;3024&quot;  &quot;3025&quot;  &quot;3028&quot;  &quot;3029&quot;  &quot;3050&quot; 
+ [369] &quot;3049&quot;  &quot;3064&quot;  &quot;3063&quot;  &quot;3067&quot;  &quot;3075&quot;  &quot;3040&quot;  &quot;3041&quot;  &quot;3046&quot; 
+ [377] &quot;3061&quot;  &quot;3060&quot;  &quot;3073&quot;  &quot;3074&quot;  &quot;3142&quot;  &quot;3141&quot;  &quot;3147&quot;  &quot;3148&quot; 
+ [385] &quot;3154&quot;  &quot;3153&quot;  &quot;3156&quot;  &quot;3157&quot;  &quot;3158&quot;  &quot;3159&quot;  &quot;3177&quot;  &quot;3186&quot; 
+ [393] &quot;3185&quot;  &quot;3195&quot;  &quot;3198&quot;  &quot;3206&quot;  &quot;3205&quot;  &quot;3213&quot;  &quot;3214&quot;  &quot;3217&quot; 
+ [401] &quot;3218&quot;  &quot;3219&quot;  &quot;3220&quot;  &quot;3224&quot;  &quot;3225&quot;  &quot;3226&quot;  &quot;3228&quot;  &quot;3229&quot; 
+ [409] &quot;3234&quot;  &quot;3233&quot;  &quot;3266&quot;  &quot;3281&quot;  &quot;3280&quot;  &quot;3302&quot;  &quot;3304&quot;  &quot;3305&quot; 
+ [417] &quot;3307&quot;  &quot;3308&quot;  &quot;3323&quot;  &quot;3331&quot;  &quot;3330&quot;  &quot;3348&quot;  &quot;3349&quot;  &quot;3365&quot; 
+ [425] &quot;3373&quot;  &quot;3374&quot;  &quot;3389&quot;  &quot;3391&quot;  &quot;3392&quot;  &quot;3397&quot;  &quot;3398&quot;  &quot;3402&quot; 
+ [433] &quot;3403&quot;  &quot;3408&quot;  &quot;3409&quot;  &quot;3418&quot;  &quot;3419&quot;  &quot;3434&quot;  &quot;3445&quot;  &quot;3447&quot; 
+ [441] &quot;3446&quot;  &quot;3453&quot;  &quot;3456&quot;  &quot;3459&quot;  &quot;3460&quot;  &quot;3465&quot;  &quot;3466&quot;  &quot;3494&quot; 
+ [449] &quot;3514&quot;  &quot;3518&quot;  &quot;3519&quot;  &quot;3571&quot;  &quot;3569&quot;  &quot;3580&quot;  &quot;3581&quot;  &quot;3592&quot; 
+ [457] &quot;3593&quot;  &quot;3618&quot;  &quot;3619&quot;  &quot;3620&quot;  &quot;3621&quot;  &quot;3622&quot;  &quot;3623&quot;  &quot;3631&quot; 
+ [465] &quot;3634&quot;  &quot;3633&quot;  &quot;3654&quot;  &quot;3653&quot;  &quot;3696&quot;  &quot;3697&quot;  &quot;3719&quot;  &quot;3720&quot; 
+ [473] &quot;3733&quot;  &quot;3734&quot;  &quot;3731&quot;  &quot;3732&quot;  &quot;3745&quot;  &quot;3746&quot;  &quot;3747&quot;  &quot;3748&quot; 
+ [481] &quot;3755&quot;  &quot;3756&quot;  &quot;3757&quot;  &quot;3758&quot;  &quot;3762&quot;  &quot;3763&quot;  &quot;3764&quot;  &quot;3782&quot; 
+ [489] &quot;3783&quot;  &quot;3791&quot;  &quot;3790&quot;  &quot;3803&quot;  &quot;3829&quot;  &quot;3828&quot;  &quot;3858&quot;  &quot;3894&quot; 
+ [497] &quot;3895&quot;  &quot;3928&quot;  &quot;3929&quot;  &quot;3947&quot;  &quot;3948&quot;  &quot;3963&quot;  &quot;3971&quot;  &quot;3972&quot; 
+ [505] &quot;3973&quot;  &quot;4173&quot;  &quot;4191&quot;  &quot;4190&quot;  &quot;4070&quot;  &quot;4181&quot;  &quot;4180&quot;  &quot;4207&quot; 
+ [513] &quot;4234&quot;  &quot;4233&quot;  &quot;4262&quot;  &quot;4286&quot;  &quot;4285&quot;  &quot;4297&quot;  &quot;4305&quot;  &quot;4304&quot; 
+ [521] &quot;4350&quot;  &quot;4379&quot;  &quot;4440&quot;  &quot;4441&quot;  &quot;4477&quot;  &quot;4528&quot;  &quot;4527&quot;  &quot;4563&quot; 
+ [529] &quot;4564&quot;  &quot;4613&quot;  &quot;4612&quot;  &quot;4618&quot;  &quot;4622&quot;  &quot;4632&quot;  &quot;4633&quot;  &quot;4642&quot; 
+ [537] &quot;4643&quot;  &quot;4650&quot;  &quot;4656&quot;  &quot;4664&quot;  &quot;4665&quot;  &quot;4668&quot;  &quot;4667&quot;  &quot;4670&quot; 
+ [545] &quot;4673&quot;  &quot;4680&quot;  &quot;4703&quot;  &quot;4706&quot;  &quot;4707&quot;  &quot;4741&quot;  &quot;4742&quot;  &quot;4743&quot; 
+ [553] &quot;4744&quot;  &quot;4768&quot;  &quot;4769&quot;  &quot;4774&quot;  &quot;4773&quot;  &quot;4804&quot;  &quot;4805&quot;  &quot;4829&quot; 
+ [561] &quot;4872&quot;  &quot;4967&quot;  &quot;4968&quot;  &quot;5017&quot;  &quot;5022&quot;  &quot;5023&quot;  &quot;5024&quot;  &quot;5025&quot; 
+ [569] &quot;5079&quot;  &quot;5116&quot;  &quot;5117&quot;  &quot;5156&quot;  &quot;5157&quot;  &quot;5151&quot;  &quot;5152&quot;  &quot;5159&quot; 
+ [577] &quot;5173&quot;  &quot;5174&quot;  &quot;5175&quot;  &quot;5180&quot;  &quot;5181&quot;  &quot;5191&quot;  &quot;5192&quot;  &quot;5198&quot; 
+ [585] &quot;5197&quot;  &quot;5217&quot;  &quot;5218&quot;  &quot;5219&quot;  &quot;5223&quot;  &quot;5247&quot;  &quot;5248&quot;  &quot;5254&quot; 
+ [593] &quot;5255&quot;  &quot;5257&quot;  &quot;5470&quot;  &quot;5471&quot;  &quot;5507&quot;  &quot;5539&quot;  &quot;5538&quot;  &quot;5646&quot; 
+ [601] &quot;5588&quot;  &quot;5587&quot;  &quot;5661&quot;  &quot;5662&quot;  &quot;5663&quot;  &quot;5692&quot;  &quot;5693&quot;  &quot;5760&quot; 
+ [609] &quot;5761&quot;  &quot;5779&quot;  &quot;5780&quot;  &quot;5783&quot;  &quot;5784&quot;  &quot;5805&quot;  &quot;5806&quot;  &quot;5401&quot; 
+ [617] &quot;5410&quot;  &quot;5411&quot;  &quot;5418&quot;  &quot;5419&quot;  &quot;5482&quot;  &quot;5483&quot;  &quot;5489&quot;  &quot;5500&quot; 
+ [625] &quot;5523&quot;  &quot;5554&quot;  &quot;5555&quot;  &quot;5627&quot;  &quot;5621&quot;  &quot;5622&quot;  &quot;5685&quot;  &quot;5684&quot; 
+ [633] &quot;5687&quot;  &quot;5686&quot;  &quot;5745&quot;  &quot;5754&quot;  &quot;5755&quot;  &quot;5785&quot;  &quot;5797&quot;  &quot;5831&quot; 
+ [641] &quot;5832&quot;  &quot;5936&quot;  &quot;5937&quot;  &quot;5965&quot;  &quot;5966&quot;  &quot;6095&quot;  &quot;6143&quot;  &quot;6144&quot; 
+ [649] &quot;6157&quot;  &quot;6182&quot;  &quot;6196&quot;  &quot;6195&quot;  &quot;6198&quot;  &quot;6192&quot;  &quot;6199&quot;  &quot;6200&quot; 
+ [657] &quot;6211&quot;  &quot;6215&quot;  &quot;6214&quot;  &quot;6235&quot;  &quot;6234&quot;  &quot;6316&quot;  &quot;6317&quot;  &quot;6373&quot; 
+ [665] &quot;6441&quot;  &quot;6442&quot;  &quot;6451&quot;  &quot;6450&quot;  &quot;6470&quot;  &quot;6490&quot;  &quot;6489&quot;  &quot;6499&quot; 
+ [673] &quot;6498&quot;  &quot;6507&quot;  &quot;6506&quot;  &quot;6510&quot;  &quot;6511&quot;  &quot;6513&quot;  &quot;6512&quot;  &quot;6544&quot; 
+ [681] &quot;6543&quot;  &quot;6545&quot;  &quot;6555&quot;  &quot;6562&quot;  &quot;6563&quot;  &quot;6576&quot;  &quot;6590&quot;  &quot;6589&quot; 
+ [689] &quot;6597&quot;  &quot;6598&quot;  &quot;6633&quot;  &quot;6634&quot;  &quot;6677&quot;  &quot;6676&quot;  &quot;6670&quot;  &quot;6691&quot; 
+ [697] &quot;6690&quot;  &quot;6698&quot;  &quot;6697&quot;  &quot;6706&quot;  &quot;6705&quot;  &quot;6767&quot;  &quot;6827&quot;  &quot;6835&quot; 
+ [705] &quot;6839&quot;  &quot;6840&quot;  &quot;6844&quot;  &quot;6874&quot;  &quot;6873&quot;  &quot;6890&quot;  &quot;6927&quot;  &quot;6946&quot; 
+ [713] &quot;6982&quot;  &quot;6979&quot;  &quot;6984&quot;  &quot;6999&quot;  &quot;7000&quot;  &quot;7001&quot;  &quot;7015&quot;  &quot;7017&quot; 
+ [721] &quot;7060&quot;  &quot;7061&quot;  &quot;7066&quot;  &quot;7067&quot;  &quot;7101&quot;  &quot;7138&quot;  &quot;7139&quot;  &quot;7143&quot; 
+ [729] &quot;7179&quot;  &quot;7183&quot;  &quot;7184&quot;  &quot;7191&quot;  &quot;7190&quot;  &quot;7226&quot;  &quot;7231&quot;  &quot;7230&quot; 
+ [737] &quot;7235&quot;  &quot;7234&quot;  &quot;7253&quot;  &quot;7254&quot;  &quot;7276&quot;  &quot;7277&quot;  &quot;7305&quot;  &quot;7306&quot; 
+ [745] &quot;7317&quot;  &quot;7318&quot;  &quot;7342&quot;  &quot;7344&quot;  &quot;7355&quot;  &quot;7356&quot;  &quot;7375&quot;  &quot;7376&quot; 
+ [753] &quot;7445&quot;  &quot;7453&quot;  &quot;7461&quot;  &quot;7462&quot;  &quot;7513&quot;  &quot;7525&quot;  &quot;7555&quot;  &quot;7554&quot; 
+ [761] &quot;7591&quot;  &quot;7590&quot;  &quot;7628&quot;  &quot;7629&quot;  &quot;7662&quot;  &quot;7661&quot;  &quot;7798&quot;  &quot;7797&quot; 
+ [769] &quot;7771&quot;  &quot;7932&quot;  &quot;7933&quot;  &quot;7956&quot;  &quot;7957&quot;  &quot;7975&quot;  &quot;7976&quot;  &quot;7994&quot; 
+ [777] &quot;8010&quot;  &quot;8011&quot;  &quot;8013&quot;  &quot;8034&quot;  &quot;8035&quot;  &quot;8038&quot;  &quot;8039&quot;  &quot;8090&quot; 
+ [785] &quot;8089&quot;  &quot;8112&quot;  &quot;8136&quot;  &quot;8122&quot;  &quot;8130&quot;  &quot;8131&quot;  &quot;8142&quot;  &quot;8155&quot; 
+ [793] &quot;8157&quot;  &quot;8167&quot;  &quot;8173&quot;  &quot;8174&quot;  &quot;8209&quot;  &quot;8213&quot;  &quot;8212&quot;  &quot;8228&quot; 
+ [801] &quot;8234&quot;  &quot;8515&quot;  &quot;8516&quot;  &quot;8523&quot;  &quot;8524&quot;  &quot;8629&quot;  &quot;8628&quot;  &quot;8670&quot; 
+ [809] &quot;8754&quot;  &quot;8753&quot;  &quot;8801&quot;  &quot;8800&quot;  &quot;8819&quot;  &quot;8820&quot;  &quot;8833&quot;  &quot;8853&quot; 
+ [817] &quot;8854&quot;  &quot;8867&quot;  &quot;8868&quot;  &quot;9057&quot;  &quot;9085&quot;  &quot;9084&quot;  &quot;9086&quot;  &quot;9083&quot; 
+ [825] &quot;9129&quot;  &quot;9128&quot;  &quot;9180&quot;  &quot;8295&quot;  &quot;8311&quot;  &quot;8362&quot;  &quot;8363&quot;  &quot;8368&quot; 
+ [833] &quot;8367&quot;  &quot;8441&quot;  &quot;8498&quot;  &quot;8497&quot;  &quot;8522&quot;  &quot;8551&quot;  &quot;8552&quot;  &quot;8567&quot; 
+ [841] &quot;8624&quot;  &quot;8631&quot;  &quot;8630&quot;  &quot;8637&quot;  &quot;8653&quot;  &quot;8663&quot;  &quot;8681&quot;  &quot;8683&quot; 
+ [849] &quot;8718&quot;  &quot;8719&quot;  &quot;8734&quot;  &quot;8735&quot;  &quot;8736&quot;  &quot;8729&quot;  &quot;8750&quot;  &quot;8751&quot; 
+ [857] &quot;8759&quot;  &quot;8846&quot;  &quot;8845&quot;  &quot;8795&quot;  &quot;8796&quot;  &quot;8828&quot;  &quot;8864&quot;  &quot;8916&quot; 
+ [865] &quot;8931&quot;  &quot;8932&quot;  &quot;8997&quot;  &quot;9032&quot;  &quot;9036&quot;  &quot;9045&quot;  &quot;9051&quot;  &quot;9050&quot; 
+ [873] &quot;9070&quot;  &quot;9069&quot;  &quot;9091&quot;  &quot;9092&quot;  &quot;9095&quot;  &quot;9094&quot;  &quot;9115&quot;  &quot;9116&quot; 
+ [881] &quot;9132&quot;  &quot;9158&quot;  &quot;9285&quot;  &quot;9312&quot;  &quot;9315&quot;  &quot;9333&quot;  &quot;9360&quot;  &quot;9399&quot; 
+ [889] &quot;9400&quot;  &quot;9398&quot;  &quot;9397&quot;  &quot;9720&quot;  &quot;9719&quot;  &quot;9725&quot;  &quot;9752&quot;  &quot;9751&quot; 
+ [897] &quot;9753&quot;  &quot;9765&quot;  &quot;9764&quot;  &quot;9781&quot;  &quot;9782&quot;  &quot;9824&quot;  &quot;9823&quot;  &quot;9832&quot; 
+ [905] &quot;9831&quot;  &quot;9846&quot;  &quot;9883&quot;  &quot;9882&quot;  &quot;9892&quot;  &quot;9893&quot;  &quot;9903&quot;  &quot;9904&quot; 
+ [913] &quot;10049&quot; &quot;10121&quot; &quot;10126&quot; &quot;10125&quot; &quot;10141&quot; &quot;10154&quot; &quot;10159&quot; &quot;10181&quot;
+ [921] &quot;10209&quot; &quot;10223&quot; &quot;10222&quot; &quot;10251&quot; &quot;10252&quot; &quot;10266&quot; &quot;10270&quot; &quot;10269&quot;
+ [929] &quot;10273&quot; &quot;10272&quot; &quot;10275&quot; &quot;10274&quot; &quot;10305&quot; &quot;10306&quot; &quot;10315&quot; &quot;10316&quot;
+ [937] &quot;10321&quot; &quot;10322&quot; &quot;10352&quot; &quot;10353&quot; &quot;10425&quot; &quot;10429&quot; &quot;10438&quot; &quot;10439&quot;
+ [945] &quot;10450&quot; &quot;10451&quot; &quot;10464&quot; &quot;10467&quot; &quot;10468&quot; &quot;10483&quot; &quot;10512&quot; &quot;10561&quot;
+ [953] &quot;10624&quot; &quot;10631&quot; &quot;10632&quot; &quot;10637&quot; &quot;10638&quot; &quot;10651&quot; &quot;10650&quot; &quot;10656&quot;
+ [961] &quot;10665&quot; &quot;10693&quot; &quot;10694&quot; &quot;10735&quot; &quot;10740&quot; &quot;10749&quot; &quot;10752&quot; &quot;10753&quot;
+ [969] &quot;10759&quot; &quot;10760&quot; &quot;10761&quot; &quot;10772&quot; &quot;10792&quot; &quot;10799&quot; &quot;10798&quot; &quot;10804&quot;
+ [977] &quot;10812&quot; &quot;10811&quot; &quot;10818&quot; &quot;10819&quot; &quot;10827&quot; &quot;10826&quot; &quot;10834&quot; &quot;10839&quot;
+ [985] &quot;10894&quot; &quot;10895&quot; &quot;10906&quot; &quot;10920&quot; &quot;10921&quot; &quot;10922&quot; &quot;10942&quot; &quot;10943&quot;
+ [993] &quot;10956&quot; &quot;10957&quot; &quot;10970&quot; &quot;10969&quot; &quot;10988&quot; &quot;10989&quot; &quot;10990&quot; &quot;10991&quot;
+ [ reached getOption(&quot;max.print&quot;) -- omitted 7034 entries ]</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGVzdF9xZjNbJzg1NTEnLCBdXG5gYGAifQ== -->
+<pre class="r"><code>test_qf3[&#39;8551&#39;, ]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiQW4gaW5zdGFuY2Ugb2YgY2xhc3MgUUZlYXR1cmVzIGNvbnRhaW5pbmcgMiBhc3NheXM6XG4gWzFdIHBzbXM6IFN1bW1hcml6ZWRFeHBlcmltZW50IHdpdGggMyByb3dzIGFuZCAzIGNvbHVtbnMgXG4gWzJdIHBlcHRpZGVzOiBTdW1tYXJpemVkRXhwZXJpbWVudCB3aXRoIDEgcm93cyBhbmQgMiBjb2x1bW5zIFxuIn0= -->
+<pre><code>An instance of class QFeatures containing 2 assays:
+ [1] psms: SummarizedExperiment with 3 rows and 3 columns 
+ [2] peptides: SummarizedExperiment with 1 rows and 2 columns </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3Vic2V0QnlGZWF0dXJlKHRlc3RfcWYzLCAnODU1MScpXG5gYGAifQ== -->
+<pre class="r"><code>subsetByFeature(test_qf3, &#39;8551&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiQW4gaW5zdGFuY2Ugb2YgY2xhc3MgUUZlYXR1cmVzIGNvbnRhaW5pbmcgMiBhc3NheXM6XG4gWzFdIHBzbXM6IFN1bW1hcml6ZWRFeHBlcmltZW50IHdpdGggMyByb3dzIGFuZCAzIGNvbHVtbnMgXG4gWzJdIHBlcHRpZGVzOiBTdW1tYXJpemVkRXhwZXJpbWVudCB3aXRoIDEgcm93cyBhbmQgMiBjb2x1bW5zIFxuIn0= -->
+<pre><code>An instance of class QFeatures containing 2 assays:
+ [1] psms: SummarizedExperiment with 3 rows and 3 columns 
+ [2] peptides: SummarizedExperiment with 1 rows and 2 columns </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF0YS5mcmFtZShsb25nRm9ybWF0KHRlc3RfcWYzWyc4NTUxJywgXSkpXG5gYGAifQ== -->
+<pre class="r"><code>data.frame(longFormat(test_qf3[&#39;8551&#39;, ]))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MTEsIm5jb2wiOjUsInN1bW1hcnkiOnsiRGVzY3JpcHRpb24iOlsiZGYgWzExIMOXIDVdIl19fSwicmRmIjoiSDRzSUFBQUFBQUFBQSsxVXpVNkRRQkNlVW1ndFRhdEdFNisrUUltMFlQQllZNHdIVDhZbXZXNWhiWWwwSWZ4VVBlbXorRGkrakQ1QmRaYXlDT2loc2RHVEpNdk05ODFNWm5ZbXMxZG40NEU2VmdHZ0RySlVnN3FDS2lpajYvT2VCY2dncUlFTUxTN3YwV21QVy9IczRHbG5Cam1JNXRFZjZWc0JEV0xYb1Y5eHVhYnQ0U1JoRG1FMjFTN2Q2U3plbEw2Z1pQSHdJM3Iva3g0eEVrWHVsRkZuUTl1NjlaWjcwakNNRThzeUJlb2ZHYnFoRjIxOTZ4YzlaY3MwOVpMK1A3SHZKdGJsUFJrT0QxNzRJbGJsNHh2L041L1hsWG44NlNzY2NxVzgwZ29qODN4MUZFRmk2VVQwb2htRTdweUVPUXo5T3g0am9PMTdCYWdzaUpmUVNvNFdobWdpVHdlUDlKUVdnb092RkdON21Ea3JScENxUTJLaTNZUThDY0N5RXRMMGNmbDloa0ZTOFdIS1g2eXdRdXdtakZmaTlPeFp3bTU3K3ZHQXAwZ2RWbDhuMDlzRlhWa2xsZDRyZldwUU5uVlpmbmVQVEtpWGdXN1dwa2pEOWpFeGJCWFpTSXY5bUFnL0Zmc25tUFIyc1B3QTI1c3l6cEVGQUFBPSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["assay"],"name":[1],"type":["chr"],"align":["left"]},{"label":["primary"],"name":[2],"type":["chr"],"align":["left"]},{"label":["rowname"],"name":[3],"type":["chr"],"align":["left"]},{"label":["colname"],"name":[4],"type":["chr"],"align":["left"]},{"label":["value"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"psms","2":"Abundance.Light","3":"449885","4":"Abundance.Light","5":"2240404"},{"1":"psms","2":"Abundance.Light","3":"204141","4":"Abundance.Light","5":"2240404"},{"1":"psms","2":"Abundance.Light","3":"449828","4":"Abundance.Light","5":"2240404"},{"1":"psms","2":"Abundance.Heavy","3":"449885","4":"Abundance.Heavy","5":"NA"},{"1":"psms","2":"Abundance.Heavy","3":"204141","4":"Abundance.Heavy","5":"NA"},{"1":"psms","2":"Abundance.Heavy","3":"449828","4":"Abundance.Heavy","5":"NA"},{"1":"psms","2":"Abundance.Unassigned","3":"449885","4":"Abundance.Unassigned","5":"NA"},{"1":"psms","2":"Abundance.Unassigned","3":"204141","4":"Abundance.Unassigned","5":"NA"},{"1":"psms","2":"Abundance.Unassigned","3":"449828","4":"Abundance.Unassigned","5":"NA"},{"1":"peptides","2":"Abundance.Light","3":"8551","4":"Abundance.Light","5":"2240404"},{"1":"peptides","2":"Abundance.Heavy","3":"8551","4":"Abundance.Heavy","5":"2481664"}],"options":{"columns":{"min":{},"max":[10],"total":[5]},"rows":{"min":[10],"max":[10],"total":[11]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF0YS5mcmFtZShsb25nRm9ybWF0KHRlc3RfcWYzWycyMDQxNDEnXSkpXG5gYGAifQ== -->
+<pre class="r"><code>data.frame(longFormat(test_qf3[&#39;204141&#39;]))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiaGFybW9uaXppbmcgaW5wdXQ6XG4gIHJlbW92aW5nIDIgc2FtcGxlTWFwIHJvd3Mgbm90IGluIG5hbWVzKGV4cGVyaW1lbnRzKVxuIn0= -->
+<pre><code>harmonizing input:
+  removing 2 sampleMap rows not in names(experiments)</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MywibmNvbCI6NSwic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMyDDlyA1XSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE3VlN3VTZFTUJDZEJicGtTWGJWYU9KWFFFUTM2cFhFR0ErZWpKdnN0UXVWSlVJaEZGWTk2YmY0T1g2Tlg3QTZCWXBZb3plYmxNNTduZW1iUG5wenNUeHhsZzRBbUdBWkl6QUpoa0FXdDVmdU9TQ0RZQVFXVE9UNmlFbjdjaGZuYmx2UmJGaUZ5TVN2OGZmY25XQlY4NGp5a0huWFNieXVmdEpYakc2ZU92cmdpMTV3S2tRU2N4WnBKNDZQaitiKzNQOFQvVWNQTTNsaUVCeStTY09lMytYWGZsV3JaaDNoTkdQS0NxSklQSXdxRmJzb2s0eVdQU3p6QjFtallKaW5BMGcyTksyWnBqSEJFay9wVEhFYUw5QU1VMjhtVEZHNWEwYVJUa1FyNnQyVlVnUmdxNVhZZVZFbE9jY2lZL2dBK3BkUmFzUmV6V1Vua1J1dWEzN3YrcWRuVXFKSmFNZTBpODFCVEZwUjQwUHphY3g0blBEKzdpbGRzYlFEczg0bTRhRjlYUDFJQjFuaFZYbEZWWjZEL2ltbXVSMXNQd0hrVEp4cytRSUFBQT09In0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["assay"],"name":[1],"type":["chr"],"align":["left"]},{"label":["primary"],"name":[2],"type":["chr"],"align":["left"]},{"label":["rowname"],"name":[3],"type":["chr"],"align":["left"]},{"label":["colname"],"name":[4],"type":["chr"],"align":["left"]},{"label":["value"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"psms","2":"Abundance.Light","3":"204141","4":"Abundance.Light","5":"2240404"},{"1":"psms","2":"Abundance.Heavy","3":"204141","4":"Abundance.Heavy","5":"NA"},{"1":"psms","2":"Abundance.Unassigned","3":"204141","4":"Abundance.Unassigned","5":"NA"}],"options":{"columns":{"min":{},"max":[10],"total":[5]},"rows":{"min":[10],"max":[10],"total":[3]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiVHJ5IG91dCBxRmVhdHVyZXMiCmF1dGhvcjoKICAtIG5hbWU6ICJDaGFybG90dGUgRGF3c29uIgogICAgYWZmaWxpYXRpb246ICJDYW1icmlkZ2UgQ2VudHJlIGZvciBQcm90ZW9taWNzIgpkYXRlOiAiYHIgZm9ybWF0KFN5cy50aW1lKCksICclZCAlQiwgJVknKWAiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCmBgYHtyfQpsaWJyYXJ5KFFGZWF0dXJlcykKbGlicmFyeShnZ3Bsb3QyKQpsaWJyYXJ5KGRwbHlyKQpsaWJyYXJ5KHRpZHlyKQpgYGAKYGBge3J9CnBzbTJwZXAgPC0gcmVhZC5kZWxpbSgiZGF0YS1yYXcvU0lMQUNfSExfYm90aFRhZ3NfUGVwdGlkZUdyb3Vwc19QU01zLnR4dCIpCnBzbSA8LSByZWFkLmRlbGltKCJkYXRhLXJhdy9TSUxBQ19ITF9ib3RoVGFnc19QU01zLnR4dCIpCnBlcCA8LSByZWFkLmRlbGltKCJkYXRhLXJhdy9TSUxBQ19ITF9ib3RoVGFnc19QZXB0aWRlR3JvdXBzLnR4dCIpCmBgYAoKYGBge3J9CnByaW50KGxlbmd0aCh1bmlxdWUocHNtMnBlcCRQZXB0aWRlLkdyb3Vwcy5QZXB0aWRlLkdyb3VwLklEKSkpCnByaW50KG5yb3cocGVwKSkKYGBgCgpgYGB7cn0KcHJpbnQobGVuZ3RoKHVuaXF1ZShwc20ycGVwJFBTTXMuUGVwdGlkZS5JRCkpKQpwcmludChucm93KHBzbSkpCmBgYAoKYGBge3J9Cmxlbmd0aCh1bmlxdWUocGVwJFBlcHRpZGUuR3JvdXBzLlBlcHRpZGUuR3JvdXAuSUQpKQpsZW5ndGgodW5pcXVlKHBzbTJwZXAkUGVwdGlkZS5Hcm91cHMuUGVwdGlkZS5Hcm91cC5JRCkpCmBgYAoKYGBge3J9CnBzbV90ZXN0IDwtIHBzbTJwZXAgJT4lIAogIHJpZ2h0X2pvaW4ocHNtLCBieSA9IGMoIlBTTXMuV29ya2Zsb3cuSUQiLCAiUFNNcy5QZXB0aWRlLklEIikpCmBgYAoKYGBge3J9CiMgUFNNcyBmb3IgbGlnaHQgYW5kIGhlYXZ5IHZlcnNpb25zIG9mIHNhbWUgcGVwdGlkZQphYWEgPC0gcHNtX3Rlc3QgJT4lIGZpbHRlcihQZXB0aWRlLkdyb3Vwcy5QZXB0aWRlLkdyb3VwLklEICVpbiUgNzo4KQoKIyBMaWdodCBhbmQgaGVhdnkgcGVwdGlkZSAKIyBJIHRoaW5rIFBTTSBhbWJpZ3VpdHkgPT0gcmVqZWN0ZWQgcGVwdGlkZXMgc2hvdWxkIGJlIHJlbW92ZWQuCmJiYiA8LSBwZXAgJT4lIGZpbHRlcihQZXB0aWRlLkdyb3Vwcy5QZXB0aWRlLkdyb3VwLklEICVpbiUgNzo4KQpgYGAKCgpgYGB7cn0KaGwgPC0gcmVhZFFGZWF0dXJlcyhwc20sIGVjb2wgPSAiUHJlY3Vyc29yLkFidW5kYW5jZSIsIG5hbWUgPSAicHNtcyIpCmBgYAoKCgoK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiVHJ5IG91dCBxRmVhdHVyZXMiCmF1dGhvcjoKICAtIG5hbWU6ICJDaGFybG90dGUgRGF3c29uIgogICAgYWZmaWxpYXRpb246ICJDYW1icmlkZ2UgQ2VudHJlIGZvciBQcm90ZW9taWNzIgpkYXRlOiAiYHIgZm9ybWF0KFN5cy50aW1lKCksICclZCAlQiwgJVknKWAiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCmBgYHtyfQpsaWJyYXJ5KFFGZWF0dXJlcykKbGlicmFyeShnZ3Bsb3QyKQpsaWJyYXJ5KGRwbHlyKQpsaWJyYXJ5KHRpZHlyKQpgYGAKCmBgYHtyfQojIFBTTQpzaWxhY19wc20gPC0gcmVhZC5kZWxpbSgiZGF0YS1yYXcvU0lMQUNfSExfYm90aFRhZ3NfUFNNcy50eHQiKQoKcGVwMnBzbSA8LSByZWFkLmRlbGltKCJkYXRhLXJhdy9TSUxBQ19ITF9ib3RoVGFnc19QZXB0aWRlR3JvdXBzX1BTTXMudHh0IikKCgoKYGBgCgpgYGB7cn0Kc2lsYWNfcHNtIDwtIHNpbGFjX3BzbSAlPiUgCiAgbGVmdF9qb2luKHBlcDJwc20sIGJ5ID0gYygiUFNNcy5Xb3JrZmxvdy5JRCIsICJQU01zLlBlcHRpZGUuSUQiKSkgJT4lIAogIHBpdm90X3dpZGVyKG5hbWVzX2Zyb20gPSAiUXVhbi5DaGFubmVsIiwgCiAgICAgICAgICAgICAgdmFsdWVzX2Zyb20gPSAiUHJlY3Vyc29yLkFidW5kYW5jZSIsCiAgICAgICAgICAgICAgbmFtZXNfcHJlZml4ID0gIkFidW5kYW5jZS4iKQoKYGBgCgoKYGBge3J9CmNvbG5hbWVzKHNpbGFjX3BzbSkKYGBgCgpgYGB7cn0KY29sbmFtZXMoc2lsYWNfcHNtKVs1MV0gPC0gIkFidW5kYW5jZS5VbmFzc2lnbmVkIgpgYGAKCmBgYHtyfQpjb2xuYW1lcyhzaWxhY19wc20pCmBgYAoKCmBgYHtyfQp0ZXN0X3FmIDwtIHJlYWRRRmVhdHVyZXMoc2lsYWNfcHNtLCAKICAgICAgICAgICAgICAgICAgICAgICAgIGVjb2wgPSBncmVwKCdBYnVuZGFuY2UnLCBjb2xuYW1lcyhzaWxhY19wc20pKSwKICAgICAgICAgICAgICAgICAgICAgICAgIGZuYW1lcyA9ICJQU01zLlBlcHRpZGUuSUQiLAogICAgICAgICAgICAgICAgICAgICAgICAgbmFtZSA9ICJwc21zIikKYGBgCgpgYGB7cn0KdGVzdF9xZiAlPiUgaGVhZCgpICU+JSBjb2xuYW1lcygpCnRlc3RfcWZbWzFdXSAlPiUgaGVhZCgpICU+JSByb3duYW1lcygpCnRlc3RfcWZbWzFdXSAlPiUgaGVhZCgpICU+JSByb3dEYXRhKCkKYW55RHVwbGljYXRlZCh0ZXN0X3FmICU+JSByb3duYW1lcygpKQpgYGAKCgpgYGB7cn0KIyBQZXB0aWRlCnNpbGFjX3BlcCA8LSByZWFkLmRlbGltKCJkYXRhLXJhdy9TSUxBQ19ITF9ib3RoVGFnc19QZXB0aWRlR3JvdXBzLnR4dCIpCgpzaWxhY19wZXAgJT4lIGhlYWQoKQpgYGAKCmBgYHtyfQpjb2xuYW1lcyhzaWxhY19wZXApW2dyZXBsKCdBYnVuZGFuY2VzJywgY29sbmFtZXMoc2lsYWNfcGVwKSldIDwtIGMoIkFidW5kYW5jZS5MaWdodCIsICJBYnVuZGFuY2UuSGVhdnkiKQpgYGAKCgoKYGBge3J9CnNpbGFjX3BlcDIgPC0gcmVhZFN1bW1hcml6ZWRFeHBlcmltZW50KHNpbGFjX3BlcCwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZWNvbCA9IGdyZXAoIl5BYnVuZGFuY2UiLCBjb2xuYW1lcyhzaWxhY19wZXApKSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZm5hbWVzID0gIlBlcHRpZGUuR3JvdXBzLlBlcHRpZGUuR3JvdXAuSUQiKQoKYGBgCgpgYGB7cn0Kc2lsYWNfcGVwMiAlPiUgaGVhZCgpICU+JSBjb2xuYW1lcygpCnNpbGFjX3BlcDIgJT4lIGhlYWQoKSAlPiUgcm93bmFtZXMoKQpzaWxhY19wZXAyICU+JSBoZWFkKCkgJT4lIHJvd0RhdGEoKQphbnlEdXBsaWNhdGVkKHNpbGFjX3BlcDIgJT4lIHJvd25hbWVzKCkpCmBgYAoKYGBge3J9CmNvbG5hbWVzKHRlc3RfcWZbWydwc21zJ11dKQpgYGAKCmBgYHtyfQpjb2xuYW1lcyhzaWxhY19wZXAyKQpgYGAKCmBgYHtyfQojIGNvbG5hbWVzKHNpbGFjX3BlcDIpIDwtIGMoIlByZWN1cnNvci5BYnVuZGFuY2UiLCAiYmFuYW5hIikKYGBgCgoKYGBge3J9CnRlc3RfcWYyIDwtIGFkZEFzc2F5KHRlc3RfcWYsIHNpbGFjX3BlcDIsIG5hbWU9J3BlcHRpZGVzJykKYGBgCgpgYGB7cn0KIyBMaW5rIHRoZSBQU01zIGFuZCB0aGUgcGVwdGlkZXMKdGVzdF9xZjMgPC0gYWRkQXNzYXlMaW5rKHRlc3RfcWYyLAogICAgICAgICAgICAgICAgICAgICAgICAgZnJvbSA9ICdwc21zJywKICAgICAgICAgICAgICAgICAgICAgICAgIHRvID0gJ3BlcHRpZGVzJywKICAgICAgICAgICAgICAgICAgICAgICAgIHZhckZyb20gPSAnUGVwdGlkZS5Hcm91cHMuUGVwdGlkZS5Hcm91cC5JRCcsCiAgICAgICAgICAgICAgICAgICAgICAgICB2YXJUbyA9ICdQZXB0aWRlLkdyb3Vwcy5QZXB0aWRlLkdyb3VwLklEJykKYGBgCgpgYGB7cn0Kcm93bmFtZXModGVzdF9xZjNbWydwZXB0aWRlcyddXSkKYGBgCgpgYGB7cn0KdGVzdF9xZjNbJzg1NTEnLCBdCmBgYAoKYGBge3J9CnN1YnNldEJ5RmVhdHVyZSh0ZXN0X3FmMywgJzg1NTEnKQpgYGAKCmBgYHtyfQpkYXRhLmZyYW1lKGxvbmdGb3JtYXQodGVzdF9xZjNbJzg1NTEnLCBdKSkKYGBgCgpgYGB7cn0KIyBQcm9iYWJseSBiZXR0ZXIgdG8gUHJlZml4IHRoZXNlIElEcyB3aXRoIFBTTSBvciBQRVAKZGF0YS5mcmFtZShsb25nRm9ybWF0KHRlc3RfcWYzWycyMDQxNDEnLCBdKSkKYGBgCgo=</div>
 
 
 
