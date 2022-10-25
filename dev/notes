@@ -1,0 +1,25 @@
+
+#### qfeatures - linking existing PD output tables ####
+
+## PSMs.txt
+
+- Need to output table with the link tables option ticked
+- Each PSM has a unique ID in the `PSMs.Peptide.ID` column
+- If you have 2 separate PSMs files and just rbind them, then there would be
+doubling up of `PSMs.Peptide.ID`s. A workaround for this is to paste together
+the `PSMs.Peptide.ID` and `Spectrum.File` columns.
+- Use the `PSMs.Peptide.ID` column to join with the `PeptideGroups_PSMs` linking
+table.
+
+## peptideGroups.txt
+
+- Each peptide has a unique ID in the `Peptide.Groups.Peptide.Group.ID` column
+- These can be 
+
+- If you have 2 separate PeptideGroups files and just rbind them, then there 
+would be doubling up of `Peptide.Groups.Peptide.Group.ID`s. A workaround for 
+this is to... paste together sequence and modifications? Or use Tom's function
+to find a common master proteins.
+
+
+
