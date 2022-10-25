@@ -3,13 +3,16 @@
 
 ## PSMs.txt
 
-- Need to output table with the link tables option ticked
+- Need to output table with the link tables option ticked!! (IMPORTANT)
 - Each PSM has a unique ID in the `PSMs.Peptide.ID` column
 - If you have 2 separate PSMs files and just rbind them, then there would be
 doubling up of `PSMs.Peptide.ID`s. A workaround for this is to paste together
-the `PSMs.Peptide.ID` and `Spectrum.File` columns.
+the `PSMs.Peptide.ID` and `Spectrum.File` columns. Or just generate new PSM names
+e.g. PSM1, PSM2, PSM3,....
 - Use the `PSMs.Peptide.ID` column to join with the `PeptideGroups_PSMs` linking
 table.
+- Then use the resulting `Peptide.Groups.Peptide.Group.ID` column to join to
+the peptidesgroups assay.
 
 ## peptideGroups.txt
 
@@ -20,6 +23,22 @@ table.
 would be doubling up of `Peptide.Groups.Peptide.Group.ID`s. A workaround for 
 this is to... paste together sequence and modifications? Or use Tom's function
 to find a common master proteins.
+
+- One idea for my data (i.e. 2 inputs, OOPS and Total) at least is to:
+ - Load PSM data as separate assays (at least for my SILAC data I think this
+ is the best way to go...)
+ OR
+ - Rbind PSM data together into the one table, add some number as a pre/suffix to 
+ the ``  and generate the initial qFeatures
+ object with this.
+ 
+ - Load peptideGroups.txt file as separate assays. Make new column with common master proteins.
+ Then try combining with QFeatures::joinAssays()? (This may require the column
+ names to be the sequence + modification...)
+ OR
+ - Rbind peptideGroups data in a way similar to Tom's get_parsimony_pep2prot
+ 
+
 
 
 

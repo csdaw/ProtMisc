@@ -1,3 +1,8 @@
+library(QFeatures)
+library(dplyr)
+library(tidyr)
+library(scp)
+
 ## Loading PSMs into qFeatures as is
 psms2 <- read.delim("dev/data-raw/RNA_IP_rand_PSMs.txt") %>% 
   rename(Apple = File.ID,
@@ -45,6 +50,11 @@ rowData(test_qf)
 dim(test_qf[[1]])
 test_qf[[1]] %>% assay() %>% head()
 test_qf[[1]] %>% rowData() %>% head()
+test_qf[[2]] %>% rowData() %>% head()
+test_qf[[3]] %>% rowData() %>% head()
+test_qf[[4]] %>% rowData() %>% head()
+
+test_qf[[4]] %>% rowData() %>% colnames() == test_qf[[2]] %>% rowData() %>% colnames()
 
 ## Try linking peptideGroups data...
 pep2 <- read.delim("dev/data-raw/RNA_IP_rand_PeptideGroups.txt")
