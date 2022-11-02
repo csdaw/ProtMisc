@@ -14,7 +14,7 @@ bioc_url
 ```
 
     ##                                      BioCsoft 
-    ## "https://bioconductor.org/packages/3.14/bioc"
+    ## "https://bioconductor.org/packages/3.15/bioc"
 
 ``` r
 pkgs <- pkgDep(
