@@ -1,3 +1,11 @@
+#### silac analysis ####
+camprotR::silac_psm_seq_int() is used to identify which isotope quantification
+came from a PSM (e.g. 'sequenced'). The others must have been identified by 
+their mass shift instead.
+
+I don't understand PDs PSM to peptide grouping... why are some PSMs which are
+present in PSMs file, the sequence is not in peptideGroups... is it the 
+result of FDR filtering at the peptide level???
 
 #### qfeatures - linking existing PD output tables ####
 
