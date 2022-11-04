@@ -36,11 +36,20 @@ jobs:
       volumes: 
         - /home/runner/work/_temp/Library:/usr/local/lib/R/host-site-library
     steps:
-      - uses: actions/checkout@v3
-
-      - uses: r-lib/actions/setup-r-dependencies@v2
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+      - name: Install Linux system dependencies
+        run: |
+            sysreqs=$(Rscript -e 'cat("apt-get update -y && apt-get install -y", paste(gsub("apt-get install -y ", "", remotes::system_requirements("ubuntu", "20.04")), collapse = " "))')
+            echo $sysreqs
+            sudo -s eval "$sysreqs"
+        
+      - name: Query and install dependencies
+        uses: r-lib/actions/setup-r-dependencies@v2
         with:
           extra-packages: any::rcmdcheck
           needs: check
 
-      - uses: r-lib/actions/check-r-package@v2
+      - name: Run R CMD check
+        uses: r-lib/actions/check-r-package@v2
