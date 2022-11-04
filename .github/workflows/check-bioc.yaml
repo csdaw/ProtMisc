@@ -13,17 +13,22 @@ on:
 name: check-bioc
 
 env:
-  bioc-version: 'RELEASE_3_15' # or devel
-
+  bioc-version: 'RELEASE_3_15'
+  
 jobs:
-  R-CMD-check-bioc:
-    name: ubuntu-latest (biocdocker ${{ env.bioc-version }})
+  get-bioc-version:
     runs-on: ubuntu-latest
+    outputs:
+      biocv: ${{ env.bioc-version }}
+  R-CMD-check-bioc:
+    name: ubuntu-latest (biocdocker ${{ needs.get-bioc-version.outputs.biocv }})
+    runs-on: ubuntu-latest
+    needs: [get-bioc-version]
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       R_KEEP_PKG_SOURCE: yes
     container:
-      image: bioconductor/bioconductor_docker:${{ env.bioc-version }}
+      image: bioconductor/bioconductor_docker:${{ needs.get-bioc-version.outputs.biocv }}
       volumes:
        - /home/runner/work/_temp/Library:/usr/local/lib/R/host-site-library
     steps:
