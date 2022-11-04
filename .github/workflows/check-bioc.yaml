@@ -20,6 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       biocv: ${{ env.bioc-version }}
+    
   R-CMD-check-bioc:
     name: ubuntu-latest (biocdocker ${{ needs.get-bioc-version.outputs.biocv }})
     runs-on: ubuntu-latest
@@ -29,8 +30,8 @@ jobs:
       R_KEEP_PKG_SOURCE: yes
     container:
       image: bioconductor/bioconductor_docker:${{ needs.get-bioc-version.outputs.biocv }}
-      volumes:
-       - /home/runner/work/_temp/Library:/usr/local/lib/R/host-site-library
+      volumes: 
+        - /home/runner/work/_temp/Library:/usr/local/lib/R/host-site-library
     steps:
       - uses: actions/checkout@v3
 
