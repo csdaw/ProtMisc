@@ -20,6 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       biocv: ${{ env.bioc-version }}
+    steps:
     
   R-CMD-check-bioc:
     name: ubuntu-latest (biocdocker ${{ needs.get-bioc-version.outputs.biocv }})
