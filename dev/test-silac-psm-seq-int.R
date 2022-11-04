@@ -1,7 +1,16 @@
 library(camprotR)
+library(dplyr)
+
+pepg2psm <- read.delim("dev/data-raw/RNA_IP_rand_PeptideGroups_PSMs.txt")
 
 psms <- read.delim("dev/data-raw/RNA_IP_rand_PSMs.txt") %>% 
-  mutate(id = paste(Sequence, Modifications, sep = ":"))
+  mutate(id = paste(Sequence, Modifications, sep = ":")) %>% 
+  left_join(pepg2psm, by = c("PSMs.Workflow.ID", "PSMs.Peptide.ID")) %>% 
+  select(Peptide.Groups.Peptide.Group.ID, everything())
+
+psms_short <- psms %>% 
+  select(Sequence, Modifications, Precursor.Abundance, Master.Protein.Accessions, Protein.Accessions,
+         Precursor.Quan.Result.ID, File.ID)
 
 pepg <- read.delim("dev/data-raw/RNA_IP_rand_PeptideGroups.txt") %>% 
   mutate(id = paste(Sequence, Modifications, sep = ":"))
@@ -39,4 +48,12 @@ psms_of_interest <- psms %>%
   filter(Sequence == "TNIIPVLEDAR" | Sequence == "VFIGNLNTAIVK")
 
 
+## MISSING PSMs ARE FOR PEPTIDES WITH ISOLEUCINE/LEUCINE THAT HAS BEEN SWITCHED
+## AROUND WITH THE DIFFERENT SEARCH ENGINES
+
+
+table(pepg2psm$Peptide.Groups.Peptide.Group.ID)
+length(unique(pepg2psm$Peptide.Groups.Peptide.Group.ID))
+
+missing_pepg_group_ids <- pepg2psm[which(!pepg2psm$Peptide.Groups.Peptide.Group.ID %in% pepg$Peptide.Groups.Peptide.Group.ID), ]
 
