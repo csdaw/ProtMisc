@@ -14,4 +14,6 @@ Depends: R (>= 4.1.0)
 Imports: 
     ggplot2,
     QFeatures
-Suggests: tinytest
+Suggests: 
+    Biostrings,
+    tinytest
