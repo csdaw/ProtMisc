@@ -1,7 +1,3 @@
-# Workflow derived from https://github.com/r-lib/actions/tree/v2/examples
-# and https://github.com/lcolladotor/biocthis/blob/master/.github/workflows/check-bioc.yml
-# and https://github.com/rformassspectrometry/QFeatures/blob/master/.github/workflows/check-bioc.yml
-
 on:
   push:
     branches:
@@ -12,44 +8,44 @@ on:
 
 name: check-bioc
 
-env:
-  bioc-version: 'RELEASE_3_16'
-  
 jobs:
-  define-image:
-    runs-on: ubuntu-latest
-    outputs:
-      biocv: ${{ env.bioc-version }}
-      image: bioconductor/bioconductor_docker:${{ env.bioc-version }}
-    steps:
-      - run: echo "$bioc-version"
-    
-  R-CMD-check-bioc:
-    name: ubuntu-latest (biocdocker ${{ needs.define-image.outputs.biocv }})
-    runs-on: ubuntu-latest
-    needs: [define-image]
+  build-check: 
+    runs-on: ${{ matrix.config.os }}
+    name: ${{ matrix.config.os}} (${{ matrix.config.r }})
+    container: 
+      image: ${{ matrix.config.cont }}
+    strategy:
+      fail-fast: false
+      config:
+        - { os: ubuntu-latest, r: '4.2', bioc: '3.16', cont: "bioconductor/bioconductor_docker:RELEASE_3_16", rspm: "https://packagemanager.rstudio.com/cran/__linux__/focal/latest" }
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-      R_KEEP_PKG_SOURCE: yes
-    container:
-      image: ${{ needs.define-image.outputs.image }}
-      volumes: 
-        - /home/runner/work/_temp/Library:/usr/local/lib/R/host-site-library
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      RSPM: ${{ matrix.config.rspm }}
     steps:
-      - name: Checkout repository
+
+      ## Set the R library to the directory matching the cache step
+      ## (lcolladotor/biocthis)
+      - name: Set R Library path on Linux
+        if: runner.os == 'Linux'
+        run: |
+          mkdir /__w/_temp/Library
+          echo ".libPaths('/__w/_temp/Library')" > ~/.Rprofile
+          
+          
+      ## (r-lib/check-standard)
+      - name: Checkout Repository
         uses: actions/checkout@v3
         
-      - name: Install Linux system dependencies
-        run: |
-            sysreqs=$(Rscript -e 'cat("apt-get update -y && apt-get install -y", paste(gsub("apt-get install -y ", "", remotes::system_requirements("ubuntu", "20.04")), collapse = " "))')
-            echo $sysreqs
-            sudo -s eval "$sysreqs"
-        
+      ## (r-lib/check-standard) 
       - name: Query and install dependencies
         uses: r-lib/actions/setup-r-dependencies@v2
         with:
           extra-packages: any::rcmdcheck
           needs: check
 
-      - name: Run R CMD check
+      ## (r-lib/check-standard)
+      - name: Check
         uses: r-lib/actions/check-r-package@v2
+        with:
+          upload-snapshots: true
