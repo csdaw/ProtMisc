@@ -12,9 +12,9 @@ jobs:
   build-check: 
     runs-on: ${{ matrix.config.os }}
     name: ${{ matrix.config.os}} (${{ matrix.config.r }})
+    ## (QFeatures bioc-check)
     container: 
       image: ${{ matrix.config.cont }}
-      ## (QFeatures bioc-check)
       volumes:
         - /home/runner/work/_temp/Library:/usr/local/lib/R/site-library
     strategy:
