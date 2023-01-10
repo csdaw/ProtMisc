@@ -30,11 +30,16 @@ jobs:
       ## (r-lib/check-standard)
       - name: Checkout Repository
         uses: actions/checkout@v3
-      
+        
+      ## Need to install remotes before next step...
+      - name: Install remotes
+        run: |
+          install.packages('remotes')
+        shell: Rscript {0}
+        
       ## Prevent an error due to 'libcurl4-openssl-dev is not available'
       ## (lcolladotor/biocthis)
       - name: Install Linux system dependencies
-        if: runner.os == 'Linux'
         run: |
           sysreqs=$(Rscript -e 'cat("apt-get update -y && apt-get install -y", paste(gsub("apt-get install -y ", "", remotes::system_requirements("ubuntu", "20.04")), collapse = " "))')
           echo $sysreqs
