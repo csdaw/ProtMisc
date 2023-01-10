@@ -27,14 +27,6 @@ jobs:
       
     steps:
 
-      ## Set the R library to the directory matching the cache step
-      ## (lcolladotor/biocthis)
-      - name: Set R Library path on Linux
-        if: runner.os == 'Linux'
-        run: |
-          mkdir /__w/_temp/Library
-          echo ".libPaths('/__w/_temp/Library')" > ~/.Rprofile
-      
       ## (r-lib/check-standard)
       - name: Checkout Repository
         uses: actions/checkout@v3
