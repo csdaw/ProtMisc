@@ -14,15 +14,17 @@ jobs:
     name: ${{ matrix.config.os}} (${{ matrix.config.r }})
     container: 
       image: ${{ matrix.config.cont }}
+      ## (QFeatures bioc-check)
+      volumes:
+        - /home/runner/work/_temp/Library:/usr/local/lib/R/site-library
     strategy:
       fail-fast: false
       matrix:
         config:
-          - { os: ubuntu-latest, r: '4.2', bioc: '3.16', cont: "bioconductor/bioconductor_docker:RELEASE_3_16", rspm: "https://packagemanager.rstudio.com/cran/__linux__/focal/latest" }
+          - { os: ubuntu-latest, r: '4.2', bioc: '3.16', cont: "bioconductor/bioconductor_docker:RELEASE_3_16" }
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      RSPM: ${{ matrix.config.rspm }}
+      
     steps:
 
       ## Set the R library to the directory matching the cache step
