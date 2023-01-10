@@ -13,7 +13,7 @@ on:
 name: check-bioc
 
 env:
-  bioc-version: 'RELEASE_3_15'
+  bioc-version: 'RELEASE_3_16'
   
 jobs:
   define-image:
